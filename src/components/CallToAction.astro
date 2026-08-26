@@ -1,0 +1,44 @@
+---
+import site from '../data/site.json';
+interface Props { cta: any; }
+const { cta } = Astro.props;
+---
+<section class="cta" id="contact">
+  <div class="cta__half cta__half--gold">
+    <div class="cta__inner">
+      <p class="eyebrow cta__eyebrow">{cta.eyebrow}</p>
+      <h2>{cta.title}</h2>
+      <p class="cta__body">{cta.body}</p>
+    </div>
+  </div>
+  <div class="cta__half cta__half--dark">
+    <div class="cta__inner">
+      <a class="btn btn--primary" href={site.calendly} target="_blank" rel="noopener">{cta.button}</a>
+      <p class="cta__link">{site.calendlyLabel}</p>
+      <p class="cta__note">{cta.note}</p>
+    </div>
+  </div>
+</section>
+<style>
+  .cta { display: grid; grid-template-columns: 1fr 1fr; }
+  .cta__half { padding-block: clamp(2.75rem, 5vw, 4.25rem); display: flex; }
+  .cta__half--gold { background: var(--gold); color: var(--deep); }
+  .cta__half--dark { background: var(--deep); color: var(--cream-on-dark); align-items: center; }
+  .cta__inner { max-width: calc(var(--maxw) / 2); padding-inline: var(--gutter); width: 100%; }
+  .cta__half--gold .cta__inner { margin-left: auto; }
+  .cta__eyebrow { color: var(--deep); opacity: 0.78; }
+  h2 { font-size: var(--fs-h3); color: var(--deep); max-width: 14ch; }
+  .cta__body { margin-top: 1.2rem; max-width: 34ch; font-size: 0.94rem; opacity: 0.85; }
+  .cta__link { margin: 1.4rem 0 0; font-size: 0.82rem; color: var(--gold-light); }
+  .cta__note { margin: 0.35rem 0 0; font-size: 0.82rem; opacity: 0.55; }
+  @media (max-width: 560px) {
+    .cta__half { padding-block: 2.25rem; }
+    .cta__body { max-width: none; }
+    h2 { max-width: none; }
+  }
+  @media (max-width: 860px) {
+    .cta { grid-template-columns: 1fr; }
+    .cta__inner { max-width: var(--maxw); margin-inline: auto; }
+    .cta__half--dark { padding-block: 2.5rem 3.25rem; }
+  }
+</style>

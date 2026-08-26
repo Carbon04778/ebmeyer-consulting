@@ -1,0 +1,88 @@
+---
+import '../styles/tokens.css';
+import site from '../data/site.json';
+
+interface Props {
+  locale: 'de' | 'en';
+  title: string;
+  description: string;
+  /** path after the locale prefix, e.g. '' or 'souveraen-mit-ki/' */
+  path?: string;
+  /** matching path in the other locale */
+  altPath?: string;
+}
+
+const { locale, title, description, path = '', altPath = '' } = Astro.props;
+const other = locale === 'de' ? 'en' : 'de';
+const canonical = `${site.domain}/${locale}/${path}`;
+const alternate = `${site.domain}/${other}/${altPath}`;
+---
+
+<!doctype html>
+<html lang={locale} class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="alternate" hreflang="de" href={`${site.domain}/de/${locale === 'de' ? path : altPath}`} />
+    <link rel="alternate" hreflang="en" href={`${site.domain}/en/${locale === 'en' ? path : altPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${site.domain}/de/`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'de' ? 'de_CH' : 'en_GB'} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#241B21" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:image" content={`${site.domain}/og-image.jpg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Nadine Ebmeyer — Ebmeyer Consulting" />
+    <meta property="og:site_name" content="Ebmeyer Consulting" />
+
+    <link rel="preload" href="/fonts/hanken-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script is:inline>
+      document.documentElement.classList.remove('no-js');
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">
+      {locale === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}
+    </a>
+    <slot />
+
+    <script is:inline>
+      // Progressive scroll reveal — no library, respects reduced motion.
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window) ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          els.forEach(function (el) { el.classList.add('is-in'); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        els.forEach(function (el) { io.observe(el); });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+---
+// Static entry point. Sends visitors to their language, host-agnostic
+// (works on Vercel, Netlify or plain FTP hosting alike).
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ebmeyer Consulting</title>
+    <link rel="canonical" href="https://ebmeyer-consulting.ch/de/" />
+    <meta http-equiv="refresh" content="0; url=/de/" />
+    <meta name="robots" content="noindex" />
+    <script is:inline>
+      var l = (navigator.language || 'de').slice(0, 2).toLowerCase();
+      location.replace(l === 'en' ? '/en/' : '/de/');
+    </script>
+  </head>
+  <body>
+    <p><a href="/de/">Deutsch</a> · <a href="/en/">English</a></p>
+  </body>
+</html>

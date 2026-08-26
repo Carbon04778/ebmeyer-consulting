@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/nadine-portrait.png';
+import site from '../data/site.json';
+
+interface Props { hero: any; }
+const { hero } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero__media">
+    <Image src={portrait} alt={hero.imageAlt} widths={[760, 1100, 1600]}
+           sizes="(max-width: 900px) 100vw, 62vw" loading="eager" fetchpriority="high" />
+  </div>
+  <span class="hero__scrim"></span>
+
+  <div class="hero__inner wrap">
+    <div class="hero__copy">
+      <p class="eyebrow eyebrow--gold">{hero.eyebrow}</p>
+      <h1>
+        {hero.titleBefore}<br />
+        <em class="serif-italic nowrap">{hero.titleAccent}</em><br />
+        {hero.titleAfter}
+      </h1>
+      <p class="lead hero__lead">{hero.lead}</p>
+      <p class="hero__triple serif-italic">{hero.triple}</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href={site.calendly} target="_blank" rel="noopener">{hero.ctaPrimary}</a>
+        <a class="arrow-link hero__alt" href="#programme">
+          {hero.ctaSecondary}
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+            <path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative; background: var(--deep);
+    min-height: clamp(560px, 84vh, 820px);
+    display: flex; align-items: center;
+    padding-top: var(--hdr-h);
+    overflow: hidden; isolation: isolate;
+  }
+  .hero__media { position: absolute; inset: 0 0 0 auto; width: 62%; z-index: -1; }
+  .hero__media :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+  .hero__scrim {
+    position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: linear-gradient(to right,
+      var(--deep) 0%,
+      var(--deep) 32%,
+      color-mix(in srgb, var(--deep) 86%, transparent) 45%,
+      color-mix(in srgb, var(--deep) 46%, transparent) 58%,
+      color-mix(in srgb, var(--deep) 14%, transparent) 70%,
+      transparent 82%);
+  }
+  .hero__inner { position: relative; width: 100%; }
+  .hero__copy { max-width: 34rem; padding-block: clamp(3rem, 7vw, 5rem); color: var(--cream-on-dark); }
+  h1 { font-size: var(--fs-h1); color: var(--paper); margin-bottom: 1.9rem; }
+  .hero__lead { color: var(--cream-on-dark); opacity: 0.82; max-width: 32rem; }
+  .hero__triple { font-size: 1.22rem; margin: 1.6rem 0 0; }
+  .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.6rem; margin-top: 2.1rem; }
+  .hero__alt { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 1100px) { .hero__media { width: 56%; } }
+
+  @media (max-width: 900px) {
+    /* photo readable at the top, copy on the dark base below it */
+    .hero { min-height: 88vh; align-items: flex-end; padding-top: 0; }
+    .hero__media { inset: 0; width: 100%; }
+    .hero__media :global(img) { object-position: 62% 4%; }
+    .hero__scrim {
+      background: linear-gradient(to bottom,
+        color-mix(in srgb, var(--deep) 30%, transparent) 0%,
+        color-mix(in srgb, var(--deep) 20%, transparent) 26%,
+        color-mix(in srgb, var(--deep) 72%, transparent) 44%,
+        var(--deep) 58%,
+        var(--deep) 100%);
+    }
+    .hero__copy {
+      max-width: none;
+      padding-block: 46vh 2.75rem;   /* pushes copy below her face */
+    }
+    .hero__lead { max-width: none; }
+  }
+  @media (max-width: 560px) {
+    .hero { min-height: 92vh; }
+    .hero__copy { padding-block: 42vh 2.25rem; }
+  }
+  @media (max-width: 560px) {
+    .hero__cta { gap: 1.1rem; margin-top: 1.7rem; }
+    .hero__alt { width: 100%; justify-content: center; }
+    .hero__triple { font-size: 1.08rem; }
+    h1 { margin-bottom: 1.4rem; }
+  }
+</style>

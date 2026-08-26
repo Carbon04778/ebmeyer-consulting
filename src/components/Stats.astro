@@ -1,0 +1,41 @@
+---
+interface Props { stats: { value: string; label: string }[]; }
+const { stats } = Astro.props;
+---
+<section class="stats">
+  <ul class="stats__list wrap">
+    {stats.map((s) => (
+      <li>
+        <span class="stats__v num">{s.value}</span>
+        <span class="stats__l">{s.label}</span>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .stats { background: var(--paper); border-bottom: 1px solid var(--hairline); }
+  .stats__list {
+    list-style: none; margin: 0; display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-block: clamp(1.6rem, 3vw, 2.4rem);
+  }
+  .stats__list li {
+    text-align: center; padding-inline: 0.5rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .stats__list li + li { border-left: 1px solid var(--hairline); }
+  .stats__v { display: block; width: 100%; text-align: center; font-size: clamp(1.6rem, 3.2vw, 2.35rem); color: var(--gold); line-height: 1.1; }
+  .stats__l {
+    display: block; width: 100%; text-align: center; margin-top: 0.5rem; font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute);
+  }
+  @media (max-width: 400px) {
+    .stats__v { font-size: 1.5rem; }
+    .stats__l { font-size: 0.6rem; letter-spacing: 0.14em; }
+  }
+  @media (max-width: 640px) {
+    .stats__list { grid-template-columns: 1fr 1fr; gap: 1.5rem 0; }
+    .stats__list li:nth-child(odd) { border-left: 0; }
+  }
+</style>

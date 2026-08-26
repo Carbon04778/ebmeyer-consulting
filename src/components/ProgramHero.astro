@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import site from '../data/site.json';
+// NOTE: placeholder portrait. Replace with Nadine's images 6380 / 6377 once supplied.
+import portrait from '../assets/nadine-program.png';
+interface Props { hero: any; }
+const { hero } = Astro.props;
+---
+<section class="phero">
+  <div class="wrap phero__grid">
+   <div class="phero__copy">
+    <p class="eyebrow eyebrow--on-dark">{hero.eyebrow}</p>
+    <h1>{hero.title}</h1>
+    <p class="phero__aud">{hero.audience}</p>
+    <hr class="rule" />
+    <p class="phero__lead">{hero.lead}</p>
+    <p class="phero__meta">{hero.meta}</p>
+    <a class="btn btn--primary" href={site.calendly} target="_blank" rel="noopener">{hero.cta}</a>
+   </div>
+   <div class="phero__media">
+     <Image src={portrait} alt="Nadine Ebmeyer" widths={[420, 840]} sizes="(max-width: 860px) 70vw, 420px" loading="eager" />
+     <span class="phero__frame" aria-hidden="true"></span>
+   </div>
+  </div>
+</section>
+<style>
+  .phero { background: var(--deep); color: var(--cream-on-dark); padding-block: clamp(3.5rem, 8vw, 6rem); }
+  .phero__grid {
+    display: grid; grid-template-columns: 1fr minmax(0, 420px);
+    gap: clamp(2rem, 5vw, 4rem); align-items: center;
+  }
+  .phero__media { position: relative; }
+  .phero__media :global(img) {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 16%;
+    border-radius: var(--radius); position: relative; z-index: 1;
+  }
+  .phero__frame {
+    position: absolute; inset: 26px -26px -26px 26px;
+    border: 1.2px solid var(--gold); border-radius: var(--radius); opacity: .6;
+  }
+  @media (max-width: 860px) {
+    .phero__grid { grid-template-columns: 1fr; }
+    .phero__media { max-width: 340px; order: -1; }
+    .phero__frame { inset: 16px -16px -16px 16px; }
+  }
+  h1 { font-size: var(--fs-h1); color: var(--paper); margin-bottom: 0.7rem; }
+  .phero__aud {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 2rem;
+  }
+  .phero__lead {
+    font-family: var(--font-display); font-variation-settings: var(--fv-text);
+    font-style: italic; font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+    line-height: 1.55; max-width: 34ch; color: var(--paper);
+  }
+  .phero__meta {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin: 1.8rem 0 2rem;
+  }
+  @media (max-width: 560px) {
+    .phero { padding-block: clamp(2.5rem, 9vw, 3.5rem); }
+    .phero__lead { max-width: none; font-size: 1.1rem; }
+    .phero__aud { margin-bottom: 1.5rem; }
+  }
+</style>

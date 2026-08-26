@@ -1,0 +1,40 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import ProgramHero from '../components/ProgramHero.astro';
+import PainList from '../components/PainList.astro';
+import CostBlock from '../components/CostBlock.astro';
+import CardGrid from '../components/CardGrid.astro';
+import Journey from '../components/Journey.astro';
+import PhaseDetail from '../components/PhaseDetail.astro';
+import Outcome from '../components/Outcome.astro';
+import Bio from '../components/Bio.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props { locale: 'de' | 'en'; t: any; p: any; }
+const { locale, t, p } = Astro.props;
+const other = locale === 'de' ? 'en' : 'de';
+---
+<Base
+  locale={locale}
+  title={p.meta.title}
+  description={p.meta.description}
+  path={`${p.slug}/`}
+  altPath={`${p.altSlug}/`}
+>
+  <Header locale={locale} nav={t.nav} altHref={`/${other}/${p.altSlug}/`} />
+  <main id="main">
+    <ProgramHero hero={p.hero} />
+    <PainList pain={p.pain} />
+    <CostBlock cost={p.cost} />
+    <CardGrid data={p.approach} variant="approach" />
+    <CardGrid data={p.forWhom} variant="forwhom" />
+    <Journey journey={p.journey} />
+    {p.phases.map((ph: any, i: number) => <PhaseDetail phase={ph} index={i} />)}
+    <Outcome outcome={p.outcome} />
+    <Bio bio={t.bio} />
+    <CallToAction cta={t.cta} />
+  </main>
+  <Footer footer={t.footer} locale={locale} />
+</Base>

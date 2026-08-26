@@ -1,0 +1,40 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props { locale: 'de' | 'en'; t: any; title: string; slug: string; altSlug: string; description?: string; }
+const { locale, t, title, slug, altSlug, description } = Astro.props;
+const fallback = locale === 'de'
+  ? `${title} von Ebmeyer Consulting, Nadine Ebmeyer, Cham ZG, Schweiz. Rechtliche Angaben und Informationen zum Datenschutz.`
+  : `${title} for Ebmeyer Consulting, Nadine Ebmeyer, Cham ZG, Switzerland. Legal details and privacy information.`;
+const other = locale === 'de' ? 'en' : 'de';
+---
+<Base locale={locale} title={`${title} — Ebmeyer Consulting`} description={description ?? fallback}
+      path={`${slug}/`} altPath={`${altSlug}/`}>
+  <Header locale={locale} nav={t.nav} altHref={`/${other}/${altSlug}/`} />
+  <main id="main" class="legal section">
+    <div class="wrap">
+      <h1>{title}</h1>
+      <hr class="rule" />
+      <div class="legal__body"><slot /></div>
+    </div>
+  </main>
+  <Footer footer={t.footer} locale={locale} />
+</Base>
+<style is:global>
+  .legal { background: var(--paper); }
+  .legal .wrap { max-width: 760px; }
+  .legal h1 { font-size: var(--fs-h2); }
+  .legal__body h2 {
+    font-size: 1.25rem; font-variation-settings: var(--fv-text);
+    margin: 2.4rem 0 0.7rem;
+  }
+  .legal__body p, .legal__body li { color: var(--ink-soft); font-size: 0.96rem; }
+  .legal__body ul { padding-left: 1.2rem; }
+  .legal__body a { color: var(--magenta); }
+  .legal__todo {
+    background: color-mix(in srgb, var(--gold) 14%, var(--paper));
+    border-left: 3px solid var(--gold); padding: 0.9rem 1.2rem;
+    border-radius: 0 8px 8px 0; font-size: 0.88rem;
+  }
+</style>

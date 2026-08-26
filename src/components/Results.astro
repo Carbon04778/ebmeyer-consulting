@@ -1,0 +1,34 @@
+---
+interface Props { results: any; }
+const { results } = Astro.props;
+---
+<section class="section results center">
+  <div class="wrap">
+    <p class="eyebrow reveal">{results.eyebrow}</p>
+    <h2 class="reveal">{results.title}</h2>
+    <ul class="results__grid">
+      {results.items.map((r: any) => (
+        <li class="reveal">
+          <span class="results__num num">{r.num}</span>
+          <span class="results__rule" aria-hidden="true"></span>
+          <h3>{r.title}</h3>
+          <p>{r.body}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+<style>
+  .results { background: var(--warm); }
+  h2 { font-size: var(--fs-h2); }
+  .results__grid {
+    list-style: none; padding: 0; margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.75rem, 4vw, 2.75rem);
+  }
+  .results__num { display: block; font-size: 1.35rem; letter-spacing: 0.14em; color: var(--gold); }
+  .results__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: 0.6; margin: 0.6rem auto 1.4rem; }
+  h3 { font-size: var(--fs-h4); font-variation-settings: var(--fv-text); margin-bottom: 0.7rem; }
+  p { color: var(--ink-soft); font-size: 0.94rem; max-width: 34ch; margin-inline: auto; }
+  @media (max-width: 780px) { .results__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { p { max-width: none; } }
+</style>

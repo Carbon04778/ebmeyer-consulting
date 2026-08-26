@@ -1,0 +1,179 @@
+{
+  "locale": "de",
+  "meta": {
+    "title": "Ebmeyer Consulting — Souverän mit KI | KI-Strategie & Enablement",
+    "description": "Massgeschneiderte KI-Assistenten und klare Strategie für Unternehmerinnen, Solopreneure und Gründer. Kostenloses Erstgespräch mit Nadine Ebmeyer.",
+    "ogAlt": "Nadine Ebmeyer, KI-Strategin bei Ebmeyer Consulting"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Souverän mit KI",
+        "href": "/de/souveraen-mit-ki/"
+      },
+      {
+        "label": "Souverän gründen",
+        "href": "/de/souveraen-gruenden/"
+      },
+      {
+        "label": "Über mich",
+        "href": "/de/#about"
+      },
+      {
+        "label": "Kontakt",
+        "href": "/de/#contact"
+      }
+    ],
+    "cta": "Termin buchen",
+    "menuLabel": "Menü öffnen",
+    "closeLabel": "Menü schliessen"
+  },
+  "hero": {
+    "eyebrow": "KI-Strategie & Enablement",
+    "titleBefore": "Zukunftssicher durch",
+    "titleAccent": "Künstliche Intelligenz",
+    "titleAfter": "und Strategie.",
+    "lead": "Gemeinsam entwickeln wir massgeschneiderte KI-Assistenten und eine klare Strategie, die Deine Prozesse effizienter machen und Dein Unternehmen für die Zukunft aufstellen — mit Technologie, die den Menschen im Mittelpunkt behält.",
+    "triple": "Agilität. Effizienz. Erfolg.",
+    "ctaPrimary": "Kostenloses Erstgespräch",
+    "ctaSecondary": "Die zwei Programme",
+    "imageAlt": "Nadine Ebmeyer, KI-Strategin und Gründerin von Ebmeyer Consulting"
+  },
+  "splitLabel": "Wo stehst Du gerade?",
+  "programs": [
+    {
+      "num": "01",
+      "name": "Souverän mit KI",
+      "who": "Für etablierte Unternehmerinnen & Solopreneure",
+      "line": "Schluss mit KI-Chaos und Zeitverlust. Dein eigener Assistent unterstützt Dein Business und Du behältst die Führung.",
+      "meta": "2 Phasen · 4–6 Wochen",
+      "phases": [
+        {
+          "name": "Standortanalyse & Basis Set-up",
+          "duration": "4 Wochen"
+        },
+        {
+          "name": "Aufbau & Enablement",
+          "duration": "2 Wochen"
+        }
+      ],
+      "cta": "Programm ansehen",
+      "href": "/de/souveraen-mit-ki/"
+    },
+    {
+      "num": "02",
+      "name": "Souverän gründen",
+      "who": "Für Gründerinnen und Gründer",
+      "line": "Du gründest mit klarer Strategie, validierten Annahmen und Deinem eigenen KI-Assistenten an Deiner Seite. Souverän, vom ersten Schritt an.",
+      "meta": "3 Phasen · 12 Wochen",
+      "phases": [
+        {
+          "name": "Klarheit & Positionierung",
+          "duration": "4 Wochen"
+        },
+        {
+          "name": "Hypothesen & Business Cases",
+          "duration": "4 Wochen"
+        },
+        {
+          "name": "Vom Plan zum Aufbau",
+          "duration": "4 Wochen"
+        }
+      ],
+      "cta": "Programm ansehen",
+      "href": "/de/souveraen-gruenden/"
+    }
+  ],
+  "stats": [
+    {
+      "value": "21+",
+      "label": "Jahre Praxis"
+    },
+    {
+      "value": "50+",
+      "label": "KI-Assistenten gebaut"
+    },
+    {
+      "value": "250+",
+      "label": "Stunden / Jahr zurück"
+    },
+    {
+      "value": "30",
+      "label": "Min Erstgespräch"
+    }
+  ],
+  "about": {
+    "eyebrow": "Über Ebmeyer Consulting",
+    "title": "Strategie, Technologie und Mensch — in einer Hand.",
+    "body": "Ebmeyer Consulting verbindet präzise Strategie- und Vertriebsberatung mit massgeschneiderten KI-Lösungen. Ich helfe Unternehmen, effizienter zu agieren, fundierte Entscheidungen zu treffen und durch technologische Innovation zukunftssicher zu werden — ohne dabei den Menschen aus dem Blick zu verlieren."
+  },
+  "results": {
+    "eyebrow": "Deine Ergebnisse",
+    "title": "Was Du am Ende in der Hand hast.",
+    "items": [
+      {
+        "num": "01",
+        "title": "Dein persönlicher KI-Assistent",
+        "body": "Er automatisiert wiederkehrende Aufgaben und spart Dir Zeit — in der Kundenkommunikation, im Marketing oder bei internen Prozessen."
+      },
+      {
+        "num": "02",
+        "title": "Datenbasierte Strategie",
+        "body": "Eine präzise, datengestützte Strategie, mit der Du Deine Zielgruppe besser verstehst, fundierte Entscheidungen triffst und effizient wächst."
+      },
+      {
+        "num": "03",
+        "title": "Deine eigene KI-Toolbox",
+        "body": "Du lernst die wichtigsten KI-Tools kennen und anwenden — für automatisierte Prozesse, kreative Inhalte und schnellere Entscheidungen."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Kundenstimmen",
+    "title": "Was Kundinnen und Kunden sagen.",
+    "items": [
+      {
+        "quote": "Dank dem KI-Assistenten habe ich jetzt einen unsichtbaren Mitarbeiter an meiner Seite. Nadine verbindet Menschen, Strategie und Technologie und schafft echten Mehrwert.",
+        "name": "Catharina Floros",
+        "role": "Gründerin & CEO, Evzoia HR Services"
+      },
+      {
+        "quote": "Dank Nadine habe ich eine virtuelle Begleiterin gefunden, die blitzschnell lernt, mich inspiriert und meinen Alltag erleichtert — einfach zauberhaft.",
+        "name": "Claudine Fehr",
+        "role": "Gründerin & CEO, grafikZUMGLÜCK"
+      },
+      {
+        "quote": "Nadine hat mit uns einen KI-Assistenten entwickelt, der uns bei der strategischen Positionierung unseres Salons geholfen hat.",
+        "name": "Asiye Karagil",
+        "role": "Inhaberin, hair4you GmbH"
+      }
+    ]
+  },
+  "bio": {
+    "eyebrow": "Warum ich",
+    "title": "Viele zeigen Dir Tools. Ich baue mit Dir eine Strategie.",
+    "quote": "«Technologie funktioniert nur, wenn der Mensch im Mittelpunkt bleibt — und Strategie nur, wenn sie sich umsetzen lässt.»",
+    "body": "21+ Jahre internationale Erfahrung, von der Luxushotellerie über Transformationsberatung bei KPMG bis zur COO- und CEO-Rolle im Health-Tech und FinTech. Über 50 individuelle KI-Assistenten gebaut. Ich verbinde Business, Technologie und Mensch.",
+    "badges": [
+      "MBA · Strategy",
+      "KPMG · Data & Analytics",
+      "COO Health-Tech",
+      "CEO BANQR"
+    ],
+    "imageAlt": "Porträt von Nadine Ebmeyer"
+  },
+  "cta": {
+    "eyebrow": "Der nächste Schritt",
+    "title": "Lass uns Deinen grössten Hebel finden.",
+    "body": "In 30 Minuten schauen wir gemeinsam auf Dein Unternehmen und wo KI Dir den grössten Hebel bringt. Kostenlos und unverbindlich.",
+    "button": "Termin vereinbaren · 30 Min",
+    "note": "30 Minuten · kostenlos · unverbindlich"
+  },
+  "footer": {
+    "address": "Langackerstrasse 11 · 6330 Cham ZG · Schweiz",
+    "legal": "© 2026 Ebmeyer Consulting",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "tagline": "Souverän mit KI"
+  }
+}

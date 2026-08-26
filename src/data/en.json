@@ -1,0 +1,179 @@
+{
+  "locale": "en",
+  "meta": {
+    "title": "Ebmeyer Consulting — AI Strategy & Enablement",
+    "description": "Tailored AI assistants and a clear strategy for established entrepreneurs, solopreneurs and founders. Free 30-minute intro call with Nadine Ebmeyer.",
+    "ogAlt": "Nadine Ebmeyer, AI strategist at Ebmeyer Consulting"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Confident with AI",
+        "href": "/en/confident-with-ai/"
+      },
+      {
+        "label": "Founding with Confidence",
+        "href": "/en/founding-with-confidence/"
+      },
+      {
+        "label": "About",
+        "href": "/en/#about"
+      },
+      {
+        "label": "Contact",
+        "href": "/en/#contact"
+      }
+    ],
+    "cta": "Book a call",
+    "menuLabel": "Open menu",
+    "closeLabel": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "AI Strategy & Enablement",
+    "titleBefore": "Future-ready through",
+    "titleAccent": "Artificial Intelligence",
+    "titleAfter": "and strategy.",
+    "lead": "Together we build a tailored AI assistant and a clear strategy that makes your processes leaner and your business ready for what comes next — with technology that keeps people at the centre.",
+    "triple": "Agility. Efficiency. Success.",
+    "ctaPrimary": "Free intro call",
+    "ctaSecondary": "The two programmes",
+    "imageAlt": "Nadine Ebmeyer, AI strategist and founder of Ebmeyer Consulting"
+  },
+  "splitLabel": "Where are you right now?",
+  "programs": [
+    {
+      "num": "01",
+      "name": "Confident with AI",
+      "who": "For established entrepreneurs & solopreneurs",
+      "line": "An end to AI chaos and lost hours. Your own assistant supports your business — and you stay in the lead.",
+      "meta": "2 phases · 4–6 weeks",
+      "phases": [
+        {
+          "name": "Assessment & Base Set-up",
+          "duration": "4 weeks"
+        },
+        {
+          "name": "Build & Enablement",
+          "duration": "2 weeks"
+        }
+      ],
+      "cta": "View programme",
+      "href": "/en/confident-with-ai/"
+    },
+    {
+      "num": "02",
+      "name": "Founding with Confidence",
+      "who": "For founders",
+      "line": "You start with a clear strategy, validated assumptions and your own AI assistant beside you. In control, from the very first step.",
+      "meta": "3 phases · 12 weeks",
+      "phases": [
+        {
+          "name": "Clarity & Positioning",
+          "duration": "4 weeks"
+        },
+        {
+          "name": "Hypotheses & Business Cases",
+          "duration": "4 weeks"
+        },
+        {
+          "name": "From Plan to Build",
+          "duration": "4 weeks"
+        }
+      ],
+      "cta": "View programme",
+      "href": "/en/founding-with-confidence/"
+    }
+  ],
+  "stats": [
+    {
+      "value": "21+",
+      "label": "Years of practice"
+    },
+    {
+      "value": "50+",
+      "label": "AI assistants built"
+    },
+    {
+      "value": "250+",
+      "label": "Hours / year returned"
+    },
+    {
+      "value": "30",
+      "label": "Min intro call"
+    }
+  ],
+  "about": {
+    "eyebrow": "About Ebmeyer Consulting",
+    "title": "Strategy, technology and people — in one place.",
+    "body": "Ebmeyer Consulting combines precise strategy and sales advisory with tailored AI solutions. I help businesses operate more efficiently, make well-founded decisions and become future-ready through technological innovation — without ever losing sight of the people involved."
+  },
+  "results": {
+    "eyebrow": "Your outcomes",
+    "title": "What you actually walk away with.",
+    "items": [
+      {
+        "num": "01",
+        "title": "Your own AI assistant",
+        "body": "It handles recurring tasks and gives you time back — in client communication, in marketing, or across internal processes."
+      },
+      {
+        "num": "02",
+        "title": "A data-led strategy",
+        "body": "A precise, data-backed strategy that helps you understand your audience, make confident decisions and grow efficiently."
+      },
+      {
+        "num": "03",
+        "title": "Your own AI toolbox",
+        "body": "You learn the tools that matter and how to apply them — for automated processes, creative output and faster decisions."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Client voices",
+    "title": "What clients say.",
+    "items": [
+      {
+        "quote": "Thanks to the AI assistant I now have an invisible colleague at my side. Nadine connects people, strategy and technology, and creates real value.",
+        "name": "Catharina Floros",
+        "role": "Founder & CEO, Evzoia HR Services"
+      },
+      {
+        "quote": "Thanks to Nadine I found a virtual companion that learns incredibly fast, inspires me and makes my days easier — simply wonderful.",
+        "name": "Claudine Fehr",
+        "role": "Founder & CEO, grafikZUMGLÜCK"
+      },
+      {
+        "quote": "Nadine built an AI assistant with us that helped us with the strategic positioning of our salon.",
+        "name": "Asiye Karagil",
+        "role": "Owner, hair4you GmbH"
+      }
+    ]
+  },
+  "bio": {
+    "eyebrow": "Why me",
+    "title": "Many will show you tools. I build a strategy with you.",
+    "quote": "«Technology only works when people stay at the centre — and strategy only works when it can actually be put into practice.»",
+    "body": "21+ years of international experience, from luxury hospitality to transformation consulting at KPMG, through to COO and CEO roles in health tech and fintech. Over 50 individual AI assistants built. I connect business, technology and people.",
+    "badges": [
+      "MBA · Strategy",
+      "KPMG · Data & Analytics",
+      "COO Health-Tech",
+      "CEO BANQR"
+    ],
+    "imageAlt": "Portrait of Nadine Ebmeyer"
+  },
+  "cta": {
+    "eyebrow": "The next step",
+    "title": "Let's find your biggest lever.",
+    "body": "In 30 minutes we look at your business together and where AI gives you the greatest leverage. Free, with no obligation.",
+    "button": "Book a call · 30 min",
+    "note": "30 minutes · free · no obligation"
+  },
+  "footer": {
+    "address": "Langackerstrasse 11 · 6330 Cham ZG · Switzerland",
+    "legal": "© 2026 Ebmeyer Consulting",
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "tagline": "Souverän mit KI"
+  }
+}

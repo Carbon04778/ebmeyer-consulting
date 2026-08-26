@@ -1,0 +1,287 @@
+/* ============================================================
+   EBMEYER CONSULTING — Design Tokens
+   Derived from the approved brandbook + homepage concept.
+   Change --paper to #FFFFFF for the pure-white variant.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/fonts/fraunces-var.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/fonts/fraunces-italic-var.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('/fonts/hanken-var.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Brand palette (brandbook) --- */
+  --ink: #241b21;
+  --magenta: #c52562;
+  --gold: #b68a4e;
+  --paper: #faf6f1;
+
+  /* --- Derived, for hierarchy --- */
+  --deep: #1b1317;
+  --warm: #f2e9dd;
+  --ink-soft: #4a3b42;
+  --ink-mute: #7e6e75;
+  --cream-on-dark: #efe6dc;
+  --gold-light: #d8c4a6;
+  --magenta-light: #e4739f; /* small text on dark — AA safe */
+  --card-dark: #2e2329;
+  --hairline: rgba(182, 138, 78, 0.4);
+
+  /* --- Type --- */
+  --font-display: 'Fraunces', 'Times New Roman', serif;
+  --font-sans: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Fraunces optical size: 144 = display cut. Numerals use 24 (legible 3). */
+  --fv-display: 'opsz' 144, 'SOFT' 0, 'WONK' 0;
+  --fv-text: 'opsz' 24, 'SOFT' 0, 'WONK' 0;
+
+  /* Fluid scale — clamp() so German compounds never overflow */
+  --fs-h1: clamp(2.25rem, 1.4rem + 3.6vw, 3.625rem);
+  --fs-h2: clamp(1.75rem, 1.25rem + 2.2vw, 2.875rem);
+  --fs-h3: clamp(1.5rem, 1.2rem + 1.3vw, 2.125rem);
+  --fs-h4: 1.25rem;
+  --fs-body: 1.03rem;
+  --fs-small: 0.9rem;
+  --fs-eyebrow: 0.72rem;
+
+  /* --- Space --- */
+  --gutter: clamp(1.15rem, 5vw, 7.5rem);
+  --section-y: clamp(2.75rem, 7vw, 6rem);
+  --maxw: 1200px;
+
+  --hdr-h: 78px;
+  --radius: 22px;
+  --radius-sm: 18px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  /* nothing may ever cause a sideways scrollbar */
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Grid/flex children default to min-width:auto, which is the single most
+   common cause of mobile overflow. Neutralise it globally. */
+.wrap > *, .split__inner > *, .cta__inner > *,
+ul, ol, dl, li, dd, dt, p, h1, h2, h3, figure, blockquote { min-width: 0; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fv-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+  /* German compounds: wrap between words, never hyphenate mid-word.
+     (Client feedback: "Rechnung" was being split as "Rech-nung".) */
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  overflow-wrap: break-word;
+}
+
+p, li, dd, dt, blockquote { overflow-wrap: break-word; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: inherit; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- utilities ---------- */
+.wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--section-y); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  margin: 0 0 1.6rem;
+}
+.eyebrow--gold { color: var(--gold); }
+.eyebrow--on-dark { color: var(--magenta-light); }
+
+.nowrap { white-space: nowrap; }
+
+.serif-italic {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fv-display);
+  font-style: italic;
+  color: var(--gold);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fv-text); /* legible 3 */
+  font-weight: 600;
+}
+
+.rule {
+  width: 76px;
+  height: 2px;
+  background: var(--gold);
+  border: 0;
+  margin: 0 0 2rem;
+}
+.rule--center { margin-inline: auto; }
+
+.lead {
+  color: var(--ink-soft);
+  max-width: 36em;
+}
+.center { text-align: center; }
+.center .lead,
+.center .rule { margin-inline: auto; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 54px;
+  padding: 0 2rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.3px solid transparent;
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease),
+    color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.btn--primary { background: var(--magenta); color: var(--paper); }
+.btn--primary:hover { background: #a91d52; }
+
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--paper); }
+
+.btn--ghost-light {
+  background: transparent;
+  color: var(--paper);
+  border-color: var(--gold);
+}
+.btn--ghost-light:hover { background: var(--gold); color: var(--deep); }
+
+.btn--sm { min-height: 44px; padding: 0 1.4rem; font-size: 0.72rem; }
+
+/* ---------- link with arrow ---------- */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.arrow-link svg { transition: transform 0.25s var(--ease); }
+.arrow-link:hover svg { transform: translateX(5px); }
+
+/* ---------- surfaces ---------- */
+.bg-paper { background: var(--paper); }
+.bg-warm  { background: var(--warm); }
+.bg-deep  { background: var(--deep); color: var(--cream-on-dark); }
+.bg-ink   { background: var(--ink); color: var(--cream-on-dark); }
+.bg-gold  { background: var(--gold); color: var(--deep); }
+.bg-deep h2, .bg-ink h2 { color: var(--paper); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.8rem 1.2rem;
+  z-index: 999;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- scroll reveal (progressive enhancement) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+
+
+/* ============================================================
+   MOBILE HARDENING
+   ============================================================ */
+@media (max-width: 560px) {
+  :root {
+    --fs-body: 1rem;
+    --radius: 16px;
+    --radius-sm: 14px;
+  }
+  h1, h2, h3 { hyphens: manual; -webkit-hyphens: manual; }
+  .btn { width: 100%; padding-inline: 1.1rem; }
+  .btn + .btn { margin-top: 0.15rem; }
+  .rule { margin-bottom: 1.5rem; }
+}
+
+/* Very narrow phones (iPhone SE and similar) */
+@media (max-width: 360px) {
+  :root { --fs-eyebrow: 0.66rem; }
+  .eyebrow { letter-spacing: 0.22em; }
+}

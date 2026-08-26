@@ -1,0 +1,68 @@
+---
+import LegalPage from '../../../layouts/LegalPage.astro';
+import t from '../../../data/de.json';
+import site from '../../../data/site.json';
+---
+<LegalPage locale="de" t={t} title="Datenschutzerklärung" slug="datenschutz" altSlug="privacy">
+  <p>
+    Diese Erklärung informiert darüber, welche Daten beim Besuch dieser Website bearbeitet
+    werden. Grundlage sind das Schweizer Datenschutzgesetz (revDSG) und, soweit anwendbar,
+    die europäische Datenschutz-Grundverordnung (DSGVO).
+  </p>
+
+  <h2>Verantwortliche Stelle</h2>
+  <p>
+    Ebmeyer Consulting, Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG, Schweiz.<br />
+    E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+  </p>
+
+  <h2>Keine Cookies, kein Tracking</h2>
+  <p>
+    Diese Website setzt <strong>keine Cookies</strong> und verwendet <strong>keine
+    Analyse- oder Tracking-Dienste</strong>. Es werden keine Profile über Besucherinnen und
+    Besucher erstellt.
+  </p>
+
+  <h2>Hosting und Server-Logfiles</h2>
+  <p>
+    Diese Website wird bei {site.legal.hostName} in der {site.legal.hostCountryDe} gehostet.
+    Die Daten verbleiben damit auf Schweizer Servern.
+  </p>
+  <p>
+    Beim Aufruf der Website werden durch den Hosting-Anbieter technisch notwendige Daten
+    verarbeitet, etwa IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp und
+    Betriebssystem. Diese Daten dienen ausschliesslich dem sicheren und stabilen Betrieb
+    der Website und werden nicht mit anderen Datenquellen zusammengeführt.
+  </p>
+
+  <h2>Terminbuchung über Calendly</h2>
+  <p>
+    Für die Buchung eines Erstgesprächs wird auf den externen Dienst Calendly verlinkt.
+    Der Dienst ist <strong>nicht in diese Website eingebettet</strong>: Es werden erst dann
+    Daten an Calendly übermittelt, wenn Sie den Link aktiv anklicken und die Seite von
+    Calendly öffnen. Ab diesem Zeitpunkt gilt die Datenschutzerklärung von Calendly
+    (Calendly LLC, USA).
+  </p>
+
+  <h2>Kontaktaufnahme</h2>
+  <p>
+    Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung
+    der Anfrage und für mögliche Anschlussfragen gespeichert. Diese Daten werden nicht ohne
+    Ihre Einwilligung weitergegeben.
+  </p>
+
+  <h2>Ihre Rechte</h2>
+  <ul>
+    <li>Auskunft über die zu Ihrer Person bearbeiteten Daten</li>
+    <li>Berichtigung unrichtiger Daten</li>
+    <li>Löschung Ihrer Daten</li>
+    <li>Widerspruch gegen die Bearbeitung</li>
+  </ul>
+  <p>Wenden Sie sich dafür an <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+  <p class="legal__todo">
+    <strong>Hinweis:</strong> Dieser Text ist eine sorgfältige Vorlage, aber keine
+    Rechtsberatung. Bitte vor dem Livegang einmal durch eine juristische Fachperson
+    prüfen lassen.
+  </p>
+</LegalPage>

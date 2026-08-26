@@ -1,0 +1,49 @@
+---
+import LegalPage from '../../../layouts/LegalPage.astro';
+import t from '../../../data/de.json';
+import site from '../../../data/site.json';
+---
+<LegalPage locale="de" t={t} title="Impressum" slug="impressum" altSlug="imprint">
+  <h2>Verantwortlich für den Inhalt</h2>
+  <p>
+    Ebmeyer Consulting<br />
+    Nadine Ebmeyer<br />
+    Langackerstrasse 11<br />
+    6330 Cham ZG<br />
+    Schweiz
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>
+    E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a><br />
+    Telefon: <a href={site.phoneHref}>{site.phone}</a>
+  </p>
+
+  <h2>Rechtsform und Registereintrag</h2>
+  <p>
+    Rechtsform: {site.legal.legalFormDe}<br />
+    Inhaberin: {site.legal.owner}<br />
+    UID-Nummer: {site.legal.uid}
+  </p>
+  <p>{site.legal.vatDe}</p>
+
+  <h2>Haftungsausschluss</h2>
+  <p>
+    Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit,
+    Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+  </p>
+
+  <h2>Haftung für Links</h2>
+  <p>
+    Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte kein Einfluss
+    besteht. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+    verantwortlich.
+  </p>
+
+  <h2>Urheberrecht</h2>
+  <p>
+    Die auf dieser Website veröffentlichten Inhalte, Texte und Bilder unterliegen dem
+    schweizerischen Urheberrecht. Jede Verwendung ausserhalb der Grenzen des Urheberrechts
+    bedarf der vorherigen schriftlichen Zustimmung.
+  </p>
+</LegalPage>

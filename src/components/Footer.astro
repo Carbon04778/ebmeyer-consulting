@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import logoLight from '../assets/logo-horizontal-light.png';
+import site from '../data/site.json';
+interface Props { footer: any; locale: 'de' | 'en'; }
+const { footer, locale } = Astro.props;
+const imprintHref = locale === 'de' ? '/de/impressum/' : '/en/imprint/';
+const privacyHref = locale === 'de' ? '/de/datenschutz/' : '/en/privacy/';
+---
+<footer class="ft center">
+  <div class="wrap">
+    <Image class="ft__logo" src={logoLight} alt="Ebmeyer Consulting" widths={[260, 520]} sizes="260px" loading="lazy" />
+    <address class="ft__addr">{footer.address}</address>
+    <p class="ft__contact">
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <span aria-hidden="true">·</span>
+      <a href={site.phoneHref}>{site.phone}</a>
+    </p>
+    <hr class="ft__hr" />
+    <p class="ft__legal">
+      {footer.legal}
+      <span aria-hidden="true">·</span>
+      <a href={imprintHref}>{footer.imprint}</a>
+      <span aria-hidden="true">·</span>
+      <a href={privacyHref}>{footer.privacy}</a>
+    </p>
+  </div>
+</footer>
+<style>
+  .ft { background: var(--ink); color: var(--cream-on-dark); padding-block: clamp(2.5rem, 4vw, 3.25rem); }
+  .ft__logo { width: 260px; max-width: 100%; height: auto; margin: 0 auto 1.6rem; }
+  .ft__addr { font-style: normal; font-size: 0.85rem; opacity: 0.62; }
+  .ft__contact { margin: 0.6rem 0 0; font-size: 0.86rem; display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
+  .ft__contact a { color: var(--gold); text-decoration: none; }
+  .ft__contact a:hover { text-decoration: underline; }
+  .ft__hr { border: 0; border-top: 1px solid var(--hairline); margin: 1.75rem 0 1.1rem; }
+  .ft__legal { margin: 0; font-size: 0.78rem; opacity: 0.55; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+  .ft__legal a { text-decoration: none; }
+  .ft__legal a:hover { text-decoration: underline; }
+  @media (max-width: 560px) {
+    .ft__logo { width: min(230px, 78%); margin-bottom: 1.25rem; }
+    .ft__addr { font-size: 0.8rem; }
+    .ft__contact { flex-direction: column; gap: 0.3rem; }
+    .ft__contact span { display: none; }
+    .ft__hr { margin: 1.4rem 0 0.9rem; }
+    .ft__legal { font-size: 0.74rem; }
+  }
+</style>

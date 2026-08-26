@@ -1,0 +1,57 @@
+---
+import LegalPage from '../../../layouts/LegalPage.astro';
+import t from '../../../data/en.json';
+import site from '../../../data/site.json';
+---
+<LegalPage locale="en" t={t} title="Privacy Policy" slug="privacy" altSlug="datenschutz">
+  <p>
+    This policy explains which data is processed when you visit this website. It is based on
+    the Swiss Data Protection Act (revDSG) and, where applicable, the European General Data
+    Protection Regulation (GDPR).
+  </p>
+  <h2>Controller</h2>
+  <p>
+    Ebmeyer Consulting, Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG, Switzerland.<br />
+    Email: <a href={`mailto:${site.email}`}>{site.email}</a>
+  </p>
+  <h2>No cookies, no tracking</h2>
+  <p>
+    This website sets <strong>no cookies</strong> and uses <strong>no analytics or tracking
+    services</strong>. No profiles of visitors are created.
+  </p>
+  <h2>Hosting and server log files</h2>
+  <p>
+    This website is hosted with {site.legal.hostName} in {site.legal.hostCountryEn}, so the
+    data remains on Swiss servers.
+  </p>
+  <p>
+    When the website is accessed, the hosting provider processes technically necessary data
+    such as IP address, date and time of access, browser type and operating system. This data
+    serves solely the secure and stable operation of the website and is not merged with other
+    data sources.
+  </p>
+  <h2>Booking a call via Calendly</h2>
+  <p>
+    To book an introductory call, this site links to the external service Calendly. The service
+    is <strong>not embedded</strong> in this website: data is only transmitted to Calendly once
+    you actively click the link and open the Calendly page. From that point, Calendly's own
+    privacy policy applies (Calendly LLC, USA).
+  </p>
+  <h2>Getting in touch</h2>
+  <p>
+    If you contact us by email or phone, your details are stored in order to handle your
+    enquiry and any follow-up questions. This data is not passed on without your consent.
+  </p>
+  <h2>Your rights</h2>
+  <ul>
+    <li>Information about the data processed about you</li>
+    <li>Correction of inaccurate data</li>
+    <li>Deletion of your data</li>
+    <li>Objection to processing</li>
+  </ul>
+  <p>Please contact <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  <p class="legal__todo">
+    <strong>Note:</strong> This text is a careful template, not legal advice. Please have it
+    reviewed by a legal professional before going live.
+  </p>
+</LegalPage>

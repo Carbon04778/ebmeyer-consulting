@@ -1,0 +1,26 @@
+{
+  "domain": "https://ebmeyer-consulting.ch",
+  "brand": "Ebmeyer Consulting",
+  "calendly": "https://calendly.com/nadine-ebmeyer-consulting/30min",
+  "calendlyLabel": "calendly.com/nadine-ebmeyer-consulting",
+  "email": "nadine@ebmeyer-consulting.ch",
+  "phone": "+41 76 224 32 09",
+  "phoneHref": "tel:+41762243209",
+  "linkedin": "https://www.linkedin.com/in/nadine-ebmeyer/",
+  "locales": [
+    "de",
+    "en"
+  ],
+  "defaultLocale": "de",
+  "legal": {
+    "legalFormDe": "Einzelunternehmen nach schweizerischem Recht",
+    "legalFormEn": "Sole proprietorship under Swiss law",
+    "uid": "CHE-456.292.561",
+    "vatDe": "Nicht mehrwertsteuerpflichtig (keine MWST ausgewiesen).",
+    "vatEn": "Not registered for VAT (no VAT is charged).",
+    "owner": "Nadine Ebmeyer",
+    "hostName": "Hostpoint AG",
+    "hostCountryDe": "Schweiz",
+    "hostCountryEn": "Switzerland"
+  }
+}

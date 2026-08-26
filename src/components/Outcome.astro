@@ -1,0 +1,35 @@
+---
+interface Props { outcome: any; }
+const { outcome } = Astro.props;
+---
+<section class="section oc">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--on-dark reveal">{outcome.eyebrow}</p>
+    <h2 class="reveal">{outcome.title}</h2>
+    <hr class="rule" />
+    <ul class="oc__list">
+      {outcome.items.map((i: any) => (
+        <li class="reveal">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+            <path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p><strong>{i.lead}</strong>{i.body}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+<style>
+  .oc { background: var(--deep); color: var(--cream-on-dark); }
+  h2 { font-size: var(--fs-h2); color: var(--paper); max-width: 22ch; margin-bottom: 2rem; }
+  .oc__list { list-style: none; padding: 0; margin: 0; }
+  .oc__list li { display: grid; grid-template-columns: 1.8rem 1fr; gap: 0.6rem; padding: 0.7rem 0; align-items: start; }
+  .oc__list svg { color: var(--gold); margin-top: 0.6rem; }
+  .oc__list p { margin: 0; font-size: 0.98rem; opacity: 0.82; max-width: 66ch; }
+  .oc__list strong { color: var(--paper); font-weight: 600; }
+  @media (max-width: 560px) {
+    .oc__list li { grid-template-columns: 1.2rem 1fr; gap: 0.45rem; padding: 0.55rem 0; }
+    .oc__list svg { width: 13px; margin-top: 0.5rem; }
+    .oc__list p { font-size: 0.94rem; }
+  }
+</style>

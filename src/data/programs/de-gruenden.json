@@ -1,0 +1,159 @@
+{
+  "slug": "souveraen-gruenden",
+  "altSlug": "founding-with-confidence",
+  "meta": {
+    "title": "Souverän gründen — Strategie & KI für Deinen Start | Ebmeyer Consulting",
+    "description": "Für Gründerinnen und Gründer: In 12 Wochen von der Idee zum validierten Modell, klaren 12-Monats-Plan und Deinem eigenen KI-Assistenten."
+  },
+  "hero": {
+    "eyebrow": "Strategie & KI für Deinen Start",
+    "title": "Souverän gründen",
+    "audience": "Für Gründerinnen und Gründer auf dem Weg in die Selbstständigkeit",
+    "lead": "Du gründest mit klarer Strategie, validierten Annahmen und Deinem eigenen KI-Assistenten an Deiner Seite. Souverän, vom ersten Schritt an.",
+    "meta": "3 Phasen · 12 Wochen",
+    "cta": "Kostenloses Erstgespräch · 30 Min"
+  },
+  "pain": {
+    "eyebrow": "Der Schmerz",
+    "title": "Du willst gründen. Aber der Start fühlt sich riesig an.",
+    "items": [
+      { "num": "01", "title": "Tausend Gedanken, kein roter Faden.", "body": "Du hast Ideen, Erfahrung und Energie. Aber keinen klaren Weg, welche Idee wirklich trägt und wo Du anfangen sollst." },
+      { "num": "02", "title": "Du planst im Blindflug.", "body": "Geschäftsmodell, Zielgruppe, Preise: vieles entsteht aus dem Bauch heraus, ohne echte Marktsignale. Das Risiko trägst Du allein." },
+      { "num": "03", "title": "KI könnte helfen, aber wie?", "body": "Zwischen Hype und tausend Tools fehlt Dir die Strategie, KI von Anfang an sinnvoll für Deinen Aufbau zu nutzen." },
+      { "num": "04", "title": "Die ehrlichste Frage.", "body": "Wie lange willst Du noch überlegen, recherchieren und zögern, statt mit einem klaren Plan und validierten Annahmen wirklich zu starten?" }
+    ],
+    "pull": "Es geht anders. Souverän, mit Strategie, validiert und mit Dir in der Führung."
+  },
+  "cost": {
+    "eyebrow": "Was Zögern kostet",
+    "title": "Jeder Monat im Zögern kostet Dich mehr, als auf der Rechnung steht.",
+    "rows": [
+      { "term": "Zeit", "body": "Monate, in denen Du planst und recherchierst, statt am Markt zu lernen, was wirklich funktioniert." },
+      { "term": "Sicherheit", "body": "Energie, die in Zweifel und Unsicherheit versickert, statt in Deine ersten echten Kunden zu fliessen." },
+      { "term": "Vorsprung", "body": "Der Markt wartet nicht. Wer früh validiert und startet, lernt schneller als der, der noch plant." }
+    ],
+    "statValue": "90",
+    "statLabel": "Tage",
+    "statBody": "In 90 Tagen vom validierten Plan zum konkreten Go-to-Market, statt Monate im Planungsmodus.",
+    "statNote": "Kein Erfolgsversprechen, sondern ein klarer, validierter Weg von der Idee zum Start."
+  },
+  "approach": {
+    "eyebrow": "Warum Souverän gründen",
+    "title": "Du brauchst keinen perfekten Plan. Du brauchst Klarheit, Validierung und einen Start.",
+    "lead": "Souverän gründen ist kein Businessplan-Kurs. Es ist der Weg von «Ich habe eine Idee» zu «Ich habe ein validiertes Modell, einen klaren Plan und setze ihn um».",
+    "cards": [
+      { "title": "Strategie und System", "body": "Du bekommst eine klare Richtung, ein durchdachtes Geschäftsmodell und eine Positionierung, die verkauft. Du weisst, wofür Du stehst, wen Du bedienst und warum gerade Du." },
+      { "title": "Erst validieren, dann investieren", "body": "Bevor Du Zeit und Geld bindest, prüfen wir Deine Annahmen an echten Marktsignalen. Du investierst in das, was wirklich nachgefragt wird." },
+      { "title": "KI von Anfang an", "body": "Dein eigener KI-Assistent unterstützt Dich von der ersten Hypothese an: schärft Ideen, strukturiert den Aufbau und nimmt Dir Routine ab." },
+      { "title": "Aus echter Erfahrung", "body": "21+ Jahre Praxis und Menschen, die bereits mit mir arbeiten: von Konzernen über E-Commerce-Solopreneure bis zu Coaches, Beratern und Therapeuten." }
+    ]
+  },
+  "forWhom": {
+    "eyebrow": "Für wen",
+    "title": "Für Gründerinnen und Gründer, die …",
+    "items": [
+      { "title": "… den Sprung wagen wollen", "body": "… raus aus dem sicheren Job, rein ins eigene Business.", "wide": true },
+      { "title": "… ihre Idee validieren wollen", "body": "Bevor sie Zeit, Geld und Sicherheit investieren.", "highlight": true },
+      { "title": "… eine tragfähige Positionierung suchen", "body": "Geschäftsmodell, Zielkunde und Angebot, das von Anfang an sitzt." },
+      { "title": "… KI von Anfang an nutzen wollen", "body": "Als Strategie und Werkzeug, nicht als Spielerei." },
+      { "title": "… Struktur & Plan statt Chaos wollen", "body": "Einen Fahrplan, der aus der Idee einen echten Start macht." }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Dein Weg",
+    "title": "Erst Klarheit. Dann Validierung. Dann der Aufbau.",
+    "lead": "Du startest mit Phase 1, Deinem Fundament. Phase 2 validiert Deine Annahmen an echten Marktsignalen, bevor Du investierst. Phase 3 macht aus dem validierten Modell einen konkreten Plan und Deinen Start.",
+    "steps": [
+      { "label": "Phase 1 · Fundament", "name": "Klarheit & Positionierung", "duration": "4 Wochen", "body": "Klarheit über Dich, Deine Richtung und eine erste Business-Case-Hypothese." },
+      { "label": "Phase 2 · Validierung", "name": "Hypothesen & Business Cases", "duration": "4 Wochen", "body": "Du prüfst Deine Annahmen an echten Marktsignalen, bevor Du investierst." },
+      { "label": "Phase 3 · Umsetzung", "name": "Vom Plan zum Aufbau", "duration": "4 Wochen", "body": "Aus dem validierten Modell wird ein konkreter 12-Monats-Plan und Dein Start.", "highlight": true }
+    ],
+    "pull": "Phase 1 gibt Dir Klarheit. Phase 2 gibt Dir Sicherheit. Phase 3 bringt Dich ins Tun.",
+    "note": "Die Phasen bauen aufeinander auf und führen Dich Schritt für Schritt von der Idee zum Start."
+  },
+  "phases": [
+    {
+      "eyebrow": "Phase 1 · Dein Fundament",
+      "title": "Klarheit & Positionierung",
+      "duration": "4 Wochen",
+      "sub": "Klarheit über Dich, Deine Idee und Deine Positionierung.",
+      "gainsTitle": "Was Du gewinnst",
+      "gains": [
+        "Ein scharfes Profil Deiner Stärken, Werte und Story",
+        "Eine klare Richtung und eine Business-Case-Hypothese, daraus entstehen Unternehmensbeschreibung und Strategie-Grundgerüst (ICP, Sales-Matrix)",
+        "Einen fertigen, auf Dich trainierten KI-Assistenten"
+      ],
+      "formatTitle": "Format",
+      "format": "1× 30 Min. Kick-off + 3 Sessions à 2 Std. über 4 Wochen, inkl. Vorlagen.",
+      "idealTitle": "Ideal für Dich, wenn …",
+      "ideal": "… Du raus aus dem Gedankenkarussell und in eine klare Richtung willst.",
+      "resultsTitle": "Ergebnisse nach 4 Wochen",
+      "results": [
+        { "term": "Gründungs-Profil", "body": "Deine Stärken, Werte und Story als Fundament für Dein Profil." },
+        { "term": "Richtung & ICP-Hypothese", "body": "Eine klare erste Annahme, wen Du bedienst und womit." },
+        { "term": "Positionierung & Story", "body": "Wofür Du stehst, auf den Punkt und in Deiner Stimme." },
+        { "term": "Basis-KI-Assistent", "body": "Trainiert auf Dich und Deine Idee, arbeitsfähig ab Tag 1." },
+        { "term": "Business-Case-Hypothese", "body": "Dein Schlussergebnis und die Übergabe in Phase 2." }
+      ],
+      "glossary": "ICP (Ideal Customer Profile) = Dein idealer Kundentyp. Sales-Matrix = roter Faden von der Ansprache bis zum Abschluss. Business-Case-Hypothese = begründete Annahme, dass Deine Idee wirtschaftlich trägt."
+    },
+    {
+      "eyebrow": "Phase 2 · Die Validierung",
+      "title": "Hypothesen & Business Case Simulation",
+      "duration": "4 Wochen",
+      "sub": "Bevor Du investierst, prüfst Du Deine Annahmen an echten Marktsignalen.",
+      "gainsTitle": "Was Du gewinnst",
+      "gains": [
+        "Eine erste Marktvalidierung Deiner nach Phase 1 ausgewählten Hypothesen",
+        "Bis zu 2 durchgerechnete Business-Case-Szenarien statt Bauchgefühl",
+        "Ein scharfes Ideal Customer Profile mit Personas und Sales-Matrix"
+      ],
+      "formatTitle": "Format",
+      "format": "1× 30 Min. Kick-off + 3 Sessions à 2 Std. über 4 Wochen, inkl. Vorlagen.",
+      "idealTitle": "Ideal für Dich, wenn …",
+      "ideal": "… Du Dein Risiko senken und auf Fakten statt Hoffnung bauen willst.",
+      "resultsTitle": "Ergebnisse nach 4 Wochen",
+      "results": [
+        { "term": "Marktvalidierung", "body": "Wir prüfen die nach Phase 1 ausgewählten Hypothesen an echten Marktsignalen." },
+        { "term": "Business-Case-Szenarien", "body": "Bis zu 2 Szenarien, durchgerechnet und mit Deinem KI-Assistenten geschärft." },
+        { "term": "ICP, Personas & Sales-Matrix", "body": "Du weisst, wen Du ansprichst und wie Du verkaufst." },
+        { "term": "3-Jahres-Übersicht", "body": "Eine High-Level-Sicht auf Umsatz, Kosten und Wachstum." }
+      ],
+      "glossary": "Marktvalidierung = echte Signale vom Markt, ob Nachfrage besteht. Business Case = durchgerechnetes Szenario zur Wirtschaftlichkeit. Personas = typische Kundenprofile Deiner Zielgruppe."
+    },
+    {
+      "eyebrow": "Phase 3 · Die Umsetzung",
+      "title": "Vom Plan zum Aufbau",
+      "duration": "4 Wochen",
+      "sub": "Aus dem validierten Modell wird ein konkreter Plan und Dein Start.",
+      "gainsTitle": "Was Du gewinnst",
+      "gains": [
+        "Einen detaillierten 12-Monats-Plan",
+        "Einen Fahrplan für Deine eigenen Kompetenzen",
+        "Weitere Automatisierungen für Deinen Alltag"
+      ],
+      "formatTitle": "Format",
+      "format": "1× 30 Min. Kick-off + 3 Sessions à 2 Std. über 4 Wochen, inkl. Vorlagen.",
+      "idealTitle": "Ideal für Dich, wenn …",
+      "ideal": "… Du jetzt verbindlich starten und nicht weiter planen willst.",
+      "resultsTitle": "Ergebnisse nach 4 Wochen",
+      "results": [
+        { "term": "12-Monats-Plan", "body": "Meilensteine, Prioritäten und Ressourcen auf einen Blick." },
+        { "term": "Gap- & Weiterbildungsplan", "body": "Was Du noch brauchst, klar als Fahrplan." },
+        { "term": "KI-Use-Case-Landkarte & Automatisierungen", "body": "Wir evaluieren gemeinsam, wie Du Deine Tätigkeiten weiter automatisierst." }
+      ],
+      "glossary": "KI-Use-Case-Landkarte = Übersicht, wo KI Dir den grössten Hebel bringt."
+    }
+  ],
+  "outcome": {
+    "eyebrow": "Dein neuer Start",
+    "title": "Stell Dir vor, Du startest mit einem klaren Plan, der sofort umsetzbar ist.",
+    "items": [
+      { "lead": "Du gründest mit Strategie:", "body": " Geschäftsmodell, Positionierung und Plan stehen, bevor Du investierst." },
+      { "lead": "Du kennst Deine Zahlen:", "body": " Validierte Business-Case-Szenarien und eine 3-Jahres-Sicht geben Dir Sicherheit." },
+      { "lead": "Dein KI-Assistent ist an Deiner Seite:", "body": " Er unterstützt Dich vom ersten Tag an, in Deiner Stimme." },
+      { "lead": "Du weisst, was als Nächstes kommt:", "body": " Ein klarer 12-Monats-Plan mit Meilensteinen, Schritt für Schritt." },
+      { "lead": "Du führst Deinen Aufbau selbst:", "body": " Unabhängig, souverän, mit klarem Kopf." }
+    ]
+  }
+}

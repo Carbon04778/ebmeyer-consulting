@@ -1,0 +1,244 @@
+---
+import { Image } from 'astro:assets';
+import logoDark from '../assets/logo-dark.png';
+import logoLightH from '../assets/logo-horizontal-light.png';
+import site from '../data/site.json';
+
+interface Props {
+  locale: 'de' | 'en';
+  nav: {
+    links: { label: string; href: string }[];
+    cta: string;
+    menuLabel: string;
+    closeLabel: string;
+  };
+  /** where the language toggle points */
+  altHref: string;
+  /** true on pages whose hero is dark: header floats over it, then solidifies */
+  overlay?: boolean;
+}
+const { locale, nav, altHref, overlay = false } = Astro.props;
+const other = locale === 'de' ? 'en' : 'de';
+---
+
+<header class:list={['hdr', overlay && 'hdr--overlay']}>
+  <div class="hdr__inner">
+    <a class="hdr__logo" href={`/${locale}/`} aria-label="Ebmeyer Consulting">
+      <Image class="hdr__logo-dark" src={logoDark} alt="Ebmeyer Consulting" widths={[240, 480]} sizes="240px" loading="eager" />
+      {overlay && (
+        <Image class="hdr__logo-light" src={logoLightH} alt="Ebmeyer Consulting" aria-hidden="true" widths={[240, 480]} sizes="240px" loading="eager" />
+      )}
+    </a>
+
+    <nav class="hdr__nav" aria-label={locale === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
+      {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+
+    <div class="hdr__end">
+      <p class="lang">
+        <span aria-current="true">{locale.toUpperCase()}</span>
+        <span aria-hidden="true">/</span>
+        <a href={altHref} hreflang={other}>{other.toUpperCase()}</a>
+      </p>
+      <a class="btn btn--primary btn--sm" href={site.calendly} target="_blank" rel="noopener">
+        {nav.cta}
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="m-menu" aria-label={nav.menuLabel}>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="m-menu" id="m-menu" hidden>
+    <nav aria-label={locale === 'de' ? 'Mobile Navigation' : 'Mobile navigation'}>
+      {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <a class="btn btn--primary" href={site.calendly} target="_blank" rel="noopener">{nav.cta}</a>
+    <p class="lang lang--m">
+      <span aria-current="true">{locale.toUpperCase()}</span>
+      <span aria-hidden="true">/</span>
+      <a href={altHref} hreflang={other}>{other.toUpperCase()}</a>
+    </p>
+  </div>
+</header>
+
+<style>
+  .hdr {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: saturate(150%) blur(12px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .hdr__inner {
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding: 0.85rem var(--gutter);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .hdr__logo { flex-shrink: 0; position: relative; display: block; }
+  .hdr__logo :global(img) { width: 200px; height: auto; }
+  .hdr__logo :global(.hdr__logo-light) { position: absolute; inset: 0; opacity: 0; transition: opacity .25s var(--ease); }
+
+  /* ---- overlay mode: floats over a dark hero ---- */
+  .hdr--overlay {
+    position: fixed; left: 0; right: 0; top: 0;
+    background: transparent; backdrop-filter: none;
+    border-bottom-color: transparent;
+    transition: background-color .3s var(--ease), border-color .3s var(--ease);
+  }
+  .hdr--overlay .hdr__nav a { color: var(--cream-on-dark); }
+  .hdr--overlay .hdr__nav a:hover { color: var(--paper); }
+  .hdr--overlay .lang { color: var(--cream-on-dark); }
+  .hdr--overlay .lang span[aria-current] { color: var(--gold); }
+  .hdr--overlay .burger span { background: var(--paper); }
+  .hdr--overlay :global(.hdr__logo-dark) { opacity: 0; }
+  .hdr--overlay :global(.hdr__logo-light) { opacity: 1; }
+
+  /* ---- once scrolled, revert to the normal light bar ---- */
+  .hdr--overlay.is-solid {
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(150%) blur(12px);
+    border-bottom-color: var(--hairline);
+  }
+  .hdr--overlay.is-solid .hdr__nav a { color: var(--ink-soft); }
+  .hdr--overlay.is-solid .lang { color: var(--ink-mute); }
+  .hdr--overlay.is-solid .lang span[aria-current] { color: var(--ink); }
+  .hdr--overlay.is-solid .burger span { background: var(--ink); }
+  .hdr--overlay.is-solid :global(.hdr__logo-dark) { opacity: 1; }
+  .hdr--overlay.is-solid :global(.hdr__logo-light) { opacity: 0; }
+
+  /* mobile menu panel always needs a solid ground */
+  .hdr--overlay .m-menu:not([hidden]) { background: var(--paper); }
+  .hdr--overlay:has(.m-menu:not([hidden])) {
+    background: var(--paper); backdrop-filter: none; border-bottom-color: var(--hairline);
+  }
+  .hdr--overlay:has(.m-menu:not([hidden])) .burger span { background: var(--ink); }
+  .hdr--overlay:has(.m-menu:not([hidden])) :global(.hdr__logo-dark) { opacity: 1; }
+  .hdr--overlay:has(.m-menu:not([hidden])) :global(.hdr__logo-light) { opacity: 0; }
+
+  .hdr__nav {
+    display: flex;
+    gap: 1.9rem;
+    margin-right: auto;
+  }
+  .hdr__nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding-block: 0.4rem;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+  }
+  .hdr__nav a:hover { color: var(--ink); border-bottom-color: var(--gold); }
+
+  .hdr__end { display: flex; align-items: center; gap: 1.1rem; }
+
+  .lang {
+    margin: 0;
+    display: flex;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+  }
+  .lang span[aria-current] { font-weight: 700; color: var(--ink); }
+  .lang a { text-decoration: none; }
+  .lang a:hover { color: var(--ink); }
+
+  .burger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 1.6px;
+    background: var(--ink);
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+  }
+  .burger[aria-expanded='true'] span:first-child { transform: translateY(3.8px) rotate(45deg); }
+  .burger[aria-expanded='true'] span:last-child { transform: translateY(-3.8px) rotate(-45deg); }
+
+  .m-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem var(--gutter) 2rem;
+    border-top: 1px solid var(--hairline);
+  }
+  .m-menu[hidden] { display: none; }
+  .m-menu nav { display: flex; flex-direction: column; }
+  .m-menu nav a {
+    font-family: var(--font-display);
+    font-variation-settings: var(--fv-display);
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .m-menu .btn { margin-top: 1.4rem; }
+  .lang--m { margin-top: 1.2rem; justify-content: center; }
+
+  @media (max-width: 1080px) {
+    .hdr__nav { display: none; }
+    .hdr__inner { justify-content: space-between; }
+    .burger { display: flex; }
+    .hdr__end .btn { display: none; }
+    .m-menu:not([hidden]) { display: flex; }
+  }
+  @media (max-width: 480px) {
+    .hdr__logo :global(img) { width: 150px; }
+    .hdr__inner { padding-inline: var(--gutter); gap: 0.75rem; }
+    .hdr__end { gap: 0.6rem; }
+  }
+  @media (max-width: 380px) {
+    /* language toggle already lives inside the mobile menu */
+    .hdr__end .lang { display: none; }
+    .hdr__logo :global(img) { width: 138px; }
+  }
+</style>
+
+<script>
+  // Solidify the overlay header once the dark hero is scrolled past.
+  const hdr = document.querySelector('.hdr--overlay');
+  if (hdr) {
+    const onScroll = () => hdr.classList.toggle('is-solid', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  const burger = document.querySelector<HTMLButtonElement>('.burger');
+  const menu = document.getElementById('m-menu');
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      const open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!open));
+      menu.hidden = open;
+      document.body.style.overflow = open ? '' : 'hidden';
+    });
+    menu.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        burger.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+        document.body.style.overflow = '';
+      })
+    );
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !menu.hidden) burger.click();
+    });
+  }
+</script>

@@ -1,0 +1,17 @@
+---
+interface Props { about: any; }
+const { about } = Astro.props;
+---
+<section class="section about center">
+  <div class="wrap reveal">
+    <p class="eyebrow">{about.eyebrow}</p>
+    <h2>{about.title}</h2>
+    <p class="lead about__body">{about.body}</p>
+  </div>
+</section>
+<style>
+  .about { background: var(--paper); }
+  h2 { font-size: var(--fs-h2); max-width: 16ch; margin-inline: auto; }
+  .about__body { margin-top: 2rem; max-width: 58ch; }
+  @media (max-width: 560px) { h2 { max-width: none; } .about__body { margin-top: 1.4rem; } }
+</style>

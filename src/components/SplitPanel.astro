@@ -1,0 +1,106 @@
+---
+interface Props { label: string; programs: any[]; }
+const { label, programs } = Astro.props;
+---
+<div class="split-label">
+  <span class="split-label__rule" aria-hidden="true"></span>
+  <p class="eyebrow">{label}</p>
+  <span class="split-label__rule" aria-hidden="true"></span>
+</div>
+
+<section class="split" id="programme">
+  {programs.map((p, i) => (
+    <article class={`split__half ${i === 0 ? 'is-light' : 'is-dark'} reveal`}>
+      <div class="split__inner">
+        <p class="split__num num">{p.num}</p>
+        <h2>{p.name}</h2>
+        <p class="split__who">{p.who}</p>
+        <p class="split__line">{p.line}</p>
+        <hr class="split__hr" />
+        <p class="split__meta">{p.meta}</p>
+        <ul class="split__phases">
+          {p.phases.map((ph: any) => (
+            <li><span class="split__dash" aria-hidden="true">—</span><span class="split__pname">{ph.name}</span><span class="split__pdur">{ph.duration}</span></li>
+          ))}
+        </ul>
+        <a class="arrow-link split__cta" href={p.href}>
+          {p.cta}
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+            <path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+  ))}
+</section>
+
+<style>
+  .split-label {
+    display: flex; align-items: center; gap: 1.5rem;
+    max-width: var(--maxw); margin-inline: auto;
+    padding-inline: var(--gutter);
+    padding-block: clamp(3rem, 6vw, 5rem);
+  }
+  .split-label .eyebrow { margin: 0; white-space: nowrap; }
+  .split-label__rule { flex: 1; height: 1px; background: var(--hairline); }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; }
+  .split__half { padding-block: clamp(2.75rem, 5vw, 4.25rem); }
+  .is-light { background: var(--warm); color: var(--ink); }
+  .is-dark  { background: var(--deep); color: var(--cream-on-dark); }
+  .is-dark h2 { color: var(--paper); }
+
+  .split__inner {
+    max-width: calc(var(--maxw) / 2);
+    padding-inline: var(--gutter);
+    display: flex; flex-direction: column; height: 100%;
+  }
+  .is-light .split__inner { margin-left: auto; }
+
+  .split__num { font-size: 0.95rem; letter-spacing: 0.22em; color: var(--gold); margin: 0 0 1.4rem; }
+  .is-dark .split__num { color: var(--magenta-light); }
+  h2 { font-size: var(--fs-h3); margin-bottom: 0.55rem; }
+  .split__who {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+  }
+  .is-dark .split__who { color: var(--magenta-light); }
+  .split__line { max-width: 32em; color: var(--ink-soft); }
+  .is-dark .split__line { color: var(--cream-on-dark); opacity: 0.78; }
+
+  .split__hr { border: 0; border-top: 1px solid var(--hairline); margin: 1.6rem 0 1rem; }
+  .split__meta {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem;
+  }
+  .is-dark .split__meta { color: var(--magenta-light); }
+
+  .split__phases { list-style: none; margin: 0 0 2rem; padding: 0; }
+  .split__phases li {
+    display: grid; grid-template-columns: 1.5rem 1fr auto;
+    gap: 0.6rem; align-items: baseline; padding: 0.35rem 0;
+  }
+  .split__dash { color: var(--gold); }
+  .split__pname {
+    font-family: var(--font-display); font-variation-settings: var(--fv-text);
+    font-weight: 600; font-size: 1rem;
+  }
+  .split__pdur { font-size: 0.8rem; opacity: 0.65; white-space: nowrap; }
+
+  .split__cta { margin-top: auto; text-decoration: none; }
+  .is-dark .split__cta { color: var(--paper); }
+
+  @media (max-width: 860px) {
+    .split { grid-template-columns: 1fr; }
+    .split__inner { max-width: var(--maxw); margin-inline: auto; }
+    .is-light .split__inner { margin-left: auto; }
+    .split__cta { margin-top: 1rem; }
+  }
+  @media (max-width: 560px) {
+    /* duration drops under the phase name instead of fighting it for width */
+    .split__phases li { grid-template-columns: 1.2rem 1fr; row-gap: 0.1rem; }
+    .split__pdur { grid-column: 2; text-align: left; }
+    .split-label { gap: 0.85rem; padding-block: clamp(2.25rem, 8vw, 3rem); }
+    .split-label .eyebrow { white-space: normal; text-align: center; }
+  }
+</style>

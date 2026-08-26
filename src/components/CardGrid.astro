@@ -1,0 +1,59 @@
+---
+interface Props { data: any; variant?: 'approach' | 'forwhom'; }
+const { data, variant = 'approach' } = Astro.props;
+---
+<section class={`section cg cg--${variant}`}>
+  <div class="wrap">
+    <p class="eyebrow reveal">{data.eyebrow}</p>
+    <h2 class="reveal">{data.title}</h2>
+    {data.lead && <p class="lead cg__lead reveal">{data.lead}</p>}
+    <ul class="cg__grid">
+      {data.cards
+        ? data.cards.map((c: any) => (
+            <li class="reveal">
+              <h3>{c.title}</h3>
+              <p>{c.body}</p>
+            </li>
+          ))
+        : data.items.map((c: any) => (
+            <li class:list={['reveal', c.wide && 'is-wide', c.highlight && 'is-hl']}>
+              <h3>{c.title}</h3>
+              <p>{c.body}</p>
+            </li>
+          ))}
+    </ul>
+  </div>
+</section>
+<style>
+  .cg { background: var(--paper); }
+  .cg--forwhom { background: var(--warm); }
+  h2 { font-size: var(--fs-h2); max-width: 24ch; margin-bottom: 1.5rem; }
+  .cg__lead { margin-bottom: 0.5rem; }
+  .cg__grid {
+    list-style: none; padding: 0; margin: clamp(2rem, 4vw, 3rem) 0 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  }
+  .cg__grid li {
+    background: color-mix(in srgb, var(--paper) 70%, #fff);
+    border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+    padding: clamp(1.35rem, 2.5vw, 1.85rem);
+  }
+  .cg--forwhom .cg__grid li { background: var(--paper); }
+  .is-wide { grid-column: 1 / -1; }
+  .is-hl {
+    background: color-mix(in srgb, var(--magenta) 7%, #fff) !important;
+    border-color: color-mix(in srgb, var(--magenta) 35%, transparent);
+  }
+  .is-hl h3 { color: var(--magenta); }
+  h3 {
+    font-family: var(--font-sans); font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 0.7rem;
+  }
+  .cg__grid p { color: var(--ink-soft); font-size: 0.94rem; margin: 0; }
+  @media (max-width: 720px) { .cg__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) {
+    h2 { max-width: none; }
+    .cg__grid li { padding: 1.15rem 1.1rem; }
+  }
+</style>

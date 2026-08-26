@@ -1,0 +1,69 @@
+---
+interface Props { cost: any; }
+const { cost } = Astro.props;
+---
+<section class="section cost">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--on-dark reveal">{cost.eyebrow}</p>
+    <h2 class="reveal">{cost.title}</h2>
+    <hr class="rule" />
+    <dl class="cost__rows">
+      {cost.rows.map((r: any) => (
+        <div class="cost__row reveal">
+          <dt>{r.term}</dt>
+          <dd>{r.body}</dd>
+        </div>
+      ))}
+    </dl>
+    <div class="cost__stat reveal">
+      <p class="cost__val"><span class="num">{cost.statValue}</span><span class="cost__unit">{cost.statLabel}</span></p>
+      <div>
+        <p class="cost__body">{cost.statBody}</p>
+        <p class="cost__note">{cost.statNote}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .cost { background: var(--deep); color: var(--cream-on-dark); }
+  h2 { font-size: var(--fs-h2); color: var(--paper); max-width: 20ch; margin-bottom: 2rem; }
+  .cost__rows { margin: 0; }
+  .cost__row {
+    display: grid; grid-template-columns: 12rem 1fr; gap: 1.5rem;
+    padding: 1.35rem 0; border-top: 1px solid var(--hairline);
+  }
+  .cost__row:last-child { border-bottom: 1px solid var(--hairline); }
+  dt {
+    font-family: var(--font-display); font-variation-settings: var(--fv-display);
+    font-style: italic; font-size: 1.3rem; color: var(--gold);
+  }
+  dd { margin: 0; font-size: 0.95rem; opacity: 0.82; max-width: 56ch; }
+  .cost__stat {
+    display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center; margin-top: 2.75rem; padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid var(--hairline); border-radius: var(--radius);
+    background: color-mix(in srgb, var(--gold) 6%, transparent);
+  }
+  .cost__val { margin: 0; text-align: center; }
+  .cost__val .num { display: block; font-size: clamp(2.75rem, 7vw, 4rem); color: var(--gold); line-height: 1; }
+  .cost__unit {
+    display: block; margin-top: 0.5rem; font-size: 0.66rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7;
+  }
+  .cost__body {
+    font-family: var(--font-display); font-variation-settings: var(--fv-text);
+    font-style: italic; font-size: 1.08rem; color: var(--paper); margin-bottom: 0.6rem;
+  }
+  .cost__note { margin: 0; font-size: 0.85rem; opacity: 0.6; }
+  @media (max-width: 700px) {
+    .cost__row { grid-template-columns: 1fr; gap: 0.3rem; }
+    .cost__stat { grid-template-columns: 1fr; text-align: center; gap: 1.1rem; }
+    .cost__body { max-width: none; }
+  }
+  @media (max-width: 560px) {
+    .cost__stat { padding: 1.25rem 1.1rem; }
+    .cost__val .num { font-size: 2.75rem; }
+    .cost__body { font-size: 1rem; }
+    dt { font-size: 1.15rem; }
+  }
+</style>
