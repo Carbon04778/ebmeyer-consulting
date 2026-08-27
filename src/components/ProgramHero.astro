@@ -1,10 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import site from '../data/site.json';
-// NOTE: placeholder portrait. Replace with Nadine's images 6380 / 6377 once supplied.
-import portrait from '../assets/nadine-program.png';
+import img6380 from '../assets/nadine-6380.jpg';
+import img6377 from '../assets/nadine-6377.jpg';
+
+const PHOTOS: Record<string, ImageMetadata> = { '6380': img6380, '6377': img6377 };
+
 interface Props { hero: any; }
 const { hero } = Astro.props;
+const portrait = PHOTOS[hero.image] ?? img6380;
 ---
 <section class="phero">
   <div class="wrap phero__grid">
@@ -18,7 +22,7 @@ const { hero } = Astro.props;
     <a class="btn btn--primary" href={site.calendly} target="_blank" rel="noopener">{hero.cta}</a>
    </div>
    <div class="phero__media">
-     <Image src={portrait} alt="Nadine Ebmeyer" widths={[420, 840]} sizes="(max-width: 860px) 70vw, 420px" loading="eager" />
+     <Image src={portrait} alt={hero.imageAlt} widths={[420, 840]} sizes="(max-width: 860px) 70vw, 420px" loading="eager" />
      <span class="phero__frame" aria-hidden="true"></span>
    </div>
   </div>
@@ -31,7 +35,7 @@ const { hero } = Astro.props;
   }
   .phero__media { position: relative; }
   .phero__media :global(img) {
-    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 16%;
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%;
     border-radius: var(--radius); position: relative; z-index: 1;
   }
   .phero__frame {

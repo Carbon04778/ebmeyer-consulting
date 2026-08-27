@@ -11,16 +11,34 @@
     "audience": "Für etablierte Unternehmerinnen & Solopreneure",
     "lead": "Schluss mit KI-Chaos und Zeitverlust. Dein eigener Assistent unterstützt Dein Business und Du behältst die Führung.",
     "meta": "2 Phasen · 4–6 Wochen",
-    "cta": "Kostenlose Potenzialanalyse · 30 Min"
+    "cta": "Kostenlose Potenzialanalyse · 30 Min",
+    "image": "6380",
+    "imageAlt": "Nadine Ebmeyer, KI-Strategin, Programm Souverän mit KI"
   },
   "pain": {
     "eyebrow": "Der Schmerz",
     "title": "Du bist erfolgreich. Aber Du trägst alles allein.",
     "items": [
-      { "num": "01", "title": "Du verlierst wertvolle Zeit.", "body": "Angebote, Posts, E-Mails, Recherche, Administration: zu viele manuelle Handgriffe hängen am Ende an Dir. Stunde um Stunde, die Dir für Deine Kunden und Dein Wachstum fehlen." },
-      { "num": "02", "title": "KI könnte helfen, aber wo anfangen?", "body": "Zwischen tausend Tools, Tutorials und Hype findest Du nie den roten Faden. Du probierst seit Monaten herum, ohne dass etwas wirklich in Deinem Business ankommt." },
-      { "num": "03", "title": "Du siehst andere Tempo machen.", "body": "Und spürst leise: Du fällst zurück, während Du noch überlegst, womit Du überhaupt starten sollst." },
-      { "num": "04", "title": "Die ehrlichste Frage.", "body": "Wie lange willst Du noch Deine Zeit gegen Geld tauschen und Energie an Aufgaben verlieren, die eine gut gebaute KI längst übernehmen könnte?" }
+      {
+        "num": "01",
+        "title": "Du verlierst wertvolle Zeit.",
+        "body": "Angebote, Posts, E-Mails, Recherche, Administration: zu viele manuelle Handgriffe hängen am Ende an Dir. Stunde um Stunde, die Dir für Deine Kunden und Dein Wachstum fehlen."
+      },
+      {
+        "num": "02",
+        "title": "KI könnte helfen, aber wo anfangen?",
+        "body": "Zwischen tausend Tools, Tutorials und Hype findest Du nie den roten Faden. Du probierst seit Monaten herum, ohne dass etwas wirklich in Deinem Business ankommt."
+      },
+      {
+        "num": "03",
+        "title": "Du siehst andere Tempo machen.",
+        "body": "Und spürst leise: Du fällst zurück, während Du noch überlegst, womit Du überhaupt starten sollst."
+      },
+      {
+        "num": "04",
+        "title": "Die ehrlichste Frage.",
+        "body": "Wie lange willst Du noch Deine Zeit gegen Geld tauschen und Energie an Aufgaben verlieren, die eine gut gebaute KI längst übernehmen könnte?"
+      }
     ],
     "pull": "Es geht anders. Souverän, mit System und ohne Dich von irgendwem abhängig zu machen."
   },
@@ -28,9 +46,18 @@
     "eyebrow": "Was Stillstand kostet",
     "title": "Jeder Monat ohne System kostet Dich mehr, als auf der Rechnung steht.",
     "rows": [
-      { "term": "Zeit", "body": "Stunden, die Du Woche für Woche in Dinge steckst, die längst delegierbar wären." },
-      { "term": "Fokus", "body": "Energie, die im Tool-Dschungel versickert, statt in Deine Kundenbeziehung zu fliessen." },
-      { "term": "Vorsprung", "body": "Der Abstand zu denen, die KI schon souverän nutzen, wächst mit jedem Monat." }
+      {
+        "term": "Zeit",
+        "body": "Stunden, die Du Woche für Woche in Dinge steckst, die längst delegierbar wären."
+      },
+      {
+        "term": "Fokus",
+        "body": "Energie, die im Tool-Dschungel versickert, statt in Deine Kundenbeziehung zu fliessen."
+      },
+      {
+        "term": "Vorsprung",
+        "body": "Der Abstand zu denen, die KI schon souverän nutzen, wächst mit jedem Monat."
+      }
     ],
     "statValue": "250+",
     "statLabel": "Stunden / Jahr",
@@ -42,21 +69,50 @@
     "title": "Du brauchst nicht viele Tools. Du brauchst Klarheit und einen Assistenten, der unterstützt.",
     "lead": "Souverän mit KI ist kein weiterer Kurs, der Dir noch ein Tool zeigt. Es ist der Weg von «Ich probiere mal» zu «Mein Business läuft mit System und mit Dir am Steuer».",
     "cards": [
-      { "title": "Strategie und System statt Tool-Chaos", "body": "Du bekommst einen klaren Plan, welche KI Dir wirklich Hebel bringt und ein System, das Deinen Alltag unterstützt, statt Dich noch mehr zu beschäftigen." },
-      { "title": "Eine Expertin, die Deine Welt kennt", "body": "Vom Solopreneur bis zum Konzern, quer durch die Branchen: Ich kenne unterschiedlichste Unternehmensformen und weiss, wie KI in Deinem konkreten Kontext funktioniert." },
-      { "title": "Enablement statt Abhängigkeit", "body": "Du lernst, Deinen KI-Assistenten eigenständig zu führen und selbst neue Automatisierungen einzurichten. Am Ende brauchst Du mich nicht mehr und genau das ist das Ziel." },
-      { "title": "Aus echter Erfahrung", "body": "21+ Jahre Praxis und Menschen, die bereits mit mir arbeiten: von Big Pharma über E-Commerce-Solopreneure bis zu Coaches, Beratern und Therapeuten." }
+      {
+        "title": "Strategie und System statt Tool-Chaos",
+        "body": "Du bekommst einen klaren Plan, welche KI Dir wirklich Hebel bringt und ein System, das Deinen Alltag unterstützt, statt Dich noch mehr zu beschäftigen."
+      },
+      {
+        "title": "Eine Expertin, die Deine Welt kennt",
+        "body": "Vom Solopreneur bis zum Konzern, quer durch die Branchen: Ich kenne unterschiedlichste Unternehmensformen und weiss, wie KI in Deinem konkreten Kontext funktioniert."
+      },
+      {
+        "title": "Enablement statt Abhängigkeit",
+        "body": "Du lernst, Deinen KI-Assistenten eigenständig zu führen und selbst neue Automatisierungen einzurichten. Am Ende brauchst Du mich nicht mehr und genau das ist das Ziel."
+      },
+      {
+        "title": "Aus echter Erfahrung",
+        "body": "21+ Jahre Praxis und Menschen, die bereits mit mir arbeiten: von Big Pharma über E-Commerce-Solopreneure bis zu Coaches, Beratern und Therapeuten."
+      }
     ]
   },
   "forWhom": {
     "eyebrow": "Für wen",
     "title": "Für etablierte Solopreneure & Unternehmerinnen, die …",
     "items": [
-      { "title": "… schon mit KI arbeiten", "body": "… und das Gefühl haben, da geht mehr.", "wide": true },
-      { "title": "… ihre Kernprozesse entlasten wollen", "body": "Content, Angebote, Recherche, Kundenkommunikation, Administration." },
-      { "title": "… Vertrieb & Akquise optimieren wollen", "body": "Von der ersten Ansprache bis zum fertigen Angebot, strukturiert und in Deiner Stimme.", "highlight": true },
-      { "title": "… Klarheit suchen", "body": "Statt sich in Tools, Tutorials und Hype zu verlieren." },
-      { "title": "… KI selbst führen wollen", "body": "Souverän und unabhängig von Dienstleistern." }
+      {
+        "title": "… schon mit KI arbeiten",
+        "body": "… und das Gefühl haben, da geht mehr.",
+        "wide": true
+      },
+      {
+        "title": "… ihre Kernprozesse entlasten wollen",
+        "body": "Content, Angebote, Recherche, Kundenkommunikation, Administration."
+      },
+      {
+        "title": "… Vertrieb & Akquise optimieren wollen",
+        "body": "Von der ersten Ansprache bis zum fertigen Angebot, strukturiert und in Deiner Stimme.",
+        "highlight": true
+      },
+      {
+        "title": "… Klarheit suchen",
+        "body": "Statt sich in Tools, Tutorials und Hype zu verlieren."
+      },
+      {
+        "title": "… KI selbst führen wollen",
+        "body": "Souverän und unabhängig von Dienstleistern."
+      }
     ]
   },
   "journey": {
@@ -64,8 +120,19 @@
     "title": "Erst das Fundament. Dann die Tiefe.",
     "lead": "Du startest mit Phase 1, Deinem Fundament. Sie steht für sich und bringt Dich mit einem arbeitsfähigen KI-Assistenten an den Start. Phase 2 ist die optionale Vertiefung: Je individueller Dein Assistent auf Dich zugeschnitten ist, desto mächtiger wird er. Genau hier liegt der grösste Hebel.",
     "steps": [
-      { "label": "Phase 1 · Fundament", "name": "Standortanalyse & Basis Set-up", "duration": "4 Wochen", "body": "Klarheit, wo Du stehst, und Dein arbeitsfähiger KI-Assistent." },
-      { "label": "Phase 2 · Vertiefung (optional)", "name": "Aufbau & Enablement", "duration": "2 Wochen", "body": "Dein Assistent unterstützt Deine Kernprozesse, und Du führst ihn selbst.", "highlight": true }
+      {
+        "label": "Phase 1 · Fundament",
+        "name": "Standortanalyse & Basis Set-up",
+        "duration": "4 Wochen",
+        "body": "Klarheit, wo Du stehst, und Dein arbeitsfähiger KI-Assistent."
+      },
+      {
+        "label": "Phase 2 · Vertiefung (optional)",
+        "name": "Aufbau & Enablement",
+        "duration": "2 Wochen",
+        "body": "Dein Assistent unterstützt Deine Kernprozesse, und Du führst ihn selbst.",
+        "highlight": true
+      }
     ],
     "pull": "Phase 1 macht Dich startklar. Phase 2 macht Dich souverän.",
     "note": "Phase 2 baut auf Phase 1 auf und ist nur in Kombination buchbar."
@@ -88,10 +155,22 @@
       "ideal": "… Du Struktur in Dein KI-Thema bringen und endlich loslegen willst.",
       "resultsTitle": "Ergebnisse nach 4 Wochen",
       "results": [
-        { "term": "Fertiger KI-Assistent", "body": "Arbeitet ab Tag 1 in Deiner Sprache und nimmt Dir die ersten Routinen ab, trainiert auf Geschäftsmodell, Zielkunden und Kernprozesse." },
-        { "term": "Use Case-Landkarte", "body": "Du weisst schwarz auf weiss, wo KI bei Dir den grössten Hebel hat: Top-3 nach Wirkung und Aufwand priorisiert." },
-        { "term": "Wunschkunde & Angebot", "body": "Du sprichst die Richtigen an, mit einem Angebot, das sitzt: Ideal Customer Profile, Personas und Bedürfnisse geklärt." },
-        { "term": "Sales-Matrix", "body": "Ein roter Faden von der ersten Ansprache bis zum Abschluss: Nutzen, Einwände, Kanäle, Content und Funnel auf einen Blick." }
+        {
+          "term": "Fertiger KI-Assistent",
+          "body": "Arbeitet ab Tag 1 in Deiner Sprache und nimmt Dir die ersten Routinen ab, trainiert auf Geschäftsmodell, Zielkunden und Kernprozesse."
+        },
+        {
+          "term": "Use Case-Landkarte",
+          "body": "Du weisst schwarz auf weiss, wo KI bei Dir den grössten Hebel hat: Top-3 nach Wirkung und Aufwand priorisiert."
+        },
+        {
+          "term": "Wunschkunde & Angebot",
+          "body": "Du sprichst die Richtigen an, mit einem Angebot, das sitzt: Ideal Customer Profile, Personas und Bedürfnisse geklärt."
+        },
+        {
+          "term": "Sales-Matrix",
+          "body": "Ein roter Faden von der ersten Ansprache bis zum Abschluss: Nutzen, Einwände, Kanäle, Content und Funnel auf einen Blick."
+        }
       ]
     },
     {
@@ -111,10 +190,22 @@
       "ideal": "… Du KI nicht nur testen, sondern fest und individuell in Dein Business einbauen willst.",
       "resultsTitle": "Ergebnisse nach 2 Wochen",
       "results": [
-        { "term": "Funktionsfähige Skills", "body": "Dein Assistent erledigt Content und Präsentationen eigenständig, an echtem Material getestet, inkl. Content-Kalender." },
-        { "term": "Prompt-Bibliothek", "body": "Kein Start bei Null mehr: Du rufst ab, was funktioniert, kategorisiert und mit Bonus-Prompts." },
-        { "term": "Bis zu 2 Automatisierungen", "body": "Wiederkehrende Aufgaben erledigen sich ohne Dich, inkl. Anleitung, wie Du selbst weitere baust." },
-        { "term": "Finales Playbook & Übergabe", "body": "Du führst und erweiterst selbst, komplett unabhängig. Übergabe abgeschlossen." }
+        {
+          "term": "Funktionsfähige Skills",
+          "body": "Dein Assistent erledigt Content und Präsentationen eigenständig, an echtem Material getestet, inkl. Content-Kalender."
+        },
+        {
+          "term": "Prompt-Bibliothek",
+          "body": "Kein Start bei Null mehr: Du rufst ab, was funktioniert, kategorisiert und mit Bonus-Prompts."
+        },
+        {
+          "term": "Bis zu 2 Automatisierungen",
+          "body": "Wiederkehrende Aufgaben erledigen sich ohne Dich, inkl. Anleitung, wie Du selbst weitere baust."
+        },
+        {
+          "term": "Finales Playbook & Übergabe",
+          "body": "Du führst und erweiterst selbst, komplett unabhängig. Übergabe abgeschlossen."
+        }
       ]
     }
   ],
@@ -122,11 +213,26 @@
     "eyebrow": "Dein neuer Alltag",
     "title": "Stell Dir vor, KI arbeitet für Dich, nicht Du für sie.",
     "items": [
-      { "lead": "Du gewinnst einen zusätzlichen Mitarbeiter", "body": ", Deinen KI-Assistenten, der Content, Angebote und Administration verlässlich übernimmt, in Deiner Stimme." },
-      { "lead": "Klarheit und eine Strategie", "body": " für Deine KI-Anwendungen, statt Tool-Überforderung." },
-      { "lead": "Spürbar mehr Zeit zurück", "body": " für Wachstum, Kunden und das, was nur Du kannst." },
-      { "lead": "Sichtbar mit System", "body": ": Routineaufgaben sind automatisiert und für Dich leicht prüfbar." },
-      { "lead": "Du führst Deine KI selbst", "body": ": unabhängig, souverän, zukunftssicher." }
+      {
+        "lead": "Du gewinnst einen zusätzlichen Mitarbeiter",
+        "body": ", Deinen KI-Assistenten, der Content, Angebote und Administration verlässlich übernimmt, in Deiner Stimme."
+      },
+      {
+        "lead": "Klarheit und eine Strategie",
+        "body": " für Deine KI-Anwendungen, statt Tool-Überforderung."
+      },
+      {
+        "lead": "Spürbar mehr Zeit zurück",
+        "body": " für Wachstum, Kunden und das, was nur Du kannst."
+      },
+      {
+        "lead": "Sichtbar mit System",
+        "body": ": Routineaufgaben sind automatisiert und für Dich leicht prüfbar."
+      },
+      {
+        "lead": "Du führst Deine KI selbst",
+        "body": ": unabhängig, souverän, zukunftssicher."
+      }
     ]
   }
 }

@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import logoLight from '../assets/logo-horizontal-light.png';
 import site from '../data/site.json';
 interface Props { footer: any; locale: 'de' | 'en'; }
 const { footer, locale } = Astro.props;
@@ -9,7 +7,7 @@ const privacyHref = locale === 'de' ? '/de/datenschutz/' : '/en/privacy/';
 ---
 <footer class="ft center">
   <div class="wrap">
-    <Image class="ft__logo" src={logoLight} alt="Ebmeyer Consulting" widths={[260, 520]} sizes="260px" loading="lazy" />
+    <img class="ft__logo" src="/logo/horizontal-light.svg" alt="Ebmeyer Consulting" width="845" height="84" loading="lazy" />
     <address class="ft__addr">{footer.address}</address>
     <p class="ft__contact">
       <a href={`mailto:${site.email}`}>{site.email}</a>

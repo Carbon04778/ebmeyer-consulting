@@ -181,19 +181,29 @@ the layout.
 | Photo cuts off the top of her head | Re-cropped with headroom + focal point at 22% |
 | Favicon hard to read | Rebuilt from her real EC monogram, bolder strokes |
 
-### About the light-on-dark logo
+### Logos — now true vector (26 Aug)
 
-`src/assets/logo-horizontal-light.png` was produced from `Asset_21` by recolouring
-the ink wordmark to cream while leaving the gold monogram and magenta tagline
-untouched. Her brandbook explicitly sanctions this: *"the logo, logomark or wordmark
-must be used following the convention of using a light color type on a dark
-background."* Replace it as soon as she supplies a proper SVG.
+Nadine supplied `Asset_21.svg` and `Asset_25.svg`. All raster logos are gone.
 
-### Favicon choice
+```
+public/logo/horizontal.svg        header on light backgrounds
+public/logo/horizontal-light.svg  footer + header over the dark hero
+public/logo/mark.svg              EC monogram alone, gold
+public/logo/mark-light.svg        EC monogram alone, cream
+```
 
-Shipped: **cream EC on aubergine** — the most legible at 32px.
-An alternative (ink EC on cream) sits at `public/icon-alt-light.png`; to switch,
-rename it over `icon-512.png` and regenerate the smaller sizes.
+`horizontal-light.svg` is her own file with the ink fill swapped to cream —
+sanctioned by the brandbook (*"light color type on a dark background"*).
+`mark.svg` is the same brand stamp with the wordmark paths removed.
+
+**Note:** her `Asset_21.svg` ships `width="1.49"`, which is corrupt. Stripped so the
+`viewBox` governs. If a future file renders 1px wide, that's the cause.
+
+### Favicon
+
+Generated from `mark-light.svg`. The strokes are dilated at small sizes — the raw
+vector hairlines disappear below about 48px, which was the client's original
+complaint. Regenerate with the snippet in section 10 if the mark ever changes.
 
 ---
 

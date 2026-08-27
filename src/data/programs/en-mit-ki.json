@@ -11,16 +11,34 @@
     "audience": "For established entrepreneurs & solopreneurs",
     "lead": "An end to AI chaos and lost hours. Your own assistant supports your business — and you stay in the lead.",
     "meta": "2 phases · 4–6 weeks",
-    "cta": "Free potential analysis · 30 min"
+    "cta": "Free potential analysis · 30 min",
+    "image": "6380",
+    "imageAlt": "Nadine Ebmeyer, AI strategist, Confident with AI programme"
   },
   "pain": {
     "eyebrow": "The pain",
     "title": "You're successful. But you carry all of it alone.",
     "items": [
-      { "num": "01", "title": "You're losing valuable time.", "body": "Proposals, posts, emails, research, admin: too many manual steps end up with you. Hour after hour that your clients and your growth never get." },
-      { "num": "02", "title": "AI could help — but where do you start?", "body": "Between a thousand tools, tutorials and hype, you never find the thread. You've been experimenting for months without anything really landing in your business." },
-      { "num": "03", "title": "You watch others pick up speed.", "body": "And quietly sense it: you're falling behind while you're still deciding where to begin." },
-      { "num": "04", "title": "The most honest question.", "body": "How much longer do you want to trade your time for money and lose energy on tasks a well-built AI could have taken over long ago?" }
+      {
+        "num": "01",
+        "title": "You're losing valuable time.",
+        "body": "Proposals, posts, emails, research, admin: too many manual steps end up with you. Hour after hour that your clients and your growth never get."
+      },
+      {
+        "num": "02",
+        "title": "AI could help — but where do you start?",
+        "body": "Between a thousand tools, tutorials and hype, you never find the thread. You've been experimenting for months without anything really landing in your business."
+      },
+      {
+        "num": "03",
+        "title": "You watch others pick up speed.",
+        "body": "And quietly sense it: you're falling behind while you're still deciding where to begin."
+      },
+      {
+        "num": "04",
+        "title": "The most honest question.",
+        "body": "How much longer do you want to trade your time for money and lose energy on tasks a well-built AI could have taken over long ago?"
+      }
     ],
     "pull": "There is another way. Confident, systematic, and without making yourself dependent on anyone."
   },
@@ -28,9 +46,18 @@
     "eyebrow": "What standing still costs",
     "title": "Every month without a system costs you more than what's on the invoice.",
     "rows": [
-      { "term": "Time", "body": "Hours you pour week after week into things that could long since have been delegated." },
-      { "term": "Focus", "body": "Energy that drains away in the tool jungle instead of flowing into your client relationships." },
-      { "term": "Lead", "body": "The gap to those already using AI with confidence grows every month." }
+      {
+        "term": "Time",
+        "body": "Hours you pour week after week into things that could long since have been delegated."
+      },
+      {
+        "term": "Focus",
+        "body": "Energy that drains away in the tool jungle instead of flowing into your client relationships."
+      },
+      {
+        "term": "Lead",
+        "body": "The gap to those already using AI with confidence grows every month."
+      }
     ],
     "statValue": "250+",
     "statLabel": "Hours / year",
@@ -42,21 +69,50 @@
     "title": "You don't need many tools. You need clarity and an assistant that supports you.",
     "lead": "Confident with AI isn't another course showing you one more tool. It's the path from «let me try something» to «my business runs on a system, with me at the wheel».",
     "cards": [
-      { "title": "Strategy and system, not tool chaos", "body": "You get a clear plan for which AI actually gives you leverage, and a system that supports your day instead of adding to it." },
-      { "title": "An expert who knows your world", "body": "From solopreneur to corporate, across industries: I know very different kinds of organisations and how AI works in your specific context." },
-      { "title": "Enablement, not dependency", "body": "You learn to run your AI assistant yourself and to set up new automations on your own. In the end you won't need me — and that is exactly the goal." },
-      { "title": "From real experience", "body": "21+ years of practice and people already working with me: from big pharma to e-commerce solopreneurs, coaches, consultants and therapists." }
+      {
+        "title": "Strategy and system, not tool chaos",
+        "body": "You get a clear plan for which AI actually gives you leverage, and a system that supports your day instead of adding to it."
+      },
+      {
+        "title": "An expert who knows your world",
+        "body": "From solopreneur to corporate, across industries: I know very different kinds of organisations and how AI works in your specific context."
+      },
+      {
+        "title": "Enablement, not dependency",
+        "body": "You learn to run your AI assistant yourself and to set up new automations on your own. In the end you won't need me — and that is exactly the goal."
+      },
+      {
+        "title": "From real experience",
+        "body": "21+ years of practice and people already working with me: from big pharma to e-commerce solopreneurs, coaches, consultants and therapists."
+      }
     ]
   },
   "forWhom": {
     "eyebrow": "Who it's for",
     "title": "For established solopreneurs & entrepreneurs who …",
     "items": [
-      { "title": "… already work with AI", "body": "… and sense there's more in it.", "wide": true },
-      { "title": "… want to lighten their core processes", "body": "Content, proposals, research, client communication, administration." },
-      { "title": "… want to sharpen sales & outreach", "body": "From first approach to finished proposal, structured and in your voice.", "highlight": true },
-      { "title": "… are looking for clarity", "body": "Instead of getting lost in tools, tutorials and hype." },
-      { "title": "… want to lead their own AI", "body": "Confidently and independent of service providers." }
+      {
+        "title": "… already work with AI",
+        "body": "… and sense there's more in it.",
+        "wide": true
+      },
+      {
+        "title": "… want to lighten their core processes",
+        "body": "Content, proposals, research, client communication, administration."
+      },
+      {
+        "title": "… want to sharpen sales & outreach",
+        "body": "From first approach to finished proposal, structured and in your voice.",
+        "highlight": true
+      },
+      {
+        "title": "… are looking for clarity",
+        "body": "Instead of getting lost in tools, tutorials and hype."
+      },
+      {
+        "title": "… want to lead their own AI",
+        "body": "Confidently and independent of service providers."
+      }
     ]
   },
   "journey": {
@@ -64,8 +120,19 @@
     "title": "Foundation first. Then depth.",
     "lead": "You start with Phase 1, your foundation. It stands on its own and gets you to a working AI assistant. Phase 2 is the optional deepening: the more your assistant is tailored to you, the more powerful it becomes. That's where the biggest leverage sits.",
     "steps": [
-      { "label": "Phase 1 · Foundation", "name": "Assessment & Base Set-up", "duration": "4 weeks", "body": "Clarity on where you stand, and your working AI assistant." },
-      { "label": "Phase 2 · Depth (optional)", "name": "Build & Enablement", "duration": "2 weeks", "body": "Your assistant supports your core processes, and you run it yourself.", "highlight": true }
+      {
+        "label": "Phase 1 · Foundation",
+        "name": "Assessment & Base Set-up",
+        "duration": "4 weeks",
+        "body": "Clarity on where you stand, and your working AI assistant."
+      },
+      {
+        "label": "Phase 2 · Depth (optional)",
+        "name": "Build & Enablement",
+        "duration": "2 weeks",
+        "body": "Your assistant supports your core processes, and you run it yourself.",
+        "highlight": true
+      }
     ],
     "pull": "Phase 1 gets you ready. Phase 2 makes you confident.",
     "note": "Phase 2 builds on Phase 1 and can only be booked in combination."
@@ -88,10 +155,22 @@
       "ideal": "… you want structure in your AI topic and to finally get going.",
       "resultsTitle": "Results after 4 weeks",
       "results": [
-        { "term": "A finished AI assistant", "body": "Works in your language from day one and takes the first routines off your hands, trained on your business model, target clients and core processes." },
-        { "term": "Use case map", "body": "You know in black and white where AI gives you the most leverage: top three, prioritised by impact and effort." },
-        { "term": "Ideal client & offer", "body": "You speak to the right people with an offer that lands: ideal customer profile, personas and needs clarified." },
-        { "term": "Sales matrix", "body": "A clear thread from first approach to close: value, objections, channels, content and funnel at a glance." }
+        {
+          "term": "A finished AI assistant",
+          "body": "Works in your language from day one and takes the first routines off your hands, trained on your business model, target clients and core processes."
+        },
+        {
+          "term": "Use case map",
+          "body": "You know in black and white where AI gives you the most leverage: top three, prioritised by impact and effort."
+        },
+        {
+          "term": "Ideal client & offer",
+          "body": "You speak to the right people with an offer that lands: ideal customer profile, personas and needs clarified."
+        },
+        {
+          "term": "Sales matrix",
+          "body": "A clear thread from first approach to close: value, objections, channels, content and funnel at a glance."
+        }
       ]
     },
     {
@@ -111,10 +190,22 @@
       "ideal": "… you want to build AI into your business properly, not just test it.",
       "resultsTitle": "Results after 2 weeks",
       "results": [
-        { "term": "Working skills", "body": "Your assistant produces content and presentations independently, tested on real material, content calendar included." },
-        { "term": "Prompt library", "body": "No more starting from zero: you call up what works, categorised and with bonus prompts." },
-        { "term": "Up to 2 automations", "body": "Recurring tasks handle themselves, with instructions for building more yourself." },
-        { "term": "Final playbook & handover", "body": "You lead and extend it yourself, fully independent. Handover complete." }
+        {
+          "term": "Working skills",
+          "body": "Your assistant produces content and presentations independently, tested on real material, content calendar included."
+        },
+        {
+          "term": "Prompt library",
+          "body": "No more starting from zero: you call up what works, categorised and with bonus prompts."
+        },
+        {
+          "term": "Up to 2 automations",
+          "body": "Recurring tasks handle themselves, with instructions for building more yourself."
+        },
+        {
+          "term": "Final playbook & handover",
+          "body": "You lead and extend it yourself, fully independent. Handover complete."
+        }
       ]
     }
   ],
@@ -122,11 +213,26 @@
     "eyebrow": "Your new everyday",
     "title": "Imagine AI working for you, not you for it.",
     "items": [
-      { "lead": "You gain an extra team member", "body": " — your AI assistant, reliably handling content, proposals and admin, in your voice." },
-      { "lead": "Clarity and a strategy", "body": " for your AI use, instead of tool overwhelm." },
-      { "lead": "Noticeably more time back", "body": " for growth, clients and the things only you can do." },
-      { "lead": "Visible and systematic", "body": ": routine tasks are automated and easy for you to check." },
-      { "lead": "You lead your own AI", "body": ": independent, confident, future-ready." }
+      {
+        "lead": "You gain an extra team member",
+        "body": " — your AI assistant, reliably handling content, proposals and admin, in your voice."
+      },
+      {
+        "lead": "Clarity and a strategy",
+        "body": " for your AI use, instead of tool overwhelm."
+      },
+      {
+        "lead": "Noticeably more time back",
+        "body": " for growth, clients and the things only you can do."
+      },
+      {
+        "lead": "Visible and systematic",
+        "body": ": routine tasks are automated and easy for you to check."
+      },
+      {
+        "lead": "You lead your own AI",
+        "body": ": independent, confident, future-ready."
+      }
     ]
   }
 }

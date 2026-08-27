@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import logoDark from '../assets/logo-dark.png';
-import logoLightH from '../assets/logo-horizontal-light.png';
+// Logos are SVG in /public — vector, sharp at any size, cached across pages.
 import site from '../data/site.json';
 
 interface Props {
@@ -24,9 +22,9 @@ const other = locale === 'de' ? 'en' : 'de';
 <header class:list={['hdr', overlay && 'hdr--overlay']}>
   <div class="hdr__inner">
     <a class="hdr__logo" href={`/${locale}/`} aria-label="Ebmeyer Consulting">
-      <Image class="hdr__logo-dark" src={logoDark} alt="Ebmeyer Consulting" widths={[240, 480]} sizes="240px" loading="eager" />
+      <img class="hdr__logo-dark" src="/logo/horizontal.svg" alt="Ebmeyer Consulting" width="845" height="84" />
       {overlay && (
-        <Image class="hdr__logo-light" src={logoLightH} alt="Ebmeyer Consulting" aria-hidden="true" widths={[240, 480]} sizes="240px" loading="eager" />
+        <img class="hdr__logo-light" src="/logo/horizontal-light.svg" alt="Ebmeyer Consulting" aria-hidden="true" width="845" height="84" />
       )}
     </a>
 
@@ -80,8 +78,8 @@ const other = locale === 'de' ? 'en' : 'de';
     gap: 2rem;
   }
   .hdr__logo { flex-shrink: 0; position: relative; display: block; }
-  .hdr__logo :global(img) { width: 200px; height: auto; }
-  .hdr__logo :global(.hdr__logo-light) { position: absolute; inset: 0; opacity: 0; transition: opacity .25s var(--ease); }
+  .hdr__logo img { width: 200px; height: auto; display: block; }
+  .hdr__logo-light { position: absolute; inset: 0; opacity: 0; transition: opacity .25s var(--ease); }
 
   /* ---- overlay mode: floats over a dark hero ---- */
   .hdr--overlay {
@@ -95,8 +93,8 @@ const other = locale === 'de' ? 'en' : 'de';
   .hdr--overlay .lang { color: var(--cream-on-dark); }
   .hdr--overlay .lang span[aria-current] { color: var(--gold); }
   .hdr--overlay .burger span { background: var(--paper); }
-  .hdr--overlay :global(.hdr__logo-dark) { opacity: 0; }
-  .hdr--overlay :global(.hdr__logo-light) { opacity: 1; }
+  .hdr--overlay .hdr__logo-dark { opacity: 0; }
+  .hdr--overlay .hdr__logo-light { opacity: 1; }
 
   /* ---- once scrolled, revert to the normal light bar ---- */
   .hdr--overlay.is-solid {
@@ -108,8 +106,8 @@ const other = locale === 'de' ? 'en' : 'de';
   .hdr--overlay.is-solid .lang { color: var(--ink-mute); }
   .hdr--overlay.is-solid .lang span[aria-current] { color: var(--ink); }
   .hdr--overlay.is-solid .burger span { background: var(--ink); }
-  .hdr--overlay.is-solid :global(.hdr__logo-dark) { opacity: 1; }
-  .hdr--overlay.is-solid :global(.hdr__logo-light) { opacity: 0; }
+  .hdr--overlay.is-solid .hdr__logo-dark { opacity: 1; }
+  .hdr--overlay.is-solid .hdr__logo-light { opacity: 0; }
 
   /* mobile menu panel always needs a solid ground */
   .hdr--overlay .m-menu:not([hidden]) { background: var(--paper); }
@@ -117,8 +115,8 @@ const other = locale === 'de' ? 'en' : 'de';
     background: var(--paper); backdrop-filter: none; border-bottom-color: var(--hairline);
   }
   .hdr--overlay:has(.m-menu:not([hidden])) .burger span { background: var(--ink); }
-  .hdr--overlay:has(.m-menu:not([hidden])) :global(.hdr__logo-dark) { opacity: 1; }
-  .hdr--overlay:has(.m-menu:not([hidden])) :global(.hdr__logo-light) { opacity: 0; }
+  .hdr--overlay:has(.m-menu:not([hidden])) .hdr__logo-dark { opacity: 1; }
+  .hdr--overlay:has(.m-menu:not([hidden])) .hdr__logo-light { opacity: 0; }
 
   .hdr__nav {
     display: flex;
@@ -201,14 +199,14 @@ const other = locale === 'de' ? 'en' : 'de';
     .m-menu:not([hidden]) { display: flex; }
   }
   @media (max-width: 480px) {
-    .hdr__logo :global(img) { width: 150px; }
+    .hdr__logo img { width: 150px; }
     .hdr__inner { padding-inline: var(--gutter); gap: 0.75rem; }
     .hdr__end { gap: 0.6rem; }
   }
   @media (max-width: 380px) {
     /* language toggle already lives inside the mobile menu */
     .hdr__end .lang { display: none; }
-    .hdr__logo :global(img) { width: 138px; }
+    .hdr__logo img { width: 138px; }
   }
 </style>
 

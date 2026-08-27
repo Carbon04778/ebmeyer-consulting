@@ -11,16 +11,34 @@
     "audience": "For founders on the way into self-employment",
     "lead": "You start with a clear strategy, validated assumptions and your own AI assistant beside you. In control, from the very first step.",
     "meta": "3 phases · 12 weeks",
-    "cta": "Free intro call · 30 min"
+    "cta": "Free intro call · 30 min",
+    "image": "6377",
+    "imageAlt": "Nadine Ebmeyer, AI strategist, Founding with Confidence programme"
   },
   "pain": {
     "eyebrow": "The pain",
     "title": "You want to start. But the beginning feels enormous.",
     "items": [
-      { "num": "01", "title": "A thousand thoughts, no clear thread.", "body": "You have ideas, experience and energy. But no clear path to which idea actually holds and where to begin." },
-      { "num": "02", "title": "You're planning blind.", "body": "Business model, audience, pricing: much of it comes from instinct, without real market signals. You carry the risk alone." },
-      { "num": "03", "title": "AI could help — but how?", "body": "Between hype and a thousand tools you're missing the strategy to use AI meaningfully for your build from the start." },
-      { "num": "04", "title": "The most honest question.", "body": "How much longer do you want to deliberate, research and hesitate instead of starting properly with a clear plan and validated assumptions?" }
+      {
+        "num": "01",
+        "title": "A thousand thoughts, no clear thread.",
+        "body": "You have ideas, experience and energy. But no clear path to which idea actually holds and where to begin."
+      },
+      {
+        "num": "02",
+        "title": "You're planning blind.",
+        "body": "Business model, audience, pricing: much of it comes from instinct, without real market signals. You carry the risk alone."
+      },
+      {
+        "num": "03",
+        "title": "AI could help — but how?",
+        "body": "Between hype and a thousand tools you're missing the strategy to use AI meaningfully for your build from the start."
+      },
+      {
+        "num": "04",
+        "title": "The most honest question.",
+        "body": "How much longer do you want to deliberate, research and hesitate instead of starting properly with a clear plan and validated assumptions?"
+      }
     ],
     "pull": "There is another way. Confident, strategic, validated, and with you in the lead."
   },
@@ -28,9 +46,18 @@
     "eyebrow": "What hesitating costs",
     "title": "Every month spent hesitating costs you more than what's on the invoice.",
     "rows": [
-      { "term": "Time", "body": "Months spent planning and researching instead of learning from the market what actually works." },
-      { "term": "Certainty", "body": "Energy that drains into doubt and uncertainty instead of flowing to your first real clients." },
-      { "term": "Lead", "body": "The market doesn't wait. Whoever validates and starts early learns faster than whoever is still planning." }
+      {
+        "term": "Time",
+        "body": "Months spent planning and researching instead of learning from the market what actually works."
+      },
+      {
+        "term": "Certainty",
+        "body": "Energy that drains into doubt and uncertainty instead of flowing to your first real clients."
+      },
+      {
+        "term": "Lead",
+        "body": "The market doesn't wait. Whoever validates and starts early learns faster than whoever is still planning."
+      }
     ],
     "statValue": "90",
     "statLabel": "Days",
@@ -42,21 +69,50 @@
     "title": "You don't need a perfect plan. You need clarity, validation and a start.",
     "lead": "Founding with Confidence isn't a business plan course. It's the path from «I have an idea» to «I have a validated model, a clear plan, and I'm executing it».",
     "cards": [
-      { "title": "Strategy and system", "body": "You get a clear direction, a well-considered business model and positioning that sells. You know what you stand for, who you serve, and why you." },
-      { "title": "Validate first, invest second", "body": "Before you commit time and money, we test your assumptions against real market signals. You invest in what is genuinely in demand." },
-      { "title": "AI from the very start", "body": "Your own AI assistant supports you from the first hypothesis: sharpening ideas, structuring the build and taking routine off your hands." },
-      { "title": "From real experience", "body": "21+ years of practice and people already working with me: from corporates to e-commerce solopreneurs, coaches, consultants and therapists." }
+      {
+        "title": "Strategy and system",
+        "body": "You get a clear direction, a well-considered business model and positioning that sells. You know what you stand for, who you serve, and why you."
+      },
+      {
+        "title": "Validate first, invest second",
+        "body": "Before you commit time and money, we test your assumptions against real market signals. You invest in what is genuinely in demand."
+      },
+      {
+        "title": "AI from the very start",
+        "body": "Your own AI assistant supports you from the first hypothesis: sharpening ideas, structuring the build and taking routine off your hands."
+      },
+      {
+        "title": "From real experience",
+        "body": "21+ years of practice and people already working with me: from corporates to e-commerce solopreneurs, coaches, consultants and therapists."
+      }
     ]
   },
   "forWhom": {
     "eyebrow": "Who it's for",
     "title": "For founders who …",
     "items": [
-      { "title": "… want to take the leap", "body": "… out of the safe job and into their own business.", "wide": true },
-      { "title": "… want to validate their idea", "body": "Before investing time, money and security.", "highlight": true },
-      { "title": "… are looking for solid positioning", "body": "A business model, target client and offer that fit from the start." },
-      { "title": "… want to use AI from day one", "body": "As strategy and tool, not as a toy." },
-      { "title": "… want structure & a plan, not chaos", "body": "A roadmap that turns the idea into a real start." }
+      {
+        "title": "… want to take the leap",
+        "body": "… out of the safe job and into their own business.",
+        "wide": true
+      },
+      {
+        "title": "… want to validate their idea",
+        "body": "Before investing time, money and security.",
+        "highlight": true
+      },
+      {
+        "title": "… are looking for solid positioning",
+        "body": "A business model, target client and offer that fit from the start."
+      },
+      {
+        "title": "… want to use AI from day one",
+        "body": "As strategy and tool, not as a toy."
+      },
+      {
+        "title": "… want structure & a plan, not chaos",
+        "body": "A roadmap that turns the idea into a real start."
+      }
     ]
   },
   "journey": {
@@ -64,9 +120,25 @@
     "title": "Clarity first. Then validation. Then the build.",
     "lead": "You start with Phase 1, your foundation. Phase 2 validates your assumptions against real market signals before you invest. Phase 3 turns the validated model into a concrete plan and your start.",
     "steps": [
-      { "label": "Phase 1 · Foundation", "name": "Clarity & Positioning", "duration": "4 weeks", "body": "Clarity about you, your direction and a first business case hypothesis." },
-      { "label": "Phase 2 · Validation", "name": "Hypotheses & Business Cases", "duration": "4 weeks", "body": "You test your assumptions against real market signals before you invest." },
-      { "label": "Phase 3 · Execution", "name": "From Plan to Build", "duration": "4 weeks", "body": "The validated model becomes a concrete 12-month plan and your start.", "highlight": true }
+      {
+        "label": "Phase 1 · Foundation",
+        "name": "Clarity & Positioning",
+        "duration": "4 weeks",
+        "body": "Clarity about you, your direction and a first business case hypothesis."
+      },
+      {
+        "label": "Phase 2 · Validation",
+        "name": "Hypotheses & Business Cases",
+        "duration": "4 weeks",
+        "body": "You test your assumptions against real market signals before you invest."
+      },
+      {
+        "label": "Phase 3 · Execution",
+        "name": "From Plan to Build",
+        "duration": "4 weeks",
+        "body": "The validated model becomes a concrete 12-month plan and your start.",
+        "highlight": true
+      }
     ],
     "pull": "Phase 1 gives you clarity. Phase 2 gives you certainty. Phase 3 gets you moving.",
     "note": "The phases build on each other and lead you step by step from idea to start."
@@ -89,11 +161,26 @@
       "ideal": "… you want out of the mental loop and into a clear direction.",
       "resultsTitle": "Results after 4 weeks",
       "results": [
-        { "term": "Founder profile", "body": "Your strengths, values and story as the foundation for your profile." },
-        { "term": "Direction & ICP hypothesis", "body": "A clear first assumption about who you serve and with what." },
-        { "term": "Positioning & story", "body": "What you stand for, sharply put and in your voice." },
-        { "term": "Base AI assistant", "body": "Trained on you and your idea, working from day one." },
-        { "term": "Business case hypothesis", "body": "Your closing result and the handover into Phase 2." }
+        {
+          "term": "Founder profile",
+          "body": "Your strengths, values and story as the foundation for your profile."
+        },
+        {
+          "term": "Direction & ICP hypothesis",
+          "body": "A clear first assumption about who you serve and with what."
+        },
+        {
+          "term": "Positioning & story",
+          "body": "What you stand for, sharply put and in your voice."
+        },
+        {
+          "term": "Base AI assistant",
+          "body": "Trained on you and your idea, working from day one."
+        },
+        {
+          "term": "Business case hypothesis",
+          "body": "Your closing result and the handover into Phase 2."
+        }
       ],
       "glossary": "ICP (Ideal Customer Profile) = your ideal type of client. Sales matrix = the thread from first approach to close. Business case hypothesis = a reasoned assumption that your idea is economically viable."
     },
@@ -114,10 +201,22 @@
       "ideal": "… you want to lower your risk and build on facts rather than hope.",
       "resultsTitle": "Results after 4 weeks",
       "results": [
-        { "term": "Market validation", "body": "We test the hypotheses selected after Phase 1 against real market signals." },
-        { "term": "Business case scenarios", "body": "Up to 2 scenarios, fully calculated and sharpened with your AI assistant." },
-        { "term": "ICP, personas & sales matrix", "body": "You know who you're speaking to and how you sell." },
-        { "term": "3-year overview", "body": "A high-level view of revenue, costs and growth." }
+        {
+          "term": "Market validation",
+          "body": "We test the hypotheses selected after Phase 1 against real market signals."
+        },
+        {
+          "term": "Business case scenarios",
+          "body": "Up to 2 scenarios, fully calculated and sharpened with your AI assistant."
+        },
+        {
+          "term": "ICP, personas & sales matrix",
+          "body": "You know who you're speaking to and how you sell."
+        },
+        {
+          "term": "3-year overview",
+          "body": "A high-level view of revenue, costs and growth."
+        }
       ],
       "glossary": "Market validation = real signals from the market on whether demand exists. Business case = a fully calculated scenario for viability. Personas = typical client profiles within your audience."
     },
@@ -138,9 +237,18 @@
       "ideal": "… you want to commit and start now, rather than keep planning.",
       "resultsTitle": "Results after 4 weeks",
       "results": [
-        { "term": "12-month plan", "body": "Milestones, priorities and resources at a glance." },
-        { "term": "Gap & development plan", "body": "What you still need, laid out clearly as a roadmap." },
-        { "term": "AI use case map & automations", "body": "We evaluate together how to automate more of your activities." }
+        {
+          "term": "12-month plan",
+          "body": "Milestones, priorities and resources at a glance."
+        },
+        {
+          "term": "Gap & development plan",
+          "body": "What you still need, laid out clearly as a roadmap."
+        },
+        {
+          "term": "AI use case map & automations",
+          "body": "We evaluate together how to automate more of your activities."
+        }
       ],
       "glossary": "AI use case map = an overview of where AI gives you the most leverage."
     }
@@ -149,11 +257,26 @@
     "eyebrow": "Your new start",
     "title": "Imagine starting with a clear plan you can act on immediately.",
     "items": [
-      { "lead": "You found with strategy:", "body": " business model, positioning and plan are in place before you invest." },
-      { "lead": "You know your numbers:", "body": " validated business case scenarios and a three-year view give you certainty." },
-      { "lead": "Your AI assistant is beside you:", "body": " supporting you from day one, in your voice." },
-      { "lead": "You know what comes next:", "body": " a clear 12-month plan with milestones, step by step." },
-      { "lead": "You lead your own build:", "body": " independent, confident, with a clear head." }
+      {
+        "lead": "You found with strategy:",
+        "body": " business model, positioning and plan are in place before you invest."
+      },
+      {
+        "lead": "You know your numbers:",
+        "body": " validated business case scenarios and a three-year view give you certainty."
+      },
+      {
+        "lead": "Your AI assistant is beside you:",
+        "body": " supporting you from day one, in your voice."
+      },
+      {
+        "lead": "You know what comes next:",
+        "body": " a clear 12-month plan with milestones, step by step."
+      },
+      {
+        "lead": "You lead your own build:",
+        "body": " independent, confident, with a clear head."
+      }
     ]
   }
 }
