@@ -78,8 +78,8 @@ const other = locale === 'de' ? 'en' : 'de';
     gap: 2rem;
   }
   .hdr__logo { flex-shrink: 0; position: relative; display: block; }
-  .hdr__logo img { width: 200px; height: auto; display: block; }
-  .hdr__logo-light { position: absolute; inset: 0; opacity: 0; transition: opacity .25s var(--ease); }
+  .hdr__logo img { width: 250px; height: auto; display: block; }
+  .hdr__logo-light { position: absolute; left: 0; top: 0; opacity: 0; transition: opacity .25s var(--ease); }
 
   /* ---- overlay mode: floats over a dark hero ---- */
   .hdr--overlay {
@@ -88,6 +88,16 @@ const other = locale === 'de' ? 'en' : 'de';
     border-bottom-color: transparent;
     transition: background-color .3s var(--ease), border-color .3s var(--ease);
   }
+  /* soft top scrim: keeps the logo legible wherever the photo is bright */
+  .hdr--overlay::before {
+    content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: linear-gradient(to bottom,
+      color-mix(in srgb, var(--deep) 72%, transparent),
+      color-mix(in srgb, var(--deep) 30%, transparent) 70%,
+      transparent);
+    transition: opacity .3s var(--ease);
+  }
+  .hdr--overlay.is-solid::before { opacity: 0; }
   .hdr--overlay .hdr__nav a { color: var(--cream-on-dark); }
   .hdr--overlay .hdr__nav a:hover { color: var(--paper); }
   .hdr--overlay .lang { color: var(--cream-on-dark); }
@@ -191,6 +201,8 @@ const other = locale === 'de' ? 'en' : 'de';
   .m-menu .btn { margin-top: 1.4rem; }
   .lang--m { margin-top: 1.2rem; justify-content: center; }
 
+  @media (max-width: 1200px) { .hdr__logo img { width: 225px; } }
+
   @media (max-width: 1080px) {
     .hdr__nav { display: none; }
     .hdr__inner { justify-content: space-between; }
@@ -199,14 +211,14 @@ const other = locale === 'de' ? 'en' : 'de';
     .m-menu:not([hidden]) { display: flex; }
   }
   @media (max-width: 480px) {
-    .hdr__logo img { width: 150px; }
+    .hdr__logo img { width: 190px; }
     .hdr__inner { padding-inline: var(--gutter); gap: 0.75rem; }
     .hdr__end { gap: 0.6rem; }
   }
   @media (max-width: 380px) {
     /* language toggle already lives inside the mobile menu */
     .hdr__end .lang { display: none; }
-    .hdr__logo img { width: 138px; }
+    .hdr__logo img { width: 168px; }
   }
 </style>
 
