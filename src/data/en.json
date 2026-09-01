@@ -152,7 +152,7 @@
   "bio": {
     "eyebrow": "Why me",
     "title": "Many will show you tools. I build a strategy with you.",
-    "quote": "«Technology only works when people stay at the centre — and strategy only works when it can actually be put into practice.»",
+    "quote": "“Technology only works when people stay at the centre of it, and strategy only works when it can actually be put into practice.”",
     "body": "21+ years of international experience, from luxury hospitality to transformation consulting at KPMG, through to COO and CEO roles in health tech and fintech. Over 50 individual AI assistants built. I connect business, technology and people.",
     "badges": [
       "MBA · Strategy",
@@ -160,7 +160,10 @@
       "COO Health-Tech",
       "CEO BANQR"
     ],
-    "imageAlt": "Portrait of Nadine Ebmeyer"
+    "imageAlt": "Portrait of Nadine Ebmeyer",
+    "socialLabel": "Follow me",
+    "linkedinLabel": "Nadine Ebmeyer on LinkedIn",
+    "instagramLabel": "Nadine Ebmeyer on Instagram"
   },
   "cta": {
     "eyebrow": "The next step",
