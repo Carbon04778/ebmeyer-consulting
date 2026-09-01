@@ -2,18 +2,22 @@
 import { Image } from 'astro:assets';
 import round from '../assets/nadine-round.png';
 import site from '../data/site.json';
+
 interface Props { bio: any; }
 const { bio } = Astro.props;
 ---
+
 <section class="section bio center" id="about">
   <div class="wrap">
     <div class="bio__photo">
       <Image src={round} alt={bio.imageAlt} widths={[220, 440]} sizes="220px" loading="lazy" />
     </div>
+
     <p class="eyebrow reveal">{bio.eyebrow}</p>
     <h2 class="reveal">{bio.title}</h2>
     <p class="bio__quote serif-italic reveal">{bio.quote}</p>
     <p class="lead reveal">{bio.body}</p>
+
     <ul class="bio__badges reveal">
       {bio.badges.map((b: string) => <li>{b}</li>)}
     </ul>
@@ -21,7 +25,7 @@ const { bio } = Astro.props;
     <ul class="bio__social reveal">
       <li>
         <a href={site.linkedin} target="_blank" rel="noopener" aria-label={bio.linkedinLabel}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4z"/>
           </svg>
           <span>LinkedIn</span>
@@ -29,7 +33,7 @@ const { bio } = Astro.props;
       </li>
       <li>
         <a href={site.instagram} target="_blank" rel="noopener" aria-label={bio.instagramLabel}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.2"/>
             <circle cx="12" cy="12" r="4.2"/>
             <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/>
@@ -38,75 +42,49 @@ const { bio } = Astro.props;
         </a>
       </li>
     </ul>
-
-    <ul class="bio__social reveal">
-      <li>
-        <a href={site.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-            <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2.98 9.75h4v11.5h-4v-11.5zM9.5 9.75h3.83v1.57h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75v6.13h-4v-5.44c0-1.3-.02-2.97-1.9-2.97-1.9 0-2.19 1.4-2.19 2.87v5.54h-4V9.75z"/>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a href={site.instagram} target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-            <rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5.2"/>
-            <circle cx="12" cy="12" r="4.1"/>
-            <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-      </li>
-    </ul>
   </div>
 </section>
+
 <style>
   .bio { background: var(--paper); }
+
   .bio__photo { width: 220px; margin: 0 auto 3rem; position: relative; }
-  .bio__photo :global(img) { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; object-position: 50% 50%; }
+  .bio__photo :global(img) {
+    width: 220px; height: 220px; border-radius: 50%;
+    object-fit: cover; object-position: 50% 50%;
+  }
   .bio__photo::after {
     content: ''; position: absolute; inset: -10px;
     border: 1.2px solid var(--gold); border-radius: 50%; opacity: 0.7;
   }
+
   h2 { font-size: var(--fs-h2); max-width: 18ch; margin-inline: auto; }
-  .bio__quote { font-size: clamp(1.05rem, 2vw, 1.22rem); line-height: 1.6; margin: 1.8rem auto 0; max-width: 46ch; }
+  .bio__quote {
+    font-size: clamp(1.05rem, 2vw, 1.22rem); line-height: 1.6;
+    margin: 1.8rem auto 0; max-width: 46ch;
+  }
   .lead { margin-top: 1.6rem; max-width: 60ch; }
+
   .bio__badges {
     list-style: none; padding: 0; margin: 2.2rem 0 0;
     display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
   }
-  @media (max-width: 560px) {
-    .bio__photo { width: 168px; margin-bottom: 2.25rem; }
-    .bio__photo :global(img) { width: 168px; height: 168px; }
-    .bio__quote { max-width: none; font-size: 1.02rem; }
-    h2 { max-width: none; }
+  .bio__badges li {
+    border: 1px solid var(--gold); border-radius: 999px; padding: 0.42rem 1.1rem;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-soft);
   }
-  .bio__social {
-    list-style: none; padding: 0; margin: 1.6rem 0 0;
-    display: flex; gap: 0.85rem; justify-content: center;
-  }
-  .bio__social a {
-    display: grid; place-items: center; width: 44px; height: 44px;
-    border: 1px solid var(--gold); border-radius: 50%;
-    color: var(--ink-soft); text-decoration: none;
-    transition: background-color .25s var(--ease), color .25s var(--ease),
-                border-color .25s var(--ease), transform .25s var(--ease);
-  }
-  .bio__social a:hover {
-    background: var(--ink); color: var(--paper);
-    border-color: var(--ink); transform: translateY(-2px);
-  }
-  .bio__social a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
   .bio__social {
-    list-style: none; padding: 0; margin: 1.6rem 0 0;
-    display: flex; gap: 0.75rem; justify-content: center;
+    list-style: none; padding: 0; margin: 1.5rem 0 0;
+    display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center;
   }
   .bio__social a {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.55rem 1.15rem; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.55rem 1.2rem; border-radius: 999px;
     border: 1px solid var(--hairline); color: var(--ink-soft);
-    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; text-decoration: none;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; line-height: 1;
     transition: background-color .25s var(--ease), color .25s var(--ease),
                 border-color .25s var(--ease), transform .25s var(--ease);
   }
@@ -117,9 +95,10 @@ const { bio } = Astro.props;
   .bio__social a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   .bio__social svg { flex-shrink: 0; }
 
-  .bio__badges li {
-    border: 1px solid var(--gold); border-radius: 999px; padding: 0.42rem 1.1rem;
-    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--ink-soft);
+  @media (max-width: 560px) {
+    .bio__photo { width: 168px; margin-bottom: 2.25rem; }
+    .bio__photo :global(img) { width: 168px; height: 168px; }
+    .bio__quote { max-width: none; font-size: 1.02rem; }
+    h2 { max-width: none; }
   }
 </style>

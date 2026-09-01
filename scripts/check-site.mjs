@@ -93,6 +93,12 @@ for (const [route, { html, ids }] of pages) {
     if (!existsSync(join(DIST, s))) err(route, `missing asset → ${s}`);
   }
 
+  // --- duplicated blocks (a patch applied twice) ---
+  for (const cls of ['bio__social', 'bio__badges', 'bio__photo', 'hdr__nav', 'stats__list']) {
+    const n = (html.match(new RegExp(`class="${cls}[ "]`, 'g')) || []).length;
+    if (n > 1) err(route, `.${cls} appears ${n} times — duplicated block`);
+  }
+
   // --- duplicate IDs ---
   const all = [...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
   const dupes = all.filter((v, i) => all.indexOf(v) !== i);
