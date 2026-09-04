@@ -10,12 +10,138 @@ interface Props {
   path?: string;
   /** matching path in the other locale */
   altPath?: string;
+  /** short human name for the breadcrumb trail; omit on the homepage */
+  pageName?: string;
+  /** extra JSON-LD nodes merged into the @graph (e.g. Service, FAQPage) */
+  schema?: any[];
 }
 
-const { locale, title, description, path = '', altPath = '' } = Astro.props;
+const {
+  locale,
+  title,
+  description,
+  path = '',
+  altPath = '',
+  pageName,
+  schema = [],
+} = Astro.props;
+
 const other = locale === 'de' ? 'en' : 'de';
 const canonical = `${site.domain}/${locale}/${path}`;
 const alternate = `${site.domain}/${other}/${altPath}`;
+const lang = locale === 'de' ? 'de-CH' : 'en-GB';
+const home = `${site.domain}/${locale}/`;
+
+/* ---------- structured data ----------
+   One @graph per page. Stable @ids let the nodes reference each other
+   instead of repeating themselves, so crawlers resolve one entity for the
+   business and one for Nadine across all ten pages. */
+const ORG = `${site.domain}/#organization`;
+const PERSON = `${site.domain}/#nadine`;
+const SITE = `${site.domain}/#website`;
+
+const graph: any[] = [
+  {
+    '@type': ['ProfessionalService', 'Organization'],
+    '@id': ORG,
+    name: site.brand,
+    url: home,
+    email: site.email,
+    telephone: site.phone,
+    image: `${site.domain}/og-image.jpg`,
+    logo: `${site.domain}/logo/horizontal.svg`,
+    description:
+      locale === 'de'
+        ? 'KI-Strategie und Enablement für Unternehmerinnen, Solopreneure und Gründer. Massgeschneiderte KI-Assistenten und klare Strategie.'
+        : 'AI strategy and enablement for entrepreneurs, solopreneurs and founders. Tailored AI assistants and a clear strategy.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Langackerstrasse 11',
+      postalCode: '6330',
+      addressLocality: 'Cham',
+      addressRegion: 'ZG',
+      addressCountry: 'CH',
+    },
+    areaServed: { '@type': 'Country', name: 'Switzerland' },
+    availableLanguage: ['de', 'en'],
+    identifier: site.legal.uid,
+    founder: { '@id': PERSON },
+    employee: { '@id': PERSON },
+    sameAs: [site.linkedin, site.instagram],
+    knowsAbout:
+      locale === 'de'
+        ? [
+            'KI-Strategie',
+            'KI-Assistenten',
+            'Unternehmensstrategie',
+            'Digitale Transformation',
+            'Prozessautomatisierung',
+            'Unternehmensgründung',
+          ]
+        : [
+            'AI strategy',
+            'AI assistants',
+            'Business strategy',
+            'Digital transformation',
+            'Process automation',
+            'Founding a business',
+          ],
+  },
+  {
+    '@type': 'Person',
+    '@id': PERSON,
+    name: 'Nadine Ebmeyer',
+    jobTitle: locale === 'de' ? 'KI-Strategin & Gründerin' : 'AI Strategist & Founder',
+    description:
+      locale === 'de'
+        ? '21+ Jahre internationale Erfahrung, von der Luxushotellerie über Transformationsberatung bei KPMG bis zur COO- und CEO-Rolle im Health-Tech und FinTech. Über 50 individuelle KI-Assistenten gebaut.'
+        : '21+ years of international experience, from luxury hospitality through transformation consulting at KPMG to COO and CEO roles in health-tech and fintech. Over 50 individual AI assistants built.',
+    url: home,
+    email: site.email,
+    telephone: site.phone,
+    worksFor: { '@id': ORG },
+    knowsLanguage: ['de', 'en'],
+    sameAs: [site.linkedin, site.instagram],
+  },
+  {
+    '@type': 'WebSite',
+    '@id': SITE,
+    name: site.brand,
+    url: `${site.domain}/`,
+    publisher: { '@id': ORG },
+    inLanguage: ['de-CH', 'en-GB'],
+  },
+  {
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: title,
+    description,
+    isPartOf: { '@id': SITE },
+    about: { '@id': ORG },
+    inLanguage: lang,
+    primaryImageOfPage: `${site.domain}/og-image.jpg`,
+  },
+  ...schema,
+];
+
+// Breadcrumbs only where there is a trail to describe.
+if (pageName) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${canonical}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: site.brand, item: home },
+      { '@type': 'ListItem', position: 2, name: pageName, item: canonical },
+    ],
+  });
+}
+
+// Escaping every "<" guarantees no literal </script> can close the block early.
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(
+  /</g,
+  '\\u003c'
+);
 ---
 
 <!doctype html>
@@ -52,6 +178,27 @@ const alternate = `${site.domain}/${other}/${altPath}`;
 
     <link rel="preload" href="/fonts/hanken-var.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json" is:inline set:html={jsonLd} />
+
+    {
+      /* Plausible — cookieless, EU-hosted, aggregate only. No consent banner
+         required, which is why this site still ships none. Production only, so
+         local development never reaches her dashboard.
+         The site is identified by the script id, not a data-domain attribute;
+         tracking options (outbound links, downloads) are toggled dashboard-side. */
+      site.plausible.enabled && import.meta.env.PROD && (
+        <Fragment>
+          <script is:inline async src={site.plausible.src} />
+          <script
+            is:inline
+            set:html={
+              'window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};\nplausible.init()'
+            }
+          />
+        </Fragment>
+      )
+    }
 
     <script is:inline>
       document.documentElement.classList.remove('no-js');

@@ -11,10 +11,28 @@ import Outcome from '../components/Outcome.astro';
 import Bio from '../components/Bio.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Footer from '../components/Footer.astro';
+import site from '../data/site.json';
 
 interface Props { locale: 'de' | 'en'; t: any; p: any; }
 const { locale, t, p } = Astro.props;
 const other = locale === 'de' ? 'en' : 'de';
+
+// One Service node per programme, attributed to the business entity that
+// Base.astro declares. No price — she is not publishing figures yet.
+const url = `${site.domain}/${locale}/${p.slug}/`;
+const service = {
+  '@type': 'Service',
+  '@id': `${url}#service`,
+  name: p.hero.title,
+  description: p.meta.description,
+  url,
+  serviceType: locale === 'de' ? 'KI-Strategie und Enablement' : 'AI strategy and enablement',
+  provider: { '@id': `${site.domain}/#organization` },
+  areaServed: { '@type': 'Country', name: 'Switzerland' },
+  availableLanguage: ['de', 'en'],
+  audience: { '@type': 'Audience', audienceType: p.hero.audience },
+  inLanguage: locale === 'de' ? 'de-CH' : 'en-GB',
+};
 ---
 <Base
   locale={locale}
@@ -22,6 +40,8 @@ const other = locale === 'de' ? 'en' : 'de';
   description={p.meta.description}
   path={`${p.slug}/`}
   altPath={`${p.altSlug}/`}
+  pageName={p.hero.title}
+  schema={[service]}
 >
   <Header locale={locale} nav={t.nav} altHref={`/${other}/${p.altSlug}/`} />
   <main id="main">

@@ -19,9 +19,17 @@
     "vatDe": "Nicht mehrwertsteuerpflichtig (keine MWST ausgewiesen).",
     "vatEn": "Not registered for VAT (no VAT is charged).",
     "owner": "Nadine Ebmeyer",
-    "hostName": "Hostpoint AG",
-    "hostCountryDe": "Schweiz",
-    "hostCountryEn": "Switzerland"
+    "hostName": "Vercel Inc.",
+    "hostCountryDe": "USA",
+    "hostCountryEn": "the USA",
+    "registrarName": "Hostpoint AG",
+    "registrarCountryDe": "Schweiz",
+    "registrarCountryEn": "Switzerland"
   },
-  "instagram": "https://www.instagram.com/nadine_ebm/"
+  "instagram": "https://www.instagram.com/nadine_ebm/",
+  "plausible": {
+    "enabled": true,
+    "domain": "ebmeyer-consulting.ch",
+    "src": "https://plausible.io/js/pa-5LUFSn6phmGR1ewBlcbFC.js"
+  }
 }

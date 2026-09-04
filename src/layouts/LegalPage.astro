@@ -10,7 +10,7 @@ const fallback = locale === 'de'
 const other = locale === 'de' ? 'en' : 'de';
 ---
 <Base locale={locale} title={`${title} — Ebmeyer Consulting`} description={description ?? fallback}
-      path={`${slug}/`} altPath={`${altSlug}/`}>
+      path={`${slug}/`} altPath={`${altSlug}/`} pageName={title}>
   <Header locale={locale} nav={t.nav} altHref={`/${other}/${altSlug}/`} />
   <main id="main" class="legal section">
     <div class="wrap">

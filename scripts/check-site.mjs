@@ -145,6 +145,107 @@ for (const [route, { html, ids }] of pages) {
   }
 }
 
+/* ---------- structured data, analytics, crawler policy ---------- */
+
+// Expected values come from the same source the build reads, so the checker
+// can never drift from the config.
+const siteCfg = JSON.parse(readFileSync('src/data/site.json', 'utf8'));
+const PLAUSIBLE_SRC = siteCfg.plausible?.src;
+
+let analyticsLive = false;
+
+for (const [route, { html }] of pages) {
+  if (/http-equiv="refresh"/.test(html)) continue; // redirect stub is exempt
+
+  // --- JSON-LD present, parseable, and describing the business ---
+  const ld = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  if (!ld) {
+    err(route, 'missing JSON-LD structured data');
+  } else {
+    try {
+      const graph = JSON.parse(ld[1])['@graph'] || [];
+      const types = graph.flatMap((n) => (Array.isArray(n['@type']) ? n['@type'] : [n['@type']]));
+      for (const required of ['Organization', 'Person', 'WebSite', 'WebPage']) {
+        if (!types.includes(required)) err(route, `JSON-LD missing a ${required} node`);
+      }
+    } catch (e) {
+      err(route, `JSON-LD is not valid JSON — ${e.message}`);
+    }
+  }
+
+  // --- Plausible must be on every page, or on none of them ---
+  if (/plausible\.io\/js\//.test(html)) {
+    analyticsLive = true;
+    const src = (html.match(/src="(https:\/\/plausible\.io\/js\/[^"]+)"/) || [])[1];
+    if (src !== PLAUSIBLE_SRC) {
+      err(route, `Plausible script is "${src}" — site.json expects ${PLAUSIBLE_SRC}`);
+    }
+    // the loader alone records nothing; the init call must ship with it
+    if (!/plausible\.init\(\)/.test(html)) {
+      err(route, 'Plausible script present but plausible.init() is missing — no pageviews will be sent');
+    }
+  } else {
+    warn(route, 'no Plausible tag on this page');
+  }
+}
+
+// --- if analytics ships, both privacy pages must disclose it ---
+if (analyticsLive) {
+  for (const route of ['/de/datenschutz/', '/en/privacy/']) {
+    const page = pages.get(route);
+    if (!page) { err(route, 'privacy page missing'); continue; }
+    if (!/Plausible/.test(page.html)) {
+      err(route, 'analytics is live but this privacy page never mentions Plausible');
+    }
+    if (/no analytics or tracking|keine\s*Analyse-\s*oder\s*Tracking-Dienste/i.test(page.html)) {
+      err(route, 'privacy page still claims there is no analytics, but Plausible is live');
+    }
+  }
+}
+
+// --- the hosting disclosure must match reality ---
+// This shipped wrong once: the pages claimed Hostpoint/Swiss servers while the
+// site was actually served from Vercel. Registrar is not the host.
+const host = siteCfg.legal?.hostName ?? '';
+const hostIsSwiss = /schweiz|switzerland/i.test(
+  `${siteCfg.legal?.hostCountryDe} ${siteCfg.legal?.hostCountryEn}`
+);
+for (const route of ['/de/datenschutz/', '/en/privacy/']) {
+  const page = pages.get(route);
+  if (!page) continue;
+  const name = host.replace(/\s+(Inc\.|AG)$/, '');
+  if (name && !page.html.includes(name)) {
+    err(route, `privacy page does not name the host from site.json ("${host}")`);
+  }
+  if (!hostIsSwiss && /Schweizer Servern|Swiss servers/i.test(page.html)) {
+    err(route, `privacy page claims Swiss servers, but the host is ${host}`);
+  }
+}
+
+// --- crawler policy survives future edits ---
+const robotsPath = join(DIST, 'robots.txt');
+if (!existsSync(robotsPath)) err('/robots.txt', 'file is missing');
+else {
+  const robots = readFileSync(robotsPath, 'utf8');
+  for (const bot of ['GPTBot', 'CCBot', 'ClaudeBot', 'Bytespider', 'Applebot-Extended']) {
+    if (!new RegExp(`User-agent:\\s*${bot}\\b`, 'i').test(robots)) {
+      err('/robots.txt', `training crawler "${bot}" is no longer blocked`);
+    }
+  }
+  for (const bot of ['OAI-SearchBot', 'PerplexityBot', 'Bingbot', 'Googlebot']) {
+    if (!new RegExp(`User-agent:\\s*${bot}\\b`, 'i').test(robots)) {
+      err('/robots.txt', `citing crawler "${bot}" is no longer listed`);
+    }
+  }
+  if (!/^Sitemap:\s*https:\/\//m.test(robots)) err('/robots.txt', 'missing Sitemap directive');
+  if (!/Disallow:\s*\/\s*$/m.test(robots)) err('/robots.txt', 'no Disallow rule found at all');
+}
+
+// --- llms.txt ---
+const llmsPath = join(DIST, 'llms.txt');
+if (!existsSync(llmsPath)) err('/llms.txt', 'file is missing');
+else if (readFileSync(llmsPath, 'utf8').length < 500) err('/llms.txt', 'looks truncated');
+
 /* ---------- summary ---------- */
 console.log('');
 if (errors === 0 && warnings === 0) console.log(`${GRN}✓ All checks passed (${pages.size} pages).${RST}\n`);
