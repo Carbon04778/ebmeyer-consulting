@@ -2,91 +2,196 @@
 import LegalPage from '../../../layouts/LegalPage.astro';
 import t from '../../../data/en.json';
 import site from '../../../data/site.json';
+const description = 'Privacy policy of Ebmeyer Consulting, Nadine Ebmeyer, Cham ZG. No cookies, hosting in Switzerland, privacy-friendly audience measurement, your rights under the FADP and GDPR.';
 ---
-<LegalPage locale="en" t={t} title="Privacy Policy" slug="privacy" altSlug="datenschutz">
-  <p>
-    This policy explains which data is processed when you visit this website. It is based on
-    the Swiss Data Protection Act (revDSG) and, where applicable, the European General Data
-    Protection Regulation (GDPR).
-  </p>
-  <h2>Controller</h2>
-  <p>
-    Ebmeyer Consulting, Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG, Switzerland.<br />
-    Email: <a href={`mailto:${site.email}`}>{site.email}</a>
-  </p>
-  <h2>No cookies</h2>
-  <p>
-    This website sets <strong>no cookies</strong> and stores no data on your device. No
-    visitor profiles are created, and there is no cross-device or cross-site tracking. This
-    is why the site needs no cookie banner.
+<LegalPage locale="en" t={t} title="Privacy Policy" slug="privacy" altSlug="datenschutz" description={description}>
+  <p class="legal__meta">
+    Ebmeyer Consulting · Nadine Ebmeyer · Langackerstrasse 11 · 6330 Cham ZG · Switzerland<br />
+    Version: September 2026
   </p>
 
-  <h2>Audience measurement with Plausible Analytics</h2>
   <p>
-    For simple audience measurement this site uses <strong>Plausible Analytics</strong>, a
-    privacy-friendly service operated by Plausible Insights OÜ, Estonia. Collection and
-    storage take place exclusively on servers within the European Union. No analytics data is
-    transferred to the United States.
+    This privacy policy explains which personal data Ebmeyer Consulting processes, for what
+    purpose, and which rights you have. It applies to visits to the website
+    <strong>ebmeyer-consulting.ch</strong> as well as to enquiries and to the collaboration
+    in the context of consulting, training and speaking services.
   </p>
-  <p>Only aggregated, anonymous information is recorded:</p>
+  <p>
+    It is based on the Swiss Federal Act on Data Protection (FADP) and, where applicable,
+    the European General Data Protection Regulation (GDPR). The
+    <a href="/en/terms/">General Terms and Conditions</a> refer to this policy for all
+    matters of data protection.
+  </p>
+
+  <h2>1. Controller</h2>
+  <p>
+    Ebmeyer Consulting<br />
+    Nadine Ebmeyer<br />
+    Langackerstrasse 11<br />
+    6330 Cham ZG, Switzerland<br />
+    E-mail: <a href={`mailto:${site.email}`}>{site.email}</a><br />
+    Phone: <a href={site.phoneHref}>{site.phone}</a>
+  </p>
+
+  <h2>2. No cookies, no tracking</h2>
+  <p>
+    This website sets <strong>no cookies</strong> and stores nothing in your browser. No
+    visitor profiles are created, there is no tracking across devices or websites, and no
+    advertising networks are embedded. Fonts and images are served directly from this
+    website, not from third parties.
+  </p>
+  <p>
+    Because no cookies are set and no services requiring consent are embedded, this website
+    needs no cookie banner. You can use it in full without agreeing to any data
+    processing.
+  </p>
+
+  <h2>3. Audience measurement with Plausible Analytics</h2>
+  <p>
+    For simple audience measurement this website uses <strong>Plausible Analytics</strong>,
+    a privacy-friendly service provided by Plausible Insights OÜ, Estonia. Data is
+    collected and stored exclusively on servers within the European Union. No analytics
+    data is transferred to the United States and no cookies are used.
+  </p>
+  <p>Only aggregated, anonymous information is collected:</p>
   <ul>
-    <li>pages viewed and the number of views</li>
+    <li>pages visited and number of page views</li>
     <li>referring website, such as a search engine or LinkedIn</li>
     <li>country, derived from the IP address</li>
     <li>device type, browser and operating system</li>
-    <li>clicks on external links, such as the booking link</li>
+    <li>clicks on outbound links, such as the booking link</li>
   </ul>
   <p>
-    <strong>Your IP address is not stored.</strong> It is used only briefly, together with a
-    randomly generated value that changes every day, to produce an irreversible checksum.
-    This makes it possible to count repeat visits within a single day without allowing any
-    conclusion about your identity. Recognition beyond that day is not possible.
+    <strong>Your IP address is not stored.</strong> It is used only momentarily, together
+    with a random value that changes daily, to form an irreversible checksum. This allows
+    repeat visits within a single day to be counted without any possibility of identifying
+    you. Recognition beyond that day is not possible.
   </p>
   <p>
     The legal basis is the legitimate interest in a data-minimising statistical analysis of
-    website use (Art. 31 revDSG and Art. 6(1)(f) GDPR). Further information is available in
-    the <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer">Plausible privacy policy</a>.
+    website usage (Art. 31 FADP and Art. 6(1)(f) GDPR). Further details are set out in the
+    <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer">Plausible data policy</a>.
   </p>
-  <h2>Hosting and server log files</h2>
+
+  <h2>4. Hosting and server log files</h2>
   <p>
-    This website is hosted by {site.legal.hostName} ({site.legal.hostCountryEn}) and
-    delivered through their global content delivery network. Pages are served from the
-    location nearest to you, which means data may be processed outside Switzerland and the
-    EU, in particular in the United States.
+    This website is hosted by <strong>{site.legal.hostName}</strong>, Rapperswil-Jona
+    ({site.legal.hostCountryEn}). The servers are located exclusively in Switzerland. No
+    personal data is transferred abroad when you visit this website. The connection is
+    encrypted end to end (TLS).
   </p>
   <p>
     When the website is accessed, the hosting provider processes technically necessary
-    connection data such as IP address, date and time of access, page requested, browser type
-    and operating system. This data serves solely the secure and stable operation of the
-    website and the prevention of attacks, and is not merged with other data sources.
+    connection data such as IP address, date and time of access, page requested, browser
+    type and operating system. This data serves solely the secure and stable operation of
+    the website and the prevention of attacks. It is not merged with other data sources
+    and is retained only as long as necessary for that purpose.
   </p>
   <p>
-    A data processing agreement is in place with the provider. The transfer to the United
-    States is based on the European Commission's Standard Contractual Clauses.
+    A data processing agreement under Swiss data protection law is in place with
+    {site.legal.hostName}. The domain <strong>ebmeyer-consulting.ch</strong> is likewise
+    registered with {site.legal.registrarName} in {site.legal.registrarCountryEn}.
+  </p>
+
+  <h2>5. Booking a call via Calendly</h2>
+  <p>
+    To book an introductory call, this website links to the external service Calendly. The
+    service is <strong>not embedded in this website</strong>: no data is sent to Calendly
+    until you actively click the link and open Calendly's page. From that point, Calendly's
+    privacy policy applies (Calendly LLC, USA). The details you enter there (name, e-mail
+    address, preferred time) are used solely to hold the call.
+  </p>
+
+  <h2>6. Getting in touch</h2>
+  <p>
+    If you contact us by e-mail or phone, your details are stored to handle the enquiry and
+    any follow-up questions. This data is not passed on to third parties without your
+    consent. Enquiries that do not lead to a collaboration are deleted after a reasonable
+    period.
+  </p>
+
+  <h2>7. Data in the course of a collaboration</h2>
+  <p>
+    Once an engagement is agreed, Ebmeyer Consulting processes the personal data required
+    for it: name, company, role, contact details, correspondence, and contract and invoicing
+    data. The purpose is to prepare quotations, perform the contract, issue invoices and
+    maintain the business relationship. The legal basis is the performance of the contract
+    (Art. 6(1)(b) GDPR) and the legitimate interest in orderly business administration.
   </p>
   <p>
-    The domain <strong>ebmeyer-consulting.ch</strong> is registered with
-    {site.legal.registrarName} in {site.legal.registrarCountryEn}. This concerns the domain
-    registration only; the content of this website is not served from there.
+    Ebmeyer Consulting <strong>does not process personal data on behalf of clients</strong>.
+    The service model is designed so that clients set up and operate their AI applications
+    themselves and on their own responsibility; control over the data remains with them.
+    Sensitive personal data is processed only where this has been expressly agreed in
+    writing.
   </p>
-  <h2>Booking a call via Calendly</h2>
+
+  <h2>8. Service providers and AI tools</h2>
   <p>
-    To book an introductory call, this site links to the external service Calendly. The service
-    is <strong>not embedded</strong> in this website: data is only transmitted to Calendly once
-    you actively click the link and open the Calendly page. From that point, Calendly's own
-    privacy policy applies (Calendly LLC, USA).
+    For its own service delivery, Ebmeyer Consulting uses service providers, for example
+    for e-mail, file storage, video calls, appointment booking and invoicing, as well as
+    artificial intelligence tools. These providers receive only the data required for the
+    respective service and are contractually bound to confidentiality.
   </p>
-  <h2>Getting in touch</h2>
   <p>
-    If you contact us by email or phone, your details are stored in order to handle your
-    enquiry and any follow-up questions. This data is not passed on without your consent.
+    No confidential client data, no sensitive personal data and no professional or
+    official secrets are entered into AI systems unless expressly agreed. Content from the
+    collaboration is not released for the training of AI models.
   </p>
-  <h2>Your rights</h2>
+
+  <h2>9. Disclosure abroad</h2>
+  <p>
+    Visiting this website does not trigger any transfer of personal data abroad. Individual
+    service providers under Section 8 may be based, or operate servers, outside
+    Switzerland, including in countries without an adequate level of data protection. In
+    such cases the disclosure is based on an adequacy decision of the Swiss Federal
+    Council, on the European Commission's Standard Contractual Clauses with the amendments
+    required for Switzerland, or on a recognised certification scheme.
+  </p>
+
+  <h2>10. Data security</h2>
+  <p>
+    Ebmeyer Consulting takes appropriate technical and organisational measures to protect
+    personal data against loss, misuse and unauthorised access: encrypted transmission,
+    access protection on all devices and accounts, and restriction of access to the people
+    needed for the collaboration.
+  </p>
+
+  <h2>11. Retention</h2>
+  <p>
+    Personal data is retained only as long as necessary for the respective purpose.
+    Business correspondence, contracts and accounting records are subject to the statutory
+    retention period of ten years (Art. 958f of the Swiss Code of Obligations). Once the
+    retention periods expire, the data is deleted or anonymised.
+  </p>
+
+  <h2>12. Links to third parties and social media</h2>
+  <p>
+    This website contains links to external services such as LinkedIn and Instagram. These
+    services are not embedded; no data flows to them unless you click the respective link.
+    The privacy policies of the respective providers apply to the linked services.
+  </p>
+
+  <h2>13. Your rights</h2>
+  <p>Under applicable data protection law you have the right to:</p>
   <ul>
-    <li>Information about the data processed about you</li>
-    <li>Correction of inaccurate data</li>
-    <li>Deletion of your data</li>
-    <li>Objection to processing</li>
+    <li>information about the data processed about you</li>
+    <li>correction of inaccurate data</li>
+    <li>deletion of your data, unless a retention obligation applies</li>
+    <li>restriction of processing</li>
+    <li>receipt of your data in a common electronic format (data portability)</li>
+    <li>objection to processing</li>
   </ul>
-  <p>Please contact <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  <p>
+    Please contact <a href={`mailto:${site.email}`}>{site.email}</a>. You also have the
+    right to lodge a complaint with the Swiss Federal Data Protection and Information
+    Commissioner (FDPIC) or, where the GDPR applies, with a supervisory authority in the EU.
+  </p>
+
+  <h2>14. Changes</h2>
+  <p>
+    Ebmeyer Consulting may amend this privacy policy at any time, for example when the
+    services used or the legal situation change. The version published on this website at
+    the time applies.
+  </p>
 </LegalPage>

@@ -4,6 +4,7 @@ interface Props { footer: any; locale: 'de' | 'en'; }
 const { footer, locale } = Astro.props;
 const imprintHref = locale === 'de' ? '/de/impressum/' : '/en/imprint/';
 const privacyHref = locale === 'de' ? '/de/datenschutz/' : '/en/privacy/';
+const termsHref = locale === 'de' ? '/de/agb/' : '/en/terms/';
 ---
 <footer class="ft center">
   <div class="wrap">
@@ -21,6 +22,8 @@ const privacyHref = locale === 'de' ? '/de/datenschutz/' : '/en/privacy/';
       <a href={imprintHref}>{footer.imprint}</a>
       <span aria-hidden="true">·</span>
       <a href={privacyHref}>{footer.privacy}</a>
+      <span aria-hidden="true">·</span>
+      <a href={termsHref}>{footer.terms}</a>
     </p>
   </div>
 </footer>

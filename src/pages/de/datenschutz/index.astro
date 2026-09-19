@@ -2,34 +2,57 @@
 import LegalPage from '../../../layouts/LegalPage.astro';
 import t from '../../../data/de.json';
 import site from '../../../data/site.json';
+const description = 'Datenschutzerklärung von Ebmeyer Consulting, Nadine Ebmeyer, Cham ZG. Keine Cookies, Hosting in der Schweiz, datenschutzfreundliche Reichweitenmessung, Ihre Rechte nach DSG und DSGVO.';
 ---
-<LegalPage locale="de" t={t} title="Datenschutzerklärung" slug="datenschutz" altSlug="privacy">
-  <p>
-    Diese Erklärung informiert darüber, welche Daten beim Besuch dieser Website bearbeitet
-    werden. Grundlage sind das Schweizer Datenschutzgesetz (revDSG) und, soweit anwendbar,
-    die europäische Datenschutz-Grundverordnung (DSGVO).
+<LegalPage locale="de" t={t} title="Datenschutzerklärung" slug="datenschutz" altSlug="privacy" description={description}>
+  <p class="legal__meta">
+    Ebmeyer Consulting · Nadine Ebmeyer · Langackerstrasse 11 · 6330 Cham ZG · Schweiz<br />
+    Stand: September 2026
   </p>
 
-  <h2>Verantwortliche Stelle</h2>
   <p>
-    Ebmeyer Consulting, Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG, Schweiz.<br />
-    E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+    Diese Datenschutzerklärung informiert darüber, welche Personendaten Ebmeyer Consulting
+    bearbeitet, zu welchem Zweck und welche Rechte Ihnen zustehen. Sie gilt für den Besuch
+    der Website <strong>ebmeyer-consulting.ch</strong> sowie für die Kontaktaufnahme und
+    die Zusammenarbeit im Rahmen von Beratungs-, Schulungs- und Referatsleistungen.
+  </p>
+  <p>
+    Grundlage sind das Schweizer Datenschutzgesetz (DSG) und, soweit anwendbar, die
+    Datenschutz-Grundverordnung der Europäischen Union (DSGVO). Die
+    <a href="/de/agb/">Allgemeinen Geschäftsbedingungen</a> verweisen für den Datenschutz
+    auf diese Erklärung.
   </p>
 
-  <h2>Keine Cookies</h2>
+  <h2>1. Verantwortliche Stelle</h2>
   <p>
-    Diese Website setzt <strong>keine Cookies</strong> und speichert keine Daten auf Ihrem
-    Gerät. Es werden keine Profile über Besucherinnen und Besucher erstellt, und es findet
-    kein geräte- oder websiteübergreifendes Tracking statt. Aus diesem Grund benötigt diese
-    Website auch kein Cookie-Banner.
+    Ebmeyer Consulting<br />
+    Nadine Ebmeyer<br />
+    Langackerstrasse 11<br />
+    6330 Cham ZG, Schweiz<br />
+    E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a><br />
+    Telefon: <a href={site.phoneHref}>{site.phone}</a>
   </p>
 
-  <h2>Reichweitenmessung mit Plausible Analytics</h2>
+  <h2>2. Keine Cookies, kein Tracking</h2>
+  <p>
+    Diese Website setzt <strong>keine Cookies</strong> und legt keine Daten im Speicher
+    Ihres Browsers ab. Es werden keine Profile über Besucherinnen und Besucher erstellt,
+    kein geräte- oder websiteübergreifendes Tracking betrieben und keine Werbenetzwerke
+    eingebunden. Schriften und Bilder werden direkt von dieser Website ausgeliefert, nicht
+    von Drittanbietern.
+  </p>
+  <p>
+    Weil keine Cookies gesetzt und keine einwilligungspflichtigen Dienste eingebunden
+    werden, benötigt diese Website kein Cookie-Banner. Sie können sie vollständig nutzen,
+    ohne einer Datenbearbeitung zuzustimmen.
+  </p>
+
+  <h2>3. Reichweitenmessung mit Plausible Analytics</h2>
   <p>
     Für eine einfache Reichweitenmessung wird <strong>Plausible Analytics</strong> eingesetzt,
     ein datenschutzfreundlicher Dienst der Plausible Insights OÜ, Estland. Erhebung und
     Speicherung erfolgen ausschliesslich auf Servern innerhalb der Europäischen Union. Es
-    werden keine Analysedaten in die USA übermittelt.
+    werden keine Analysedaten in die USA übermittelt und keine Cookies verwendet.
   </p>
   <p>Erfasst werden ausschliesslich aggregierte, anonyme Angaben:</p>
   <ul>
@@ -48,58 +71,137 @@ import site from '../../../data/site.json';
   </p>
   <p>
     Rechtsgrundlage ist das berechtigte Interesse an einer datensparsamen statistischen
-    Auswertung der Websitenutzung (Art. 31 revDSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Weitere
+    Auswertung der Websitenutzung (Art. 31 DSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Weitere
     Informationen finden Sie in der
     <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Plausible</a>.
   </p>
 
-  <h2>Hosting und Server-Logfiles</h2>
+  <h2>4. Hosting und Server-Logfiles</h2>
   <p>
-    Diese Website wird von {site.legal.hostName} ({site.legal.hostCountryDe}) gehostet und
-    über deren weltweites Content-Delivery-Netzwerk ausgeliefert. Die Auslieferung erfolgt
-    jeweils von dem Standort, der Ihrem Zugriffsort am nächsten liegt. Dabei können Daten
-    auch ausserhalb der Schweiz und der EU bearbeitet werden, namentlich in den USA.
+    Diese Website wird von der <strong>{site.legal.hostName}</strong>, Rapperswil-Jona
+    ({site.legal.hostCountryDe}), gehostet. Die Server stehen ausschliesslich in der
+    Schweiz. Beim Aufruf dieser Website werden keine Personendaten ins Ausland übermittelt.
+    Die Verbindung ist durchgehend verschlüsselt (TLS).
   </p>
   <p>
-    Beim Aufruf der Website werden durch den Hosting-Anbieter technisch notwendige
-    Verbindungsdaten verarbeitet, etwa IP-Adresse, Datum und Uhrzeit des Zugriffs,
-    angeforderte Seite, Browsertyp und Betriebssystem. Diese Daten dienen ausschliesslich
-    dem sicheren und stabilen Betrieb der Website sowie der Abwehr von Angriffen und werden
-    nicht mit anderen Datenquellen zusammengeführt.
+    Beim Aufruf der Website verarbeitet der Hosting-Anbieter technisch notwendige
+    Verbindungsdaten, etwa IP-Adresse, Datum und Uhrzeit des Zugriffs, angeforderte Seite,
+    Browsertyp und Betriebssystem. Diese Daten dienen ausschliesslich dem sicheren und
+    stabilen Betrieb der Website sowie der Abwehr von Angriffen. Sie werden nicht mit
+    anderen Datenquellen zusammengeführt und nur so lange aufbewahrt, wie es für diesen
+    Zweck erforderlich ist.
   </p>
   <p>
-    Mit dem Anbieter besteht ein Auftragsverarbeitungsvertrag. Die Übermittlung in die USA
-    stützt sich auf die Standardvertragsklauseln der Europäischen Kommission.
-  </p>
-  <p>
-    Die Domain <strong>ebmeyer-consulting.ch</strong> ist bei der {site.legal.registrarName}
-    in der {site.legal.registrarCountryDe} registriert. Die Registrierung betrifft
-    ausschliesslich die Domain selbst; die Inhalte dieser Website werden nicht dort
-    ausgeliefert.
+    Mit der {site.legal.hostName} besteht ein Auftragsbearbeitungsvertrag nach Schweizer
+    Datenschutzrecht. Die Domain <strong>ebmeyer-consulting.ch</strong> ist ebenfalls bei
+    der {site.legal.registrarName} in der {site.legal.registrarCountryDe} registriert.
   </p>
 
-  <h2>Terminbuchung über Calendly</h2>
+  <h2>5. Terminbuchung über Calendly</h2>
   <p>
     Für die Buchung eines Erstgesprächs wird auf den externen Dienst Calendly verlinkt.
     Der Dienst ist <strong>nicht in diese Website eingebettet</strong>: Es werden erst dann
     Daten an Calendly übermittelt, wenn Sie den Link aktiv anklicken und die Seite von
     Calendly öffnen. Ab diesem Zeitpunkt gilt die Datenschutzerklärung von Calendly
-    (Calendly LLC, USA).
+    (Calendly LLC, USA). Die dort eingegebenen Angaben (Name, E-Mail-Adresse, gewünschter
+    Termin) werden ausschliesslich zur Durchführung des Gesprächs verwendet.
   </p>
 
-  <h2>Kontaktaufnahme</h2>
+  <h2>6. Kontaktaufnahme</h2>
   <p>
     Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung
     der Anfrage und für mögliche Anschlussfragen gespeichert. Diese Daten werden nicht ohne
-    Ihre Einwilligung weitergegeben.
+    Ihre Einwilligung an Dritte weitergegeben. Anfragen, aus denen keine Zusammenarbeit
+    entsteht, werden nach angemessener Zeit gelöscht.
   </p>
 
-  <h2>Ihre Rechte</h2>
+  <h2>7. Daten im Rahmen der Zusammenarbeit</h2>
+  <p>
+    Kommt ein Auftrag zustande, bearbeitet Ebmeyer Consulting die dafür erforderlichen
+    Personendaten: Name, Firma, Funktion, Kontaktdaten, Angaben zur Korrespondenz sowie
+    Vertrags- und Rechnungsdaten. Zweck ist die Offertstellung, die Vertragserfüllung, die
+    Rechnungsstellung und die Pflege der Geschäftsbeziehung. Rechtsgrundlage ist die
+    Erfüllung des Vertrags (Art. 6 Abs. 1 lit. b DSGVO) beziehungsweise das berechtigte
+    Interesse an einer geordneten Geschäftsführung.
+  </p>
+  <p>
+    Ebmeyer Consulting bearbeitet <strong>keine Personendaten im Auftrag der Kundinnen und
+    Kunden</strong>. Das Leistungsmodell ist darauf ausgerichtet, dass Kundinnen und Kunden
+    ihre KI-Anwendungen selbst einrichten und eigenverantwortlich betreiben; die Datenhoheit
+    verbleibt bei ihnen. Besonders schützenswerte Personendaten werden nur bearbeitet, wenn
+    dies ausdrücklich und schriftlich vereinbart wurde.
+  </p>
+
+  <h2>8. Einsatz von Dienstleistern und KI-Werkzeugen</h2>
+  <p>
+    Für die eigene Leistungserbringung setzt Ebmeyer Consulting Dienstleister ein, etwa
+    für E-Mail, Datenablage, Videokonferenzen, Terminbuchung, Rechnungsstellung sowie
+    Werkzeuge der Künstlichen Intelligenz. Diese Anbieter erhalten nur die Daten, die für
+    den jeweiligen Dienst erforderlich sind, und sind vertraglich zur Vertraulichkeit
+    verpflichtet.
+  </p>
+  <p>
+    In KI-Systeme werden keine vertraulichen Kundendaten, keine besonders schützenswerten
+    Personendaten und keine Berufs- oder Amtsgeheimnisse eingegeben, sofern dies nicht
+    ausdrücklich vereinbart wurde. Inhalte aus der Zusammenarbeit werden nicht zum Training
+    von KI-Modellen freigegeben.
+  </p>
+
+  <h2>9. Bekanntgabe ins Ausland</h2>
+  <p>
+    Der Besuch dieser Website löst keine Übermittlung von Personendaten ins Ausland aus.
+    Einzelne Dienstleister nach Ziffer 8 können ihren Sitz oder ihre Server ausserhalb der
+    Schweiz haben, auch in Staaten ohne angemessenes Datenschutzniveau. In diesem Fall
+    stützt sich die Bekanntgabe auf einen Angemessenheitsbeschluss des Bundesrats, auf die
+    Standardvertragsklauseln der Europäischen Kommission mit den für die Schweiz nötigen
+    Anpassungen oder auf ein anerkanntes Zertifizierungssystem.
+  </p>
+
+  <h2>10. Datensicherheit</h2>
+  <p>
+    Ebmeyer Consulting trifft angemessene technische und organisatorische Massnahmen, um
+    Personendaten vor Verlust, Missbrauch und unbefugtem Zugriff zu schützen: verschlüsselte
+    Übertragung, Zugriffsschutz auf allen Geräten und Konten sowie die Beschränkung des
+    Zugriffs auf die für die Zusammenarbeit notwendigen Personen.
+  </p>
+
+  <h2>11. Aufbewahrung</h2>
+  <p>
+    Personendaten werden nur so lange aufbewahrt, wie es für den jeweiligen Zweck
+    erforderlich ist. Geschäftskorrespondenz, Verträge und Buchungsbelege unterliegen der
+    gesetzlichen Aufbewahrungspflicht von zehn Jahren (Art. 958f OR). Nach Ablauf der
+    Aufbewahrungsfristen werden die Daten gelöscht oder anonymisiert.
+  </p>
+
+  <h2>12. Links zu Dritten und Social Media</h2>
+  <p>
+    Diese Website enthält Links zu externen Angeboten, etwa zu LinkedIn und Instagram.
+    Diese Dienste sind nicht eingebettet; es fliessen keine Daten an sie, solange Sie den
+    jeweiligen Link nicht anklicken. Für die verlinkten Angebote gelten die
+    Datenschutzbestimmungen der jeweiligen Anbieter.
+  </p>
+
+  <h2>13. Ihre Rechte</h2>
+  <p>Im Rahmen des anwendbaren Datenschutzrechts haben Sie das Recht auf:</p>
   <ul>
     <li>Auskunft über die zu Ihrer Person bearbeiteten Daten</li>
     <li>Berichtigung unrichtiger Daten</li>
-    <li>Löschung Ihrer Daten</li>
+    <li>Löschung Ihrer Daten, soweit keine Aufbewahrungspflicht entgegensteht</li>
+    <li>Einschränkung der Bearbeitung</li>
+    <li>Herausgabe Ihrer Daten in einem gängigen elektronischen Format (Datenübertragung)</li>
     <li>Widerspruch gegen die Bearbeitung</li>
   </ul>
-  <p>Wenden Sie sich dafür an <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  <p>
+    Wenden Sie sich dafür an <a href={`mailto:${site.email}`}>{site.email}</a>. Zudem
+    haben Sie das Recht, sich beim Eidgenössischen Datenschutz- und
+    Öffentlichkeitsbeauftragten (EDÖB) oder, soweit die DSGVO anwendbar ist, bei einer
+    Aufsichtsbehörde im EU-Raum zu beschweren.
+  </p>
+
+  <h2>14. Änderungen</h2>
+  <p>
+    Ebmeyer Consulting kann diese Datenschutzerklärung jederzeit anpassen, etwa bei
+    Änderungen der eingesetzten Dienste oder der Rechtslage. Massgebend ist die jeweils auf
+    dieser Website veröffentlichte Fassung.
+  </p>
 </LegalPage>

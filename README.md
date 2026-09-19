@@ -114,6 +114,7 @@ is `clamp()`-based so nothing overflows at any viewport.
 /de/souveraen-gruenden/        /en/founding-with-confidence/
 /de/impressum/                 /en/imprint/
 /de/datenschutz/               /en/privacy/
+/de/agb/                       /en/terms/
 ```
 
 ### How the programme pages work
@@ -137,24 +138,29 @@ All lifted from her brochures, **without the CHF prices**.
 
 ## 5. Deploying
 
-### Vercel (recommended)
+### Hostpoint (production, since Sept 2026)
 
-1. Push to GitHub.
-2. Import the repo in Vercel — it auto-detects Astro. No configuration needed.
-3. Add `ebmeyer-consulting.ch` under Project → Domains.
-4. At the registrar, set the two DNS records Vercel shows you.
-
-Every push to `main` redeploys. Every pull request gets a preview URL — useful
-for showing Nadine changes before they go live.
-
-### Hostpoint / any FTP host
+The site lives on Nadine's Hostpoint web hosting — same account as the
+domain, servers in Switzerland. It is a plain Apache docroot; `public/.htaccess`
+supplies what a platform host would do implicitly (www → apex, HTTPS, 404,
+cache headers).
 
 ```bash
 npm run build
-# upload the contents of dist/ to the web root
+scp -i ~/.ssh/hostpoint_ebmeyer -r dist/. <user>@<user>.ssh.cloud.hostpoint.ch:www/ebmeyer-consulting.ch/
 ```
 
-Works identically. You lose auto-deploy and preview URLs.
+Needs SSH enabled in the Hostpoint panel (Webhosting → Advanced → SSH access)
+with the deploy public key pasted in. SSH only works with the hosting
+username, not the Hostpoint ID. FreeSSL (Let's Encrypt) is issued
+automatically when the website entry is created.
+
+### Vercel (previous host, kept as a fallback)
+
+Import the repo, add the domain, done — Astro is auto-detected. The privacy
+pages must then be rewritten for a US host: `hostName` in `site.json` plus the
+hosting paragraphs in both `datenschutz`/`privacy` pages. The site checker
+enforces that the two agree (§11).
 
 ---
 
@@ -247,16 +253,17 @@ us — this is what stops that repeating.
 **Resolved 25 Aug:** Einzelunternehmen · CHE-456.292.561 · not VAT-registered ·
 `/deine-ki-landkarte/` dropped. All now live in the legal pages.
 
-**Fixed Sept 2026 — hosting disclosure.** Both privacy pages used to state the
-site was hosted with *Hostpoint AG in Switzerland*, "so the data remains on
-Swiss servers". That was wrong: **Hostpoint is only the domain registrar.** The
-site is hosted on **Vercel**, whose edge network serves from wherever is nearest
-the visitor, which means processing outside Switzerland and the EU. Both pages
-now say so, and the build fails if they ever drift again — see §11.
+**Hosting disclosure — history.** Early Sept 2026 the privacy pages claimed
+Hostpoint/Swiss servers while the site actually ran on Vercel (Hostpoint was
+only the registrar then). The pages were corrected to Vercel/USA, and a build
+check was added so the disclosure can't drift from `site.json` again — see §11.
+Later in Sept 2026 the site **moved to Hostpoint web hosting**, on Nadine's
+request, so that hosting is Swiss and the policy needs no US-transfer clause.
+Both pages now say Hostpoint AG, Switzerland, and the check passes.
 
-> **Registrar ≠ host.** If hosting ever moves, update
-> `site.json → legal.hostName` / `hostCountry*` and the disclosure follows.
-> `registrarName` is a separate field and should stay Hostpoint.
+> **Registrar ≠ host.** If hosting ever moves again, update
+> `site.json → legal.hostName` / `hostCountry*` **and** the hosting paragraphs
+> in both privacy pages. `registrarName` is a separate field.
 
 Open items for analytics and AI findability are in §11.
 
@@ -344,8 +351,8 @@ Two traps for whoever edits this next:
   well as training, and losing a citation surface costs more than the training
   use is worth. Her call, reversible in one line.
 
-robots.txt is honoured voluntarily. For enforcement, block at the edge in
-Vercel.
+robots.txt is honoured voluntarily. For enforcement, add a `User-Agent`
+rewrite rule to `public/.htaccess`.
 
 ### llms.txt
 
@@ -385,21 +392,14 @@ It cannot manufacture authority.
 | Thing | Who | Where |
 |---|---|---|
 | Domain registration + DNS | Hostpoint AG | Switzerland |
-| Web hosting / serving | Vercel | global edge, US company |
+| Web hosting / serving | Hostpoint AG | Switzerland (same account) |
 | Analytics | Plausible Insights OÜ | EU servers |
 | Booking | Calendly LLC | USA — linked, never embedded |
 
-The DNS records at Hostpoint point `ebmeyer-consulting.ch` at Vercel. Hostpoint
-serves no page content, so it is **not** the host for privacy purposes.
+Domain and hosting sit in one Hostpoint account, so assigning the domain to the
+hosting package in the panel repoints DNS — no manual A record.
 
-**Two things Nadine should confirm on the Vercel side:**
-
-1. That the **Data Processing Agreement** is accepted on her Vercel account.
-   The privacy pages now state that a DPA is in place and that the US transfer
-   rests on Standard Contractual Clauses. That is Vercel's standard offering,
-   but the statement should not stand unverified.
-2. Static pages are served from Vercel's global edge and **cannot be pinned to
-   the EU** — region settings govern functions, and this site has none. So
-   "processed outside Switzerland and the EU" is the honest wording and should
-   stay. If she ever wants EU-only delivery, that is a change of host, not a
-   setting.
+**One thing Nadine should confirm on the Hostpoint side:** that the
+**Auftragsverarbeitungsvertrag (AVV / DPA)** with Hostpoint is signed. The
+privacy pages state one is in place; Hostpoint provides it as standard, but
+the statement should not stand unverified.

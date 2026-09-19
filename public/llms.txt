@@ -45,5 +45,7 @@ published; they are discussed on that call.
 
 - [Impressum (DE)](https://ebmeyer-consulting.ch/de/impressum/)
 - [Datenschutzerklärung (DE)](https://ebmeyer-consulting.ch/de/datenschutz/)
+- [Allgemeine Geschäftsbedingungen (DE)](https://ebmeyer-consulting.ch/de/agb/)
 - [Imprint (EN)](https://ebmeyer-consulting.ch/en/imprint/)
 - [Privacy Policy (EN)](https://ebmeyer-consulting.ch/en/privacy/)
+- [General Terms and Conditions (EN)](https://ebmeyer-consulting.ch/en/terms/)

@@ -1,0 +1,42 @@
+---
+// Not-found page. Served by Apache via `ErrorDocument 404 /404.html` in
+// public/.htaccess; Vercel and Netlify pick up dist/404.html on their own.
+// Bilingual and self-contained — it deliberately skips Base.astro, which
+// would emit a canonical URL and JSON-LD that make no sense on a 404.
+import '../styles/tokens.css';
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seite nicht gefunden — Ebmeyer Consulting</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" />
+  </head>
+  <body class="nf">
+    <main class="nf__wrap center">
+      <a href="/de/" class="nf__logo-link">
+        <img src="/logo/horizontal.svg" alt="Ebmeyer Consulting" width="845" height="84" />
+      </a>
+      <p class="nf__code" aria-hidden="true">404</p>
+      <h1>Diese Seite gibt es nicht.</h1>
+      <p class="lead">Vielleicht hat sich ein Tippfehler eingeschlichen, oder die Seite wurde verschoben.</p>
+      <p><a class="btn" href="/de/">Zur Startseite</a></p>
+      <hr class="rule rule--center" />
+      <p lang="en"><strong>Page not found.</strong> The page may have moved or the address contains a typo.</p>
+      <p lang="en"><a href="/en/">Go to the English homepage →</a></p>
+    </main>
+  </body>
+</html>
+<style>
+  .nf { min-height: 100svh; display: grid; place-items: center; background: var(--paper); padding: 1.5rem 16px; }
+  .nf__wrap { max-width: 34rem; }
+  .nf__logo-link img { width: min(280px, 100%); height: auto; margin: 0 auto 2rem; display: block; }
+  .nf__code { font-family: var(--font-display); font-variation-settings: var(--fv-display); font-size: 5rem; line-height: 1; color: var(--gold); margin: 0 0 0.25rem; }
+  .nf h1 { font-size: var(--fs-h3); margin: 0 0 0.75rem; }
+  .nf .lead { color: var(--ink-soft); }
+  .nf [lang="en"] { color: var(--ink-mute); font-size: 0.95rem; }
+  .nf [lang="en"] a { color: var(--magenta); }
+</style>

@@ -53,6 +53,9 @@ console.log(`\n${DIM}Checking ${pages.size} pages…${RST}\n`);
 /* ---------- per-page checks ---------- */
 for (const [route, { html, ids }] of pages) {
   const isRedirect = /http-equiv="refresh"/.test(html);
+  // 404 and other noindex pages: links and assets must still resolve, but
+  // they carry no canonical, OG image or structured data by design.
+  const isNoindex = /name="robots" content="noindex"/.test(html);
 
   // --- internal links + anchors ---
   for (const m of html.matchAll(/href="([^"]+)"/g)) {
@@ -120,6 +123,7 @@ for (const [route, { html, ids }] of pages) {
     'h1': /<h1[\s>]/,
   };
   for (const [label, re] of Object.entries(need)) {
+    if (isNoindex && ['meta description', 'canonical', 'og:image'].includes(label)) continue;
     if (!re.test(html)) err(route, `missing ${label}`);
   }
 
@@ -156,6 +160,7 @@ let analyticsLive = false;
 
 for (const [route, { html }] of pages) {
   if (/http-equiv="refresh"/.test(html)) continue; // redirect stub is exempt
+  if (/name="robots" content="noindex"/.test(html)) continue; // 404 page: no schema, no analytics
 
   // --- JSON-LD present, parseable, and describing the business ---
   const ld = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
