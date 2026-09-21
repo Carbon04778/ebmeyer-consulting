@@ -2,54 +2,109 @@
 import LegalPage from '../../../layouts/LegalPage.astro';
 import t from '../../../data/de.json';
 import site from '../../../data/site.json';
-const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Nadine Ebmeyer, Cham ZG, Schweiz. Geltungsbereich, Leistungen, Honorar, Nutzungsrechte, Haftung und Gerichtsstand.';
+const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Nadine Ebmeyer, Cham ZG, Schweiz. Vertragsschluss, Widerrufsrecht, Leistungen, Honorar, Nutzungsrechte, Haftung und Gerichtsstand.';
 ---
 <LegalPage locale="de" t={t} title="Allgemeine Geschäftsbedingungen" slug="agb" altSlug="terms" description={description}>
   <p class="legal__meta">
-    Ebmeyer Consulting · Nadine Ebmeyer · Langackerstrasse 11 · 6330 Cham ZG · Schweiz<br />
+    Ebmeyer Consulting, Inhaberin Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG, Schweiz<br />
     Stand: September 2026
   </p>
 
   <h2>1. Geltungsbereich</h2>
   <p>
-    Diese Allgemeinen Geschäftsbedingungen gelten für alle Offerten, Verträge und Leistungen
-    zwischen Ebmeyer Consulting, Inhaberin Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG
-    (nachfolgend «Ebmeyer Consulting») und ihren Auftraggeberinnen und Auftraggebern
-    (nachfolgend «Kunde»).
+    Diese Allgemeinen Geschäftsbedingungen gelten für alle Offerten, Verträge und
+    Dienstleistungen zwischen Ebmeyer Consulting, Inhaberin Nadine Ebmeyer,
+    Langackerstrasse 11, 6330 Cham ZG, Schweiz (nachfolgend «Ebmeyer Consulting») und ihrer
+    Kundschaft (nachfolgend «Kunde»).
   </p>
   <p>
-    Massgebend ist die bei Vertragsschluss auf www.ebmeyer-consulting.ch veröffentlichte
-    Fassung. Abweichende Geschäftsbedingungen des Kunden gelten nur, wenn Ebmeyer Consulting
-    ihnen schriftlich zugestimmt hat.
+    «Arbeitstage» sind Montag bis Freitag, ausgenommen gesetzliche Feiertage am Sitz von
+    Ebmeyer Consulting. «Textform» umfasst insbesondere auch E-Mail, sofern keine strengere
+    Form gesetzlich vorgeschrieben ist. «Liefergegenstände» sind nur ausdrücklich als solche
+    bezeichnete, abnahmefähige Arbeitsergebnisse. Eine Session ist eine einzelne vereinbarte
+    Beratungs-, Schulungs- oder Besprechungseinheit. Programme und mehrphasige Programme
+    richten sich nach der jeweiligen Offerte.
+  </p>
+  <p>
+    Diese Allgemeinen Geschäftsbedingungen werden dem Kunden vor oder spätestens bei
+    Vertragsschluss in speicher- und ausdruckbarer Fassung übermittelt oder über einen
+    dauerhaft verfügbaren, speicherbaren Link zugänglich gemacht. Sie gelten mit Annahme der
+    Offerte, Unterzeichnung der Auftragsbestätigung oder Anmeldung über das
+    Online-Anmeldeformular beziehungsweise die Plattform eines Kooperationspartners als
+    rechtsgültiger Vertragsbestandteil. Bei Widersprüchen gilt folgende Rangordnung:
+    1) zwingende gesetzliche Bestimmungen, einschliesslich zwingenden Datenschutzrechts,
+    2) individuell ausgehandelte Regelungen, 3) Auftragsbestätigung, 4) Offerte und 5) diese
+    Allgemeinen Geschäftsbedingungen. Rechtserhebliche Mitteilungen können an die im
+    jeweiligen Vertrag angegebene E-Mail-Adresse gesendet werden. Abweichende
+    Geschäftsbedingungen des Kunden gelten nur bei ausdrücklicher Zustimmung durch Ebmeyer
+    Consulting. Dies bedarf der Textform.
   </p>
 
-  <h2>2. Angebot und Vertragsschluss</h2>
+  <h2>2. Vertragsschluss und Widerrufsrecht</h2>
   <p>
-    Offerten sind während 14 Kalendertagen ab Offertdatum gültig, sofern nichts anderes
-    vermerkt ist. Der Vertrag kommt zustande, wenn der Kunde die Offerte schriftlich annimmt
-    (E-Mail genügt) oder Ebmeyer Consulting eine Auftragsbestätigung zustellt.
+    Offerten von Ebmeyer Consulting sind während 14 Kalendertagen ab Offertdatum gültig. Der
+    Vertrag kommt durch die schriftliche Annahme der Offerte (insbesondere auch durch E-Mail)
+    oder durch die Unterzeichnung der Auftragsbestätigung zustande. Bei Anmeldungen über ein
+    Online-Anmeldeformular oder die Plattform eines Kooperationspartners kommt der Vertrag
+    mit der Bestätigung der Anmeldung durch Ebmeyer Consulting zustande.
   </p>
   <p>
-    Umfang und Inhalt der Leistung ergeben sich ausschliesslich aus der Offerte
-    beziehungsweise der Auftragsbestätigung. Leistungen, die dort nicht aufgeführt sind, sind
-    nicht geschuldet. Mündliche Zusagen bedürfen der schriftlichen Bestätigung.
+    Umfang und Inhalt der Dienstleistung ergeben sich ausschliesslich aus der Offerte
+    beziehungsweise der Auftragsbestätigung. Dienstleistungen, die dort nicht aufgeführt
+    sind, sind nicht geschuldet. Telefonische oder mündliche Vereinbarungen und Zusagen
+    werden erst mit schriftlicher Bestätigung durch Ebmeyer Consulting verbindlich.
+  </p>
+  <p>
+    Konsumentinnen und Konsumenten (B2C-Kunden) haben das Recht, während 14 Tagen nach
+    Vertragsschluss den Vertrag mit Ebmeyer Consulting zu widerrufen. Die Frist gilt als
+    eingehalten, wenn der Kunde Ebmeyer Consulting den Widerruf fristgerecht anzeigt. Der
+    Widerruf kann insbesondere per E-Mail an
+    <a href={`mailto:${site.email}`}>{site.email}</a> erklärt werden. Der Kunde kann dafür
+    das <a href="#widerrufsformular">Muster-Widerrufsformular im Anhang</a> dieser
+    Allgemeinen Geschäftsbedingungen verwenden; dies ist nicht vorgeschrieben. Der Widerruf
+    bedarf keiner Begründung. Zur Wahrung des Widerrufsrechts reicht es aus, wenn der Kunde
+    die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der vorgenannten
+    14-Tage-Frist abschickt. Die Ausübung des Widerrufsrechts führt zu einer Rückabwicklung
+    des Vertrages.
+  </p>
+  <p>
+    Eine allenfalls bereits geleistete Zahlung wird innerhalb von 14 Tagen seit Eingang des
+    Widerrufs bei Ebmeyer Consulting dem Kunden zurückerstattet. Für diese Rückerstattung
+    verwendet Ebmeyer Consulting dasselbe Zahlungsmittel, welches der Kunde für seine
+    Zahlung eingesetzt hat.
+  </p>
+  <p>
+    Das Widerrufsrecht erlischt vor Ablauf der 14-tägigen Frist, wenn mit der Ausführung der
+    Dienstleistung mit der ausdrücklichen Zustimmung des Kunden begonnen wurde und der Kunde
+    seine Kenntnis davon bestätigt hat, dass er sein Widerrufsrecht bei vollständiger
+    Vertragserfüllung durch Ebmeyer Consulting verliert und Ebmeyer Consulting die
+    Dienstleistung vollständig erbracht hat. Für den Fall, dass der Kunde den
+    Dienstleistungsvertrag fristgerecht widerruft, bevor Ebmeyer Consulting die
+    Dienstleistung vollständig erbracht hat, schuldet der Kunde Wertersatz für die von
+    Ebmeyer Consulting bis zum Zeitpunkt des Widerrufs erbrachten Leistungen.
   </p>
 
   <h2>3. Leistungen</h2>
   <p>
-    Ebmeyer Consulting erbringt Beratungs-, Strategie-, Schulungs- und Referatsleistungen in
-    den Bereichen Künstliche Intelligenz, Digitalisierung und Unternehmensentwicklung.
+    Ebmeyer Consulting erbringt KI-Strategieberatung für Unternehmen, KMU, Selbstständige
+    und Private, mehrphasige Beratungsprogramme, Workshops, Schulungen und Trainings online
+    und vor Ort, Keynotes und Referate, Lehraufträge sowie die Konzeption und Konfiguration
+    individueller KI-Assistenten auf bestehenden Drittanbieter-Plattformen.
   </p>
   <p>
-    Die Leistungen werden nach Auftragsrecht (Art. 394 ff. OR) erbracht. Geschuldet ist ein
-    sorgfältiges Tätigwerden, nicht ein bestimmter wirtschaftlicher Erfolg. Umsatz-, Kosten-
-    oder Effizienzziele werden nicht zugesichert.
+    Laufende Beratung sowie Workshops, Schulungen, Trainings, Keynotes und Referate werden
+    grundsätzlich als Auftrag nach Art. 394 ff. OR erbracht. Soweit individuelle
+    Arbeitsergebnisse ausdrücklich als abnahmefähige Liefergegenstände bezeichnet sind,
+    können darauf die werkvertraglichen Bestimmungen nach Art. 363 ff. OR Anwendung finden.
+    Die konkrete Vertragsqualifikation richtet sich nach dem jeweils vereinbarten
+    Leistungsgegenstand. Eine Erfolgsgarantie, insbesondere für Umsatz-, Kosten- oder
+    Effizienzziele, wird nicht geschuldet, soweit sie nicht ausdrücklich vereinbart ist.
   </p>
   <p>
     Ebmeyer Consulting kann zur Leistungserbringung Partnerinnen und Partner beiziehen und
     bleibt in diesem Fall Ansprechpartnerin des Kunden. Leistungen, die der Kunde direkt mit
-    Dritten vereinbart und abrechnet (etwa technische Umsetzung, Design, Lizenzen, Hosting),
-    sind nicht Vertragsgegenstand.
+    Dritten vereinbart und abrechnet, insbesondere technische Umsetzung, Lizenzen, Hosting
+    oder Leistungen von Drittanbieter-Plattformen, sind nicht Vertragsgegenstand.
   </p>
   <p>
     Ebmeyer Consulting erbringt keine Rechts-, Steuer-, Finanz- oder medizinische Beratung.
@@ -61,7 +116,9 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
     Der Kunde stellt rechtzeitig und vollständig alle Informationen, Unterlagen und Zugänge
     bereit, die für die Leistungserbringung nötig sind, und benennt eine
     entscheidungsbefugte Ansprechperson. Rückfragen und vereinbarte Vorbereitungsaufgaben
-    bearbeitet er innert der vereinbarten Frist.
+    bearbeitet er innert der vereinbarten Frist. Er ist für die Richtigkeit und rechtliche
+    Zulässigkeit der von ihm bereitgestellten Informationen, Unterlagen, Daten, Inhalte und
+    Zugänge verantwortlich.
   </p>
   <p>
     Bei Terminen vor Ort stellt der Kunde geeignete Räumlichkeiten, eine stabile
@@ -76,55 +133,82 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
 
   <h2>5. Termine, Verschiebung und Absage</h2>
   <p>
-    Termine sind nach schriftlicher Bestätigung verbindlich. Verschiebt oder annulliert der
-    Kunde einen bestätigten Termin, gilt:
+    Die nachfolgenden Absageregelungen gelten nur für schriftlich bestätigte einzelne Termine
+    oder für den ausdrücklich als solchen bezeichneten Veranstaltungstermin. Der Kunde kann
+    einen bestätigten Termin verschieben oder annullieren. Eine Verschiebung gilt als Absage,
+    sofern kein Ersatztermin vereinbart wird. Bei einer Absage oder Verschiebung wegen
+    Krankheit kann Ebmeyer Consulting einen geeigneten Nachweis verlangen, ohne zwingende
+    gesetzliche Rechte einzuschränken. Bei technischen Störungen eines Online-Termins bietet
+    Ebmeyer Consulting einen zumutbaren Ersatztermin an. Die nachfolgenden Pauschalen gelten
+    als pauschalierter Schadenersatz.
   </p>
+  <p>Bei Absagen durch den Kunden gilt für das Honorar Folgendes:</p>
   <ul>
-    <li>bis 14 Kalendertage vorher: kostenlos, einmalig pro Termin</li>
-    <li>13 bis 7 Kalendertage vorher: 50 Prozent des auf den Termin entfallenden Honorars</li>
-    <li>weniger als 7 Kalendertage vorher oder bei Nichterscheinen: 100 Prozent</li>
+    <li>bis spätestens 14 Kalendertage vor dem Termin: keine Kostenfolge</li>
+    <li>13 bis 7 Kalendertage vor dem Termin: 50 Prozent des für den betreffenden Termin vereinbarten Honorars</li>
+    <li>weniger als 7 Kalendertage vor dem Termin oder bei Nichterscheinen: 100 Prozent des für den betreffenden Termin vereinbarten Honorars</li>
   </ul>
   <p>
-    Bereits angefallene, nicht stornierbare Reise- und Nebenkosten sind zusätzlich
-    geschuldet.
+    Bereits angefallene, nicht stornierbare Dritt- und Reisekosten sind zusätzlich nur
+    geschuldet, soweit sie in der Offerte ausgewiesen oder vom Kunden vorgängig genehmigt
+    wurden.
   </p>
   <p>
-    Ist Ebmeyer Consulting verhindert, wird ein Ersatztermin angeboten. Ist das nicht
-    möglich, werden bereits geleistete Zahlungen für den ausgefallenen Termin
-    zurückerstattet.
+    Sagt Ebmeyer Consulting einen Termin endgültig ab, werden bereits geleistete Zahlungen
+    für den ausgefallenen Termin zurückerstattet, sofern kein Ersatztermin oder keine
+    Anrechnung auf eine gleichwertige Leistung vereinbart wird. Bereits angefallene, nicht
+    stornierbare Dritt- oder Reisekosten dürfen nur verrechnet werden, wenn sie in der
+    Offerte ausgewiesen oder vom Kunden vorgängig genehmigt wurden. Zwingende gesetzliche
+    Ansprüche bleiben vorbehalten. Schadenersatzforderungen werden ausgeschlossen.
   </p>
   <p>
     Nicht bezogene Sessions innerhalb eines mehrteiligen Programms verfallen 12 Monate nach
-    Programmstart.
+    Programmstart, sofern der Kunde die Nichtbeziehung zu vertreten hat und kein zwingender
+    gesetzlicher Anspruch, insbesondere infolge einer Beendigung nach Art. 404 OR,
+    entgegensteht.
   </p>
 
   <h2>6. Honorar und Zahlung</h2>
   <p>
     Alle Preise verstehen sich in Schweizer Franken und exklusive Mehrwertsteuer. Ebmeyer
-    Consulting ist derzeit nicht mehrwertsteuerpflichtig; tritt die Steuerpflicht ein, wird
+    Consulting ist derzeit nicht mehrwertsteuerpflichtig. Tritt die Steuerpflicht ein, wird
     die Mehrwertsteuer zusätzlich verrechnet.
   </p>
   <p>
-    Die Vergütung erfolgt projektbasiert als Pauschalhonorar für den in der Offerte
+    Bei einem vereinbarten Pauschalhonorar erfolgt die Vergütung für den in der Offerte
     definierten Leistungsumfang. Das Honorar bemisst sich nach Umfang, Komplexität und Wert
     der Leistung, nicht nach dem tatsächlichen Zeitaufwand. Ein Anspruch auf Reduktion bei
-    geringerem Zeitaufwand besteht nicht.
+    geringerem Zeitaufwand besteht nicht. Bei höherem Zeitaufwand innerhalb des vereinbarten
+    Leistungsumfangs besteht kein Anspruch auf eine zusätzliche Vergütung.
+  </p>
+  <p>
+    Bei einem vereinbarten Aufwandhonorar bemisst sich die Vergütung nach der aufgewendeten
+    Zeit (Stundenhonorar).
   </p>
   <p>
     Nicht im Honorar enthalten sind Reise- und Übernachtungskosten, Lizenz- und Tool-Kosten,
     Leistungen beigezogener Dritter sowie Druck-, Material- und Raumkosten. Für Termine vor
-    Ort wird eine in der Offerte ausgewiesene Reisepauschale verrechnet.
+    Ort wird die in der Offerte ausgewiesene Reisepauschale verrechnet.
   </p>
   <p>
-    Sofern nichts anderes vereinbart ist, sind 50 Prozent des Honorars bei
-    Auftragsbestätigung und 50 Prozent nach Abschluss fällig. Bei mehrphasigen Programmen
-    wird das Honorar phasenweise fällig, jeweils zu Beginn der betreffenden Phase. Workshops,
-    Seminare und Referate sind vor dem Veranstaltungsdatum vollständig zu bezahlen.
+    Sofern nichts anderes vereinbart ist, ist das Honorar vollständig vor dem ersten Termin
+    zu bezahlen. Der erste Termin findet erst nach Zahlungseingang statt. Bei mehrphasigen
+    Programmen ist das Honorar der jeweiligen Phase vollständig vor deren erstem Termin zu
+    bezahlen. Workshops, Seminare und Referate sind vor dem Veranstaltungsdatum vollständig
+    zu bezahlen. Ratenzahlung ist nach vorgängiger Vereinbarung in Textform möglich. Höhe und
+    Fälligkeit der Raten werden in der Offerte oder der Auftragsbestätigung festgehalten; die
+    erste Rate ist vor dem ersten Termin zu bezahlen. Bleibt eine Rate trotz Mahnung und
+    Ansetzung einer angemessenen Nachfrist aus, wird der gesamte Restbetrag sofort zur
+    Zahlung fällig.
   </p>
   <p>
-    Rechnungen sind innert 14 Kalendertagen ohne Abzug zahlbar. Nach Ablauf der
-    Zahlungsfrist ist ein Verzugszins von 5 Prozent pro Jahr geschuldet (Art. 104 OR). Bei
-    Zahlungsverzug kann Ebmeyer Consulting die Leistungserbringung sistieren.
+    Rechnungen sind, sofern keine andere Frist vereinbart ist, innert 14 Kalendertagen ab
+    Rechnungsdatum ohne Abzug zahlbar. Nach Eintreten der Fälligkeit ist ein Verzugszins von
+    5 Prozent pro Jahr geschuldet (Art. 104 OR). Ab der zweiten Mahnung kann Ebmeyer
+    Consulting eine angemessene pauschale Umtriebsentschädigung von CHF 30.– als
+    pauschalierten Ersatz angemessener Umtriebe verrechnen. Bei Zahlungsverzug kann Ebmeyer
+    Consulting die Leistungserbringung nach vorgängiger Mahnung und Ansetzung einer
+    angemessenen Nachfrist sistieren.
   </p>
   <p>
     Rabatte oder Sonderkonditionen gelten nur für den ausdrücklich bezeichneten Einzelauftrag
@@ -133,18 +217,22 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
 
   <h2>7. Korrekturschleifen und Abnahme</h2>
   <p>
-    Im Honorar ist pro Liefergegenstand eine Korrekturschleife enthalten, sofern die Offerte
-    nichts anderes vorsieht. Rückmeldungen erfolgen gesammelt und schriftlich innert 10
-    Arbeitstagen nach Zustellung.
+    Im Honorar ist pro Leistungseinheit eine Korrekturschleife enthalten. Rückmeldungen
+    erfolgen gesammelt und schriftlich innert 10 Arbeitstagen nach Leistungserbringung.
   </p>
   <p>
     Weitere Korrekturschleifen sowie Änderungen oder Erweiterungen des Leistungsumfangs sind
-    nicht im Honorar enthalten. Sie werden gesondert offeriert und erst nach schriftlicher
-    Freigabe ausgeführt.
+    nicht im Honorar enthalten und sind honorarpflichtig. Sie werden gesondert offeriert und
+    erst nach schriftlicher Freigabe ausgeführt.
   </p>
   <p>
-    Erfolgt innert 10 Arbeitstagen keine schriftliche Beanstandung oder nutzt der Kunde den
-    Liefergegenstand produktiv, gilt dieser als abgenommen.
+    Bei ausdrücklich als abnahmefähig bezeichneten Lieferungen respektive Leistungen gelten
+    diese als abgenommen, wenn der Kunde innert 10 Arbeitstagen ab Zustellung keine
+    schriftliche und nachvollziehbare Beanstandung erkennbarer Mängel erhebt. Eine blosse
+    produktive Nutzung gilt nicht als vorbehaltlose Abnahme, soweit sie erkennbar der Prüfung
+    oder Erprobung des Liefergegenstands dient. Diese Abnahmefiktion gilt nicht für laufende
+    Beratung, Workshops, Referate oder einzelne Sessions. Zwingende gesetzliche Rechte und
+    gesetzliche Verjährungsfristen bleiben unberührt.
   </p>
 
   <h2>8. Nutzungsrechte</h2>
@@ -170,8 +258,10 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
     persönlichen Gebrauch der Teilnehmenden bestimmt.
   </p>
   <p>
-    Der Kunde sichert zu, dass ihm an allen von ihm beigestellten Materialien die
-    erforderlichen Rechte zustehen.
+    Der Kunde sichert zu, dass er an allen von ihm beigestellten Materialien die
+    erforderlichen Rechte besitzt, und stellt Ebmeyer Consulting von Ansprüchen Dritter
+    frei, soweit diese auf einer schuldhaften Verletzung dieser Zusicherung durch den Kunden
+    beruhen.
   </p>
 
   <h2>9. Einsatz von Künstlicher Intelligenz</h2>
@@ -181,15 +271,20 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
   </p>
   <p>
     Ergebnisse KI-gestützter Systeme werden wahrscheinlichkeitsbasiert erzeugt und können
-    unvollständig, veraltet oder inhaltlich unzutreffend sein. Sie sind vor der Verwendung
-    durch den Kunden fachlich zu prüfen. Ebmeyer Consulting übernimmt keine Gewähr für
-    Richtigkeit, Vollständigkeit oder Reproduzierbarkeit KI-generierter Inhalte.
+    unvollständig, veraltet oder inhaltlich unzutreffend sein. Sie sind vor einer produktiven
+    oder sonst rechtlich relevanten Verwendung durch den Kunden fachlich zu prüfen. Ebmeyer
+    Consulting schuldet bei der Auswahl, dem Einsatz, der Konfiguration und der Kontrolle der
+    eingesetzten Systeme angemessene Sorgfalt, übernimmt jedoch keine Garantie für die
+    Richtigkeit, Vollständigkeit, Aktualität oder Verfügbarkeit KI-generierter Inhalte. Die
+    Haftungsregelung in Ziffer 12 sowie zwingendes Recht bleiben unberührt.
   </p>
   <p>
     Verfügbarkeit, Funktionsumfang, Preise und Nutzungsbedingungen von
     Drittanbieter-Werkzeugen liegen ausserhalb des Einflussbereichs von Ebmeyer Consulting.
-    Erforderliche Lizenzen und Abonnements beschafft der Kunde in eigenem Namen und auf
-    eigene Rechnung.
+    Massgeblich bleiben die Bedingungen der jeweiligen Anbieter, insbesondere hinsichtlich
+    Datenverwendung und Modelltraining. Ebmeyer Consulting sichert weder die Verfügbarkeit
+    noch die unveränderte Weiterführung dieser Dienste zu. Erforderliche Lizenzen und
+    Abonnements beschafft der Kunde in eigenem Namen und auf eigene Rechnung.
   </p>
   <p>
     Der Kunde stellt sicher, dass keine besonders schützenswerten Personendaten, Berufs- oder
@@ -207,90 +302,99 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
   <h2>10. Vertraulichkeit und Datenschutz</h2>
   <p>
     Beide Parteien behandeln nicht öffentliche Informationen der jeweils anderen Partei
-    vertraulich und verwenden sie ausschliesslich zur Vertragserfüllung. Diese Pflicht gilt
-    während der Vertragsdauer und drei Jahre darüber hinaus.
+    vertraulich und verwenden sie ausschliesslich zur Vertragserfüllung. Hiervon ausgenommen
+    sind Informationen, die der empfangenden Partei bereits rechtmässig bekannt waren, ohne
+    Verletzung dieser Pflicht öffentlich bekannt werden, rechtmässig von Dritten ohne
+    Geheimhaltungspflicht erhalten werden oder aufgrund gesetzlicher, behördlicher oder
+    gerichtlicher Anordnung offengelegt werden müssen. Soweit rechtlich zulässig, informiert
+    die empfangende Partei die andere Partei vor einer solchen Offenlegung. Auf Verlangen der
+    anderen Partei sind vertrauliche Informationen zurückzugeben oder zu löschen, soweit
+    keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Diese Pflicht gilt während der
+    Vertragsdauer und für drei Jahre nach deren Ende. Für Geschäftsgeheimnisse gilt sie so
+    lange, wie deren Geheimhaltungsbedürftigkeit besteht.
   </p>
   <p>
     Ebmeyer Consulting bearbeitet Personendaten in Übereinstimmung mit dem Schweizer
     Datenschutzgesetz und, soweit anwendbar, der DSGVO. Einzelheiten regelt die
     <a href="/de/datenschutz/">Datenschutzerklärung</a> auf www.ebmeyer-consulting.ch.
   </p>
-  <p>
-    Ebmeyer Consulting bearbeitet keine Personendaten im Auftrag des Kunden. Das
-    Leistungsmodell ist darauf ausgerichtet, dass der Kunde seine KI-Anwendungen selbst
-    einrichtet und eigenverantwortlich betreibt; die Datenhoheit verbleibt beim Kunden. Für
-    die eigene Leistungserbringung kann Ebmeyer Consulting Dienstleister wie Cloud-, KI- und
-    Kollaborationsanbieter einsetzen.
-  </p>
 
   <h2>11. Referenzen</h2>
   <p>
     Ebmeyer Consulting darf Name und Logo des Kunden sowie eine allgemeine, nicht
-    vertrauliche Beschreibung der Zusammenarbeit als Referenz nennen, sofern der Kunde dem
-    nicht schriftlich widerspricht. Die Nennung vertraulicher Inhalte, Zahlen oder Zitate
-    erfolgt nur nach vorgängiger Freigabe.
+    vertrauliche Beschreibung der Zusammenarbeit nur nach dessen vorheriger ausdrücklicher
+    Zustimmung als Referenz verwenden. Zahlen, Zitate und Fallstudien dürfen nur nach
+    gesonderter vorheriger Freigabe durch den Kunden verwendet werden. Vertrauliche Inhalte
+    und Personendaten dürfen nicht verwendet werden. Eine erteilte Zustimmung oder Freigabe
+    kann mit Wirkung für die Zukunft widerrufen werden. Bereits veröffentlichte Materialien
+    entfernt Ebmeyer Consulting innert angemessener Frist. Die Verwendung erfolgt unter
+    Wahrung der Vertraulichkeit und des anwendbaren Datenschutzrechts.
   </p>
   <p>
-    Wurde eine Sonderkondition ausdrücklich im Austausch gegen eine Referenz oder Fallstudie
-    gewährt, erbringt der Kunde diese innert 30 Kalendertagen nach Abschluss der Leistung.
+    Wurde eine Sonderkondition ausdrücklich als Gegenleistung für eine Referenz oder
+    Fallstudie vereinbart, verpflichtet sich der Kunde, die vereinbarte Referenz oder
+    Fallstudie innert 30 Kalendertagen nach Abschluss der Leistung zu erbringen. Die
+    Verwendung der Referenz oder Fallstudie durch Ebmeyer Consulting setzt die vorherige
+    ausdrückliche Zustimmung beziehungsweise die gesonderte Freigabe gemäss dieser Ziffer
+    voraus.
   </p>
 
   <h2>12. Haftung</h2>
   <p>
-    Ebmeyer Consulting haftet für Vorsatz und grobe Fahrlässigkeit. Die Haftung für leichte
-    Fahrlässigkeit wird ausgeschlossen, soweit gesetzlich zulässig.
+    Ebmeyer Consulting haftet für Vorsatz, einschliesslich rechtswidriger Absicht, und grobe
+    Fahrlässigkeit. Die Haftung für leichte Fahrlässigkeit wird ausgeschlossen, soweit
+    gesetzlich zulässig. Zwingende gesetzliche Haftung, insbesondere für Schäden an Leib und
+    Leben sowie zwingende datenschutzrechtliche Haftung, bleibt vorbehalten.
   </p>
   <p>
-    Ausgeschlossen ist – soweit gesetzlich zulässig – die Haftung für indirekte Schäden und
-    Folgeschäden, insbesondere entgangenen Gewinn, Betriebsunterbruch, Datenverlust und
-    Ansprüche Dritter. Im Übrigen ist die Haftung auf das für das betreffende Mandat
-    bezahlte Honorar beschränkt.
+    Bei leichter Fahrlässigkeit ist die Haftung für mittelbare Schäden, Folgeschäden,
+    entgangenen Gewinn und Betriebsunterbruch, soweit gesetzlich zulässig, ausgeschlossen.
+    Für unmittelbare Schäden aus leichter Fahrlässigkeit ist die Haftung auf das für
+    diejenige konkrete Leistung geschuldete Nettohonorar begrenzt, welche den Schaden
+    unmittelbar verursacht hat, höchstens jedoch auf das für diese Leistung vereinbarte
+    Nettohonorar. Bei mehrphasigen Programmen gilt jede einzelne Phase als konkrete
+    Leistung. Dieser Haftungsausschluss und diese Haftungsbeschränkung gelten nicht bei
+    Vorsatz, grober Fahrlässigkeit, Personenschäden, zwingender datenschutzrechtlicher
+    Haftung oder sonstiger zwingender gesetzlicher Haftung. Art. 100 und Art. 101 OR sowie,
+    soweit anwendbar, Art. 8 UWG bleiben vorbehalten.
   </p>
   <p>
-    Ebmeyer Consulting haftet nicht für unternehmerische Entscheidungen des Kunden, für die
-    Umsetzung durch Dritte, für die Verfügbarkeit von Drittanbieter-Werkzeugen sowie für
-    Ergebnisse KI-gestützter Systeme gemäss Ziffer 9.
-  </p>
-  <p>
-    Mängel sind innert 10 Arbeitstagen schriftlich zu rügen. Ebmeyer Consulting hat das
-    Recht zur Nachbesserung innert angemessener Frist.
-  </p>
-
-  <h2>13. Widerrufsrecht für Konsumentinnen und Konsumenten</h2>
-  <p>
-    Diese Ziffer gilt ausschliesslich für Verträge mit Konsumentinnen und Konsumenten, also
-    für natürliche Personen, die zu einem Zweck bestellen, der überwiegend weder ihrer
-    gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden kann.
-    Für Unternehmen, Selbstständige und Institutionen besteht kein Widerrufsrecht.
-  </p>
-  <p>
-    Konsumentinnen und Konsumenten können den Vertrag innert 14 Kalendertagen ab
-    Vertragsschluss ohne Angabe von Gründen widerrufen. Der Widerruf ist in Textform an
-    <a href={`mailto:${site.email}`}>{site.email}</a> zu richten; die rechtzeitige Absendung
-    genügt.
-  </p>
-  <p>
-    Wünscht die Konsumentin oder der Konsument ausdrücklich, dass die Leistung bereits vor
-    Ablauf der Widerrufsfrist beginnt, wird der Wert der bis zum Widerruf erbrachten
-    Leistungen anteilig geschuldet. Bei bereits vollständig erbrachten Leistungen erlischt
-    das Widerrufsrecht mit der vollständigen Erbringung, sofern die Leistung auf
-    ausdrücklichen Wunsch vorzeitig begonnen wurde.
-  </p>
-  <p>
-    Bereits geleistete Zahlungen werden innert 14 Kalendertagen nach Eingang des Widerrufs
-    zurückerstattet, abzüglich des Werts bereits erbrachter Leistungen.
+    Ergänzend zur vorstehenden Haftungsregelung haftet Ebmeyer Consulting, soweit kein
+    zwingendes Recht entgegensteht, nicht für unternehmerische Entscheidungen des Kunden,
+    die Umsetzung durch Dritte sowie die Verfügbarkeit oder Änderungen von
+    Drittanbieter-Werkzeugen. Davon unberührt bleibt die Haftung von Ebmeyer Consulting für
+    eigene schuldhafte Pflichtverletzungen. Für die fachliche Prüfung KI-generierter
+    Ergebnisse gilt Ziffer 9.
   </p>
 
-  <h2>14. Beendigung</h2>
+  <h2>13. Beendigung</h2>
   <p>
-    Die Vertragsdauer richtet sich nach der Offerte beziehungsweise Auftragsbestätigung. Das
-    Recht beider Parteien zur jederzeitigen Beendigung nach Art. 404 OR bleibt vorbehalten.
+    Die Vertragsdauer richtet sich nach der Offerte beziehungsweise Auftragsbestätigung. Bei
+    künftig ausdrücklich vereinbarten Retainern beträgt die Laufzeit 6 oder 12 Monate. Sie
+    können mit einer Frist von einem Monat auf Ende der Laufzeit gekündigt werden, soweit
+    dies mit dem jederzeitigen Kündigungsrecht nach Art. 404 OR vereinbar ist, und
+    verlängern sich nicht automatisch ohne ausdrückliche Zustimmung. Das Recht beider
+    Parteien zur jederzeitigen Beendigung nach Art. 404 OR bleibt vorbehalten.
   </p>
   <p>
-    Endet der Vertrag vor Erbringung aller Leistungen, schuldet der Kunde das Honorar für die
-    bis dahin erbrachten Leistungen sowie den Ersatz getätigter Aufwendungen und
-    eingegangener Verpflichtungen. Bei mehrphasigen Programmen gilt das Honorar der
-    jeweiligen Phase mit deren Beginn als verdient.
+    Endet der Vertrag durch Kündigung, Auflösung oder aus einem sonstigen Grund vor
+    vollständiger Erbringung aller Leistungen, schuldet der Kunde das Honorar für die bis
+    dahin tatsächlich erbrachten Leistungen sowie den Ersatz notwendiger Aufwendungen und
+    eingegangener nicht stornierbarer Verpflichtungen, soweit diese nicht bereits
+    anderweitig vergütet oder vermeidbar sind.
+  </p>
+  <p>
+    Bei Aufträgen bleibt das jederzeitige Kündigungsrecht nach Art. 404 OR vorbehalten. Für
+    noch nicht erbrachte Leistungen ist bei einer Beendigung nach Art. 404 OR kein Honorar
+    geschuldet. Bei einer Kündigung zur Unzeit bleiben die gesetzlichen
+    Schadenersatzansprüche nach Art. 404 Abs. 2 OR vorbehalten. Bei mehrphasigen Programmen
+    sind vollständig erbrachte Phasen vollständig geschuldet. Für begonnene, noch nicht
+    vollständig erbrachte Phasen ist das Honorar anteilig entsprechend dem nachvollziehbar
+    bestimmten Leistungsstand geschuldet. Noch nicht begonnene Phasen werden nicht
+    geschuldet, vorbehaltlich gesetzlicher Ansprüche. Soweit ausdrücklich als abnahmefähig
+    bezeichnete Liefergegenstände werkvertraglich zu qualifizieren sind, bleiben die
+    gesetzlichen Beendigungs- und Vergütungsfolgen, insbesondere Art. 377 OR, vorbehalten.
+    Die Folgen höherer Gewalt richten sich ausschliesslich nach Ziffer 14.
   </p>
   <p>
     Beide Parteien können den Vertrag aus wichtigem Grund fristlos auflösen, insbesondere bei
@@ -298,19 +402,28 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
     Mahnung.
   </p>
 
-  <h2>15. Höhere Gewalt</h2>
+  <h2>14. Höhere Gewalt</h2>
   <p>
     Ereignisse ausserhalb des Einflussbereichs einer Partei – etwa Naturereignisse,
     behördliche Anordnungen, Streik, Cyberangriffe oder der Ausfall von Telekommunikations-,
-    Cloud- oder KI-Diensten – befreien die betroffene Partei für die Dauer der Behinderung
-    von ihren Leistungspflichten. Dauert das Ereignis länger als 60 Kalendertage, kann jede
-    Partei vom Vertrag zurücktreten; bereits erbrachte Leistungen sind zu vergüten.
+    Cloud- oder KI-Diensten – befreien die betroffene Partei für die Dauer und im Umfang der
+    Behinderung von ihren Leistungspflichten. Bei einer vorübergehenden Behinderung werden
+    die Leistungen innert angemessener Frist verschoben oder, soweit möglich und zumutbar,
+    durch eine gleichwertige Ersatzleistung erbracht.
+  </p>
+  <p>
+    Führt das Ereignis zu einer endgültigen Unmöglichkeit der Leistungserbringung oder dauert
+    es länger als 60 Kalendertage an, kann jede Partei den Vertrag bezüglich der noch nicht
+    erbrachten Leistungen beenden. In diesem Fall sind nur bereits erbrachte Leistungen sowie
+    notwendige, im Zusammenhang mit dem Auftrag eingegangene und nicht stornierbare Kosten
+    geschuldet, soweit diese nicht bereits anderweitig vergütet wurden. Für nicht erbrachte
+    Leistungen ist keine Vergütung geschuldet. Die gesetzlichen Rückerstattungs- und
+    Unmöglichkeitsfolgen, insbesondere nach Art. 119 OR, sowie die Haftung für selbst zu
+    vertretende Pflichtverletzungen bleiben vorbehalten.
   </p>
 
-  <h2>16. Schlussbestimmungen</h2>
-  <p>
-    Änderungen und Ergänzungen bedürfen der Schriftform; die Textform per E-Mail genügt.
-  </p>
+  <h2>15. Schlussbestimmungen</h2>
+  <p>Änderungen und Ergänzungen dieser AGB bedürfen der Textform.</p>
   <p>
     Der Kunde kann Rechte und Pflichten aus dem Vertrag nur mit schriftlicher Zustimmung
     übertragen. Ebmeyer Consulting darf den Vertrag im Rahmen einer Umwandlung oder
@@ -326,7 +439,7 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
   </p>
   <p>
     Diese Geschäftsbedingungen können in weiteren Sprachen veröffentlicht werden. Massgebend
-    ist in jedem Fall die deutsche Fassung.
+    ist die deutsche Fassung.
   </p>
   <p>
     Es gilt ausschliesslich Schweizer Recht unter Ausschluss des UN-Kaufrechts.
@@ -335,9 +448,33 @@ const description = 'Allgemeine Geschäftsbedingungen von Ebmeyer Consulting, Na
   </p>
 
   <p class="legal__meta">
-    Ebmeyer Consulting · Nadine Ebmeyer · Langackerstrasse 11 · 6330 Cham ZG · Schweiz<br />
+    Ebmeyer Consulting, Inhaberin Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG, Schweiz<br />
     <a href={`mailto:${site.email}`}>{site.email}</a> · www.ebmeyer-consulting.ch ·
     <a href={site.phoneHref}>{site.phone}</a><br />
     Stand: September 2026
   </p>
+
+  <h2 id="widerrufsformular">Anhang: Muster-Widerrufsformular</h2>
+  <p>
+    <em>Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und
+    senden Sie es per E-Mail zurück. Die Verwendung des Formulars ist nicht vorgeschrieben;
+    eine eindeutige Erklärung per E-Mail genügt.</em>
+  </p>
+  <div class="legal__form">
+    <p>
+      An: Ebmeyer Consulting, Nadine Ebmeyer, Langackerstrasse 11, 6330 Cham ZG, Schweiz ·
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+    <p>
+      Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die
+      Erbringung der folgenden Dienstleistung:<br />
+      <span class="legal__blank"></span>
+    </p>
+    <p>Bestellt am: <span class="legal__blank legal__blank--short"></span></p>
+    <p>Name der Konsumentin / des Konsumenten:<br /><span class="legal__blank"></span></p>
+    <p>Anschrift der Konsumentin / des Konsumenten:<br /><span class="legal__blank"></span></p>
+    <p>Unterschrift (nur bei Mitteilung auf Papier):<br /><span class="legal__blank"></span></p>
+    <p>Datum: <span class="legal__blank legal__blank--short"></span></p>
+    <p><em>(*) Unzutreffendes streichen.</em></p>
+  </div>
 </LegalPage>
