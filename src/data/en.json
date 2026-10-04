@@ -149,6 +149,28 @@
       }
     ]
   },
+  "gallery": {
+    "eyebrow": "From the courses",
+    "title": "What the work looks like.",
+    "lead": "Moments from on-site workshops and training sessions — with entrepreneurs and teams bringing AI into their everyday work.",
+    "items": [
+      {
+        "file": "workshop-01.jpg",
+        "caption": "On-site workshop",
+        "alt": "Participants working in the AI workshop"
+      },
+      {
+        "file": "workshop-02.jpg",
+        "caption": "On-site workshop",
+        "alt": "Nadine Ebmeyer in conversation with participants"
+      },
+      {
+        "file": "workshop-03.jpg",
+        "caption": "On-site workshop",
+        "alt": "Working on the concept during the workshop"
+      }
+    ]
+  },
   "bio": {
     "eyebrow": "Why me",
     "title": "Many will show you tools. I build a strategy with you.",

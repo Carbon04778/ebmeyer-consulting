@@ -149,6 +149,28 @@
       }
     ]
   },
+  "gallery": {
+    "eyebrow": "Aus der Praxis",
+    "title": "Wie die Arbeit aussieht.",
+    "lead": "Einblicke aus Workshops und Schulungen vor Ort — mit Unternehmerinnen, Unternehmern und Teams, die KI in ihren Alltag holen.",
+    "items": [
+      {
+        "file": "workshop-01.jpg",
+        "caption": "Workshop vor Ort",
+        "alt": "Teilnehmende arbeiten im KI-Workshop"
+      },
+      {
+        "file": "workshop-02.jpg",
+        "caption": "Workshop vor Ort",
+        "alt": "Nadine Ebmeyer im Gespräch mit Teilnehmenden"
+      },
+      {
+        "file": "workshop-03.jpg",
+        "caption": "Workshop vor Ort",
+        "alt": "Arbeit am Konzept während des Workshops"
+      }
+    ]
+  },
   "bio": {
     "eyebrow": "Warum ich",
     "title": "Viele zeigen Dir Tools. Ich baue mit Dir eine Strategie.",

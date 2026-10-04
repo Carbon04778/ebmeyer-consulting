@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets';
+
+/* Workshop photos.
+   Images live in src/assets/gallery/ and are matched by the `file` key in
+   de.json / en.json. Astro optimises and hashes them at build time, so adding
+   a photo means dropping the file in and adding one line of JSON — no code
+   change. An entry whose file is missing is skipped rather than breaking the
+   build, and the whole section disappears if no photo resolves. */
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/gallery/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true }
+);
+const byName = new Map(
+  Object.entries(files).map(([path, mod]) => [path.split('/').pop()!, mod.default])
+);
+
+interface Props { gallery: any; }
+const { gallery } = Astro.props;
+
+const items = (gallery?.items ?? [])
+  .map((item: any) => ({ ...item, img: byName.get(item.file) }))
+  .filter((item: any) => item.img);
+---
+{items.length > 0 && (
+  <section class="section gal center" id="praxis">
+    <div class="wrap">
+      <p class="eyebrow reveal">{gallery.eyebrow}</p>
+      <h2 class="reveal">{gallery.title}</h2>
+      {gallery.lead && <p class="lead reveal">{gallery.lead}</p>}
+
+      <ul class="gal__grid">
+        {items.map((item: any) => (
+          <li class="reveal">
+            <figure>
+              <Image
+                src={item.img}
+                alt={item.alt ?? item.caption}
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 46vw, 31vw"
+                loading="lazy"
+                decoding="async"
+              />
+              {item.caption && <figcaption>{item.caption}</figcaption>}
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .gal { background: var(--warm); }
+  h2 { font-size: var(--fs-h2); }
+  .gal .lead { max-width: 56ch; margin-inline: auto; color: var(--ink-soft); }
+
+  .gal__grid {
+    list-style: none; padding: 0; margin: clamp(2.5rem, 5vw, 3.75rem) 0 0;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 2.2vw, 1.75rem);
+    text-align: left;
+  }
+  figure { margin: 0; }
+  figure :global(img) {
+    width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+    display: block; background: var(--hairline);
+  }
+  figcaption {
+    margin-top: 0.7rem; font-size: 0.82rem; line-height: 1.5;
+    color: var(--ink-mute);
+  }
+
+  /* A lone photo in the last row stays photo-sized instead of stretching. */
+  @media (max-width: 1000px) {
+    .gal__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .gal__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    figure :global(img) { aspect-ratio: 3 / 2; }
+    figcaption { font-size: 0.84rem; }
+  }
+</style>
