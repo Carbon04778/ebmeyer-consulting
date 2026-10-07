@@ -156,18 +156,38 @@
     "items": [
       {
         "file": "workshop-01.jpg",
-        "caption": "Workshop vor Ort",
-        "alt": "Teilnehmende arbeiten im KI-Workshop"
+        "caption": "KI-Workshop vor Ort",
+        "alt": "Teilnehmende im KI-Workshop, Nadine Ebmeyer präsentiert vorne am Bildschirm"
       },
       {
         "file": "workshop-02.jpg",
-        "caption": "Workshop vor Ort",
-        "alt": "Nadine Ebmeyer im Gespräch mit Teilnehmenden"
+        "caption": "Vom Konzept zur Anwendung",
+        "alt": "Nadine Ebmeyer erklärt einen Arbeitsschritt am Bildschirm"
       },
       {
         "file": "workshop-03.jpg",
-        "caption": "Workshop vor Ort",
-        "alt": "Arbeit am Konzept während des Workshops"
+        "caption": "Blick in den Raum",
+        "alt": "Teilnehmende verfolgen die Präsentation, Nadine Ebmeyer vorne am Bildschirm"
+      },
+      {
+        "file": "workshop-04.jpg",
+        "caption": "KI, die im Alltag ankommt",
+        "alt": "Nadine Ebmeyer im Gespräch mit der Gruppe"
+      },
+      {
+        "file": "workshop-05.jpg",
+        "caption": "Mitten in der Session",
+        "alt": "Teilnehmende mit geöffneten Laptops während der Präsentation im Seminarraum"
+      },
+      {
+        "file": "workshop-06.jpg",
+        "caption": "Fragen, die weiterbringen",
+        "alt": "Nadine Ebmeyer beantwortet Fragen aus der Gruppe"
+      },
+      {
+        "file": "workshop-07.jpg",
+        "caption": "Ein klarer Ablauf",
+        "alt": "Der Tagesablauf eines KI-Workshops auf dem Bildschirm"
       }
     ]
   },

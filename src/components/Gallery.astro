@@ -6,7 +6,11 @@ import { Image } from 'astro:assets';
    de.json / en.json. Astro optimises and hashes them at build time, so adding
    a photo means dropping the file in and adding one line of JSON — no code
    change. An entry whose file is missing is skipped rather than breaking the
-   build, and the whole section disappears if no photo resolves. */
+   build, and the whole section disappears if no photo resolves.
+
+   The set mixes portrait and landscape, so the grid is a masonry column flow
+   and every photo keeps its own aspect ratio. Forcing one ratio would crop a
+   9:16 room shot down to a slice of the room. */
 const files = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/gallery/*.{jpg,jpeg,png,webp,avif}',
   { eager: true }
@@ -56,27 +60,26 @@ const items = (gallery?.items ?? [])
 
   .gal__grid {
     list-style: none; padding: 0; margin: clamp(2.5rem, 5vw, 3.75rem) 0 0;
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1rem, 2.2vw, 1.75rem);
+    columns: 3; column-gap: clamp(1rem, 2.2vw, 1.75rem);
     text-align: left;
+  }
+  .gal__grid > li {
+    break-inside: avoid; /* a figure is never split across two columns */
+    margin-bottom: clamp(1rem, 2.2vw, 1.75rem);
   }
   figure { margin: 0; }
   figure :global(img) {
-    width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover;
-    display: block; background: var(--hairline);
+    width: 100%; height: auto; display: block; background: var(--hairline);
   }
   figcaption {
-    margin-top: 0.7rem; font-size: 0.82rem; line-height: 1.5;
+    margin-top: 0.6rem; font-size: 0.82rem; line-height: 1.5;
     color: var(--ink-mute);
   }
 
-  /* A lone photo in the last row stays photo-sized instead of stretching. */
-  @media (max-width: 1000px) {
-    .gal__grid { grid-template-columns: repeat(2, 1fr); }
-  }
+  @media (max-width: 1000px) { .gal__grid { columns: 2; } }
   @media (max-width: 600px) {
-    .gal__grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    figure :global(img) { aspect-ratio: 3 / 2; }
+    .gal__grid { columns: 1; }
+    .gal__grid > li { margin-bottom: 1.5rem; }
     figcaption { font-size: 0.84rem; }
   }
 </style>

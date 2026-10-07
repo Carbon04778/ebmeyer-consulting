@@ -156,18 +156,38 @@
     "items": [
       {
         "file": "workshop-01.jpg",
-        "caption": "On-site workshop",
-        "alt": "Participants working in the AI workshop"
+        "caption": "AI workshop on site",
+        "alt": "Participants in the AI workshop, Nadine Ebmeyer presenting at the screen"
       },
       {
         "file": "workshop-02.jpg",
-        "caption": "On-site workshop",
-        "alt": "Nadine Ebmeyer in conversation with participants"
+        "caption": "From concept to application",
+        "alt": "Nadine Ebmeyer explaining a step on screen"
       },
       {
         "file": "workshop-03.jpg",
-        "caption": "On-site workshop",
-        "alt": "Working on the concept during the workshop"
+        "caption": "A look into the room",
+        "alt": "Participants following the presentation, Nadine Ebmeyer at the screen"
+      },
+      {
+        "file": "workshop-04.jpg",
+        "caption": "AI that lands in everyday work",
+        "alt": "Nadine Ebmeyer in conversation with the group"
+      },
+      {
+        "file": "workshop-05.jpg",
+        "caption": "In the middle of the session",
+        "alt": "Participants with laptops open during the presentation in the seminar room"
+      },
+      {
+        "file": "workshop-06.jpg",
+        "caption": "The questions that move things on",
+        "alt": "Nadine Ebmeyer answering questions from the group"
+      },
+      {
+        "file": "workshop-07.jpg",
+        "caption": "A clear structure",
+        "alt": "The agenda of an AI workshop shown on screen"
       }
     ]
   },
